@@ -2448,7 +2448,9 @@
 				<control type="label">
 					<left>720</left>
 					<top>978</top>
-					<label>$VAR[NowPlayingPlayLabelVar]</label>
+					<!-- whitemod -->
+					<label>$VAR[NowPlayingPlayLabelVar]  $INFO[Player.Duration ] / $INFO[Player.Time] / $INFO[Player.TimeRemaining]</label>
+					<!-- whitemod -->
 					<font>Font_Reg31_Caps</font>
 					<textcolor>$VAR[TitleColorVar]</textcolor>
 				</control>
