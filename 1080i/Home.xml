@@ -488,6 +488,8 @@
 							<visible>[Skin.HasSetting(ProgressMainMenu) + Skin.HasSetting(smallermainmenu)]</visible>
 						</control>
 					</control>
+					<!-- whitemod -->
+					<!--
 					<control type="image">
 						<top>453</top>
 						<width>1920</width>
@@ -498,6 +500,8 @@
 						<include>Animation_VisibleChange400</include>
 						<visible>!Skin.HasSetting(DisableGlowbar) | [Skin.HasSetting(ExtendedGlowMode) + Skin.HasSetting(glasshome)] | Skin.HasSetting(classichome)</visible>
 					</control>
+                                        -->
+					<!-- whitemod -->
 					<!-- Home OSD -->
 					<control type="label">
 						<top>445</top>
@@ -727,6 +731,8 @@
 					<scroll>true</scroll>
 					<visible>!Skin.HasSetting(BelowMidLogo)</visible>
 				</control>
+				<!-- whitemod -->
+				<!--
 				<control type="progress">
 					<animation effect="slide" time="250" start="-270,10" end="0,0" tween="back" easing="out" condition="Substring(Control.GetLabel(8318),empty.png) | String.IsEmpty(Skin.String(ArtistsLogosPath)) | !Skin.HasSetting(BelowMidLogo)">Conditional</animation>
 					<posx>0</posx>
@@ -742,6 +748,8 @@
 					<visible>Substring(Control.GetLabel(8318),empty.png) | !Skin.HasSetting(BelowMidLogo)</visible>
 					<visible>Player.HasDuration</visible>
 				</control>
+                                -->
+				<!-- whitemod -->
 			</control>
 			<control type="group">
 				<animation effect="slide" start="0,200" end="0" time="560" tween="cubic" easing="inout" delay="350">WindowOpen</animation>
