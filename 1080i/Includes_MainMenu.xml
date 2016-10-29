@@ -6,7 +6,9 @@
 			<top>455</top>
 			<width>2120</width>
 			<height>225</height>
-			<texture>home/homemenu_gradient.png</texture>
+			<!-- whitemod -->
+			<texture>home/white_homemenu_gradient.png</texture>
+			<!-- whitemod -->
 		</control>
 		<control type="image">
 			<top>453</top>
@@ -17,7 +19,9 @@
 		</control>
 	</include>
 	<include name="MainMenuLabels">
-		<top>-3</top>
+	        <!-- whitemod -->
+		<top>0</top>
+		<!-- whitemod -->
 		<height>225</height>
 		<align>center</align>
 		<label>$INFO[ListItem.Label]</label>
@@ -47,7 +51,9 @@
 		<include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
 		<include>DefaultControl</include>
 
-		<visible>![Player.HasMedia + System.IdleTime(8)]</visible>
+                <!-- whitemod -->
+		<visible>![Player.HasMedia + System.IdleTime(8) + Skin.HasSetting(stopprogress)]</visible>
+		<!-- whitemod -->
 		<orientation>horizontal</orientation>
 		<animation effect="slide" end="-302,0" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(biggergap)">Conditional</animation>
 		<animation effect="fade" end="100" time="160">Visible</animation>
@@ -112,7 +118,8 @@
 			<control type="label">
 				<left>0</left>
 				<width>519</width>
-				<textcolor>white5</textcolor>
+				<!-- whitemod -->
+				<textcolor>$INFO[Skin.String(HomeMenuColor2)]</textcolor>
 				<include>MainMenuLabels</include>
 			</control>
 		</itemlayout>
@@ -120,7 +127,7 @@
 			<control type="label">
 				<left>0</left>
 				<width>519</width>
-				<textcolor>$VAR[MainMenuFontColorVar]</textcolor>
+				<textcolor>$INFO[Skin.String(HomeMenuColor1)]</textcolor>
 				<include>MainMenuLabels</include>
 			</control>
 		</focusedlayout>
@@ -128,7 +135,8 @@
 			<control type="label">
 				<left>0</left>
 				<width>639</width>
-				<textcolor>white5</textcolor>
+				<textcolor>$INFO[Skin.String(HomeMenuColor2)]</textcolor>
+				<!-- whitemod -->
 				<include>MainMenuLabels</include>
 			</control>
 		</itemlayout>
@@ -180,7 +188,8 @@
 				<align>center</align>
 				<label>$INFO[ListItem.Label]</label>
 				<font>Font_Reg28_Caps</font>
-				<textcolor>grey2</textcolor>
+				<!-- whitemod -->
+				<textcolor>$INFO[Skin.String(HomeMenuColor6)]</textcolor>
 			</control>
 		</itemlayout>
 		<focusedlayout width="230" height="50">
@@ -191,7 +200,7 @@
 				<align>center</align>
 				<label>$INFO[ListItem.Label]</label>
 				<font>Font_Reg28_Caps</font>
-				<textcolor>grey2</textcolor>
+				<textcolor>$INFO[Skin.String(HomeMenuColor6)]</textcolor>
 				<animation effect="zoom" center="112,25" start="100" end="120" time="160" tween="quadratic">Focus</animation>
 				<animation effect="zoom" center="112,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
 				<scroll>true</scroll>
@@ -203,7 +212,8 @@
 				<align>center</align>
 				<label>$INFO[ListItem.Label]</label>
 				<font>Font_Reg28_Caps</font>
-				<textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
+				<textcolor>$INFO[Skin.String(HomeMenuColor7)]</textcolor>
+				<!-- whitemod -->
 				<animation effect="zoom" center="112,25" start="100" end="120" time="160" tween="quadratic">Focus</animation>
 				<animation effect="zoom" center="112,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
 				<scroll>true</scroll>
@@ -451,7 +461,8 @@
 				<height>36</height>
 				<label>$VAR[LibraryStatsVar]</label>
 				<font>Font_Reg28_Caps</font>
-				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<!-- whitemod -->
+				<textcolor>$INFO[Skin.String(HomeMenuColor4)]</textcolor>
 				<scroll>true</scroll>
 				<visible>!Skin.HasSetting(shorterhomebars)</visible>
 			</control>
@@ -462,7 +473,8 @@
 				<height>36</height>
 				<label>$VAR[ShortLibraryStatsVar]</label>
 				<font>Font_Reg28_Caps</font>
-				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<textcolor>$INFO[Skin.String(HomeMenuColor4)]</textcolor>
+				<!-- whitemod -->
 				<scroll>true</scroll>
 				<visible>Skin.HasSetting(shorterhomebars)</visible>
 			</control>
@@ -505,9 +517,10 @@
 				<width>600</width>
 				<height>36</height>
 				<align>right</align>
-				<label>[COLOR grey]$INFO[System.Date(ddd)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
+				<!-- whitemod -->
+				<label>[COLOR $INFO[Skin.String(HomeMenuColor3)]]$INFO[System.Date(ddd)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
 				<font>Font_Reg28_Caps</font>
-				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<textcolor>$INFO[Skin.String(HomeMenuColor5)]</textcolor>
 				<visible>!Skin.HasSetting(shorterhomebars) + Skin.HasSetting(W_condition_image)</visible>
 			</control>
 			<control type="label">
@@ -515,9 +528,9 @@
 				<width>600</width>
 				<height>36</height>
 				<align>right</align>
-				<label>[COLOR grey]$INFO[System.Date(DDD)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
+				<label>[COLOR $INFO[Skin.String(HomeMenuColor3)]]$INFO[System.Date(DDD)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
 				<font>Font_Reg28_Caps</font>
-				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<textcolor>$INFO[Skin.String(HomeMenuColor5)]</textcolor>
 				<visible>Skin.HasSetting(shorterhomebars)</visible>
 			</control>
 			<control type="label">
@@ -525,9 +538,9 @@
 				<width>600</width>
 				<height>36</height>
 				<align>right</align>
-				<label>[COLOR grey]$INFO[System.Date(DDD)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
+				<label>[COLOR $INFO[Skin.String(HomeMenuColor3)]]$INFO[System.Date(DDD)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
 				<font>Font_Reg28_Caps</font>
-				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<textcolor>$INFO[Skin.String(HomeMenuColor5)]</textcolor>
 				<visible>!Skin.HasSetting(W_condition_image)</visible>
 			</control>
 			<control type="grouplist">
@@ -540,16 +553,16 @@
 				<control type="label">
 					<width min="0" max="700">auto</width>
 					<height>36</height>
-					<label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey]• [/COLOR]</label>
+					<label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR $INFO[Skin.String(HomeMenuColor3)]]• [/COLOR]</label>
 					<font>Font_Reg28_Caps</font>
-					<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+					<textcolor>$INFO[Skin.String(HomeMenuColor5)]</textcolor>
 				</control>
 				<control type="image">
 					<left>-20</left>
 					<top>-13</top>
 					<width>65</width>
 					<height>65</height>
-					<colordiffuse>white2</colordiffuse>
+					<colordiffuse>$INFO[Skin.String(HomeMenuColor5)]</colordiffuse>
 					<texture>$VAR[Realweatherimg]$INFO[Weather.FanartCode].png</texture>
 					<visible>!Skin.HasSetting(W_condition_image)</visible>
 					<animation effect="slide" end="20" time="320" condition="Skin.HasSetting(W_real_image)">Conditional</animation>
@@ -561,7 +574,8 @@
 					<aligny>top</aligny>
 					<label>$INFO[Window(Weather).Property(Current.Condition)]</label>
 					<font>Font_Reg33_Caps</font>
-					<textcolor>grey</textcolor>
+					<textcolor>$INFO[Skin.String(HomeMenuColor3)]</textcolor>
+					<!-- whitemod -->
 					<scroll>true</scroll>
 					<visible>Skin.HasSetting(W_condition_image)</visible>
 				</control>
