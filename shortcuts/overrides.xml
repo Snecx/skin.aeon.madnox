@@ -71,6 +71,9 @@
 	<property property="InfoLine">Movie playlist</property>
 	<property property="InfoLine">TV Show playlist</property>
 	<property property="InfoLine">Music Video playlist</property>
+	<!-- whitemod -->
+	<property property="InfoLine">Stats</property>
+	<!-- whitemod -->
 	<!-- Widgets -->
 	<widget-groupings>
 		<node label="342">
