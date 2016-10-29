@@ -3495,15 +3495,38 @@ msgctxt "#31999"
 msgid "Login"
 msgstr ""
 
+msgctxt "#39900"
+msgid "Video Decoder"
+msgstr ""
 
+msgctxt "#39901"
+msgid "Pixel Format"
+msgstr ""
 
+msgctxt "#39902"
+msgid "Deinterlace Method"
+msgstr ""
 
+msgctxt "#39903"
+msgid "Resolution"
+msgstr ""
 
+msgctxt "#39904"
+msgid "Audio"
+msgstr ""
 
+msgctxt "#39905"
+msgid "Memory usage"
+msgstr ""
 
+msgctxt "#39906"
+msgid "CPU usage"
+msgstr ""
 
+msgctxt "#39907"
+msgid "Bufferlevel"
+msgstr ""
 
-
-
-
-
+msgctxt "#39908"
+msgid "Filename"
+msgstr ""
