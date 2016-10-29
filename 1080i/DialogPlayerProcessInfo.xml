@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">5550</defaultcontrol>
+	<animation effect="fade" start="0" end="100" time="10">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" time="10">WindowClose</animation>
+	<onload>Action(PlayerDebug)</onload>
+	<onunload>Action(PlayerDebug)</onunload>
+	<controls>
+		<control type="group">
+			<top>912</top>
+			<control type="image">
+				<left>0</left>
+				<top>-912</top>
+				<width>1920</width>
+				<height>600</height>
+				<texture border="20">buttons/back40.png</texture>
+			</control>
+			<control type="grouplist">
+				<left>52</left>
+				<top>-234</top>
+				<visible>Control.HasFocus(5551)</visible>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamServiceName,[COLOR processinfo]$LOCALIZE[19099]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamProviderName,[COLOR processinfo]$LOCALIZE[19101]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamClient,[COLOR processinfo]$LOCALIZE[19012]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamDevice,[COLOR processinfo]$LOCALIZE[19006]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamStatus,[COLOR processinfo]$LOCALIZE[19007]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamEncryptionName,[COLOR processinfo]$LOCALIZE[19015]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+			</control>
+			<control type="grouplist">
+				<left>1250</left>
+				<top>-234</top>
+				<visible>Control.HasFocus(5551)</visible>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamBer,[COLOR processinfo]$LOCALIZE[19010]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamUnc,[COLOR processinfo]$LOCALIZE[19011]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamMux,[COLOR processinfo]$LOCALIZE[19100]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamSignal,[COLOR processinfo]$LOCALIZE[19008]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="progress">
+					<top>5</top>
+					<width>600</width>
+					<height>18</height>
+					<info>PVR.ActStreamProgrSignal</info>
+				</control>
+				<control type="label">
+					<top>5</top>
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamSNR,[COLOR processinfo]$LOCALIZE[19009]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="progress">
+					<top>0</top>
+					<width>600</width>
+					<height>18</height>
+					<info>PVR.ActStreamProgrSNR</info>
+				</control>
+			</control>
+			<control type="grouplist">
+				<left>14</left>
+				<top>-720</top>
+				<visible>Control.HasFocus(5552)</visible>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(videodecoder),[COLOR processinfo]$LOCALIZE[39900]:[/COLOR] ]$VAR[VideoHWDecoder, (,)]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+					
+					<visible>Player.HasVideo</visible>					
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(pixformat),[COLOR processinfo]$LOCALIZE[39901]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>					
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(deintmethod),[COLOR processinfo]$LOCALIZE[39902]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>					
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(videowidth),[COLOR processinfo]$LOCALIZE[39903]:[/COLOR] ,x]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>					
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>[COLOR processinfo]$LOCALIZE[39904]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[System.Memory(used.percent),[COLOR processinfo]$LOCALIZE[39905]:[/COLOR] ,       ]$INFO[System.CpuUsage,[COLOR processinfo]$LOCALIZE[39906]:[/COLOR] ]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>[COLOR processinfo]$LOCALIZE[39907]:[/COLOR]$INFO[Player.CacheLevel]%</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>[COLOR processinfo]$LOCALIZE[39908]:[/COLOR]$INFO[Player.Filenameandpath]</label>
+					<font>font17</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+			</control>
+			<control type="grouplist" id="5550">
+				<left>15</left>
+				<top>-1269</top>
+				<width>1000</width>
+				<height>100</height>
+				<align>right</align>
+				<orientation>horizontal</orientation>
+				<itemgap>-10</itemgap>
+				<onup>Close</onup>
+				<ondown>Close</ondown>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="button" id="5551">
+					<width>auto</width>
+					<height>100</height>
+					<textoffsetx>40</textoffsetx>
+					<label>$LOCALIZE[31137]</label>
+					<visible>VideoPlayer.Content(livetv)</visible>
+				</control>
+
+			<control type="button" id="5552">
+			         <left>100</left>
+					<width>auto</width>
+					<height>50</height>
+					<textoffsetx>40</textoffsetx>
+					<!--<label>$LOCALIZE[31138]</label>-->
+					<label>Player Process Info</label>
+					
+				</control> 
+			</control>
+			<!-- Progress -->
+			<control type="group">
+				<top>119</top>
+				<control type="progress">
+					<animation effect="fade" end="0" time="200">WindowClose</animation>
+					<left>29</left>
+					<top>-10</top>
+					<width>1862</width>
+					<height>30</height>
+					<info>Player.ProgressCache</info>
+					<texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg>
+					<midtexture colordiffuse="processinfo">colors/white50.png</midtexture>
+					<animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+				</control>
+				<control type="progress" id="23">
+					<animation effect="fade" end="0" time="200">WindowClose</animation>
+					<left>29</left>
+					<top>-10</top>
+					<width>1862</width>
+					<height>30</height>
+					<info>Player.Progress</info>
+					<texturebg border="3" colordiffuse="80FFFFFF">colors/white50.png</texturebg>
+					<midtexture colordiffuse="processinfo">colors/white50.png</midtexture>
+				</control>
+				<control type="button" id="87">
+					<include>HiddenObject</include>
+					<onup condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onup>
+					<onup>201</onup>
+					<ondown condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</ondown>
+					<ondown>201</ondown>
+					<onright>PlayerControl(Forward)</onright>
+					<onleft>PlayerControl(Rewind)</onleft>
+					<visible>Player.SeekEnabled</visible>
+					<onclick condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onclick>
+				</control>
+				<control type="slider">
+					<left>29</left>
+					<top>-10</top>
+					<width>1862</width>
+					<height>30</height>
+					<onup>8010</onup>
+					<ondown>650</ondown>
+					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_bar.png</texturesliderbar>
+					<textureslidernib>osd/progress/nub_bar.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="processinfo">osd/progress/nub_bar.png</textureslidernibfocus>
+					<info>Player.Progress</info>
+					<action>seek</action>
+					<visible>!Control.HasFocus(87)</visible>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>
