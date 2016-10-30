@@ -752,13 +752,15 @@
 			<aspect>0.67</aspect>
 			<size>80</size>
 		</font>
+		<!-- whitemod -->
 		<font>
 			<name>Font_MainClassic</name>
-			<filename>MC360.ttf</filename>
-			<aspect>0.67</aspect>
-			<style>bold uppercase</style>
-			<size>112</size>
+			<filename>Jelly_Crazies.ttf</filename>
+			<aspect>0.8</aspect>
+			<style>uppercase</style>
+			<size>45</size>
 		</font>
+		<!-- whitemod -->
 		<font>
 			<name>Font_MainMenu</name>
 			<filename>MC360.ttf</filename>
