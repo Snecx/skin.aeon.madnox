@@ -312,6 +312,15 @@
 						<include>Default_SettingButton</include>
 						<onclick>ActivateWindow(1168)</onclick>
 					</control>
+				        <!-- colormod -->
+					<control type="button" id="521">
+						<label>Customize Menubar Colors</label>
+						<include>Default_SettingButton</include>
+						<onclick>SetProperty(actualItem,MainMenu,1132)</onclick>
+						<onclick>ActivateWindow(home)</onclick>
+						<onclick>ActivateWindow(1132)</onclick>
+					</control>
+					<!-- colormod -->					
 					<control type="button" id="517">
 						<label>$LOCALIZE[31809]</label>
 						<include>Default_SettingButton</include>
