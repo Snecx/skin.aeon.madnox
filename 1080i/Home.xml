@@ -435,7 +435,9 @@
 							<top>3</top>
 							<width>1300</width>
 							<height>87</height>
-							<texture colordiffuse="$VAR[ExtendedColorVar]">$VAR[SubMenuImageVar]</texture>
+							<!-- colormod submenu-->
+							<texture colordiffuse="$INFO[Skin.String(colorsubmenu)]">$VAR[SubMenuImageVar]</texture>
+							<!-- colormod -->
 						</control>
 						<include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList</include>
 						<include condition="!Skin.HasSetting(submenufixedlist)">SubMenuWrapList</include>
@@ -454,7 +456,9 @@
 						<top>453</top>
 						<width>1920</width>
 						<height>225</height>
-						<texture colordiffuse="$VAR[DialogColorVar]">$VAR[HomeMenuBackVar]</texture>
+						<!-- colormod fullbar -->
+						<texture colordiffuse="$INFO[Skin.String(colormainbar)]">$VAR[HomeMenuBackVar]</texture>
+						<!-- colormod -->
 						<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
 						<animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
 					</control>
@@ -488,20 +492,20 @@
 							<visible>[Skin.HasSetting(ProgressMainMenu) + Skin.HasSetting(smallermainmenu)]</visible>
 						</control>
 					</control>
-					<!-- whitemod -->
+					<!-- whitemod colormod -->
 					<!--
 					<control type="image">
 						<top>453</top>
 						<width>1920</width>
 						<height>225</height>
-						<texture colordiffuse="$VAR[ColorDiffuseVar]">home/homemenu_back_glow.png</texture>
+						<texture colordiffuse="$INFO[Skin.String(colormainbar)]">home/homemenu_back_glow.png</texture>
 						<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
 						<include>PanelGlowFade</include>
 						<include>Animation_VisibleChange400</include>
 						<visible>!Skin.HasSetting(DisableGlowbar) | [Skin.HasSetting(ExtendedGlowMode) + Skin.HasSetting(glasshome)] | Skin.HasSetting(classichome)</visible>
 					</control>
                                         -->
-					<!-- whitemod -->
+					<!-- whitemod colormod-->
 					<!-- Home OSD -->
 					<control type="label">
 						<top>445</top>
