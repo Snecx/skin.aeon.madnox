@@ -912,5 +912,40 @@
 			<content>special://skin/extras/Playlists/MoviesInProgress.xsp</content>
 			<autoscroll time="7000" delay="7000" repeat="7000">True</autoscroll>
 		</control>
+	<!--*   HOLIDAY MOD   *-->
+	<control type="group"><!-- Halloween -->
+	<visible>Skin.HasSetting(halloween)</visible>
+	<include>Halloween</include>
+	</control>
+	<control type="group"><!-- Thanksgiving -->
+	<visible>Skin.HasSetting(thanksgiving)</visible>
+	<include>Thanksgiving</include>
+	</control>	
+	<control type="group"><!-- Leaves -->
+	<visible>Skin.HasSetting(leaves)</visible>
+	<include>Leaves</include>
+	</control>
+	<control type="group"><!-- Christmas -->
+	<visible>Skin.HasSetting(christmas)</visible>
+	<include>Christmas</include>
+	</control>
+	<control type="group"><!-- Heavy Snow -->
+	<visible>Skin.HasSetting(heavysnow)</visible>
+	<include>HeavySnow</include>
+	</control>
+	<control type="group"><!-- Medium Snow -->
+	<visible>Skin.HasSetting(mediumsnow)</visible>
+	<include>MediumSnow</include>
+	</control>
+	<control type="group"><!-- Light Snow -->
+	<visible>Skin.HasSetting(lightsnow)</visible>
+	<include>LightSnow</include>
+	</control>
+	<!--*   HOLIDAY MOD   *-->
+	<control type="group">
+	<visible>Skin.HasSetting(starwars)</visible>
+	<include>StarWars</include>
+	</control>
+	<!--*   STAR WARS MOD   *-->
 	</controls>
 </window>
