@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="1132" type="dialog">
+	<defaultcontrol always="true">450</defaultcontrol>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+		<system>1</system>
+	</coordinates>
+	<include>Animation_DialogPopup</include>
+	<onunload>ActivateWindow(skinsettings)</onunload>
+	<controls>
+		<control type="group">
+			<top>-130</top>
+			<control type="image">
+				<left>356</left>
+				<top>200</top>
+				<width>1210</width>
+				<height>720</height>
+				<texture colordiffuse="$VAR[ColorDiffuseVar]" border="50">osd/osd_settings_back_glow.png</texture>
+				<visible>!Skin.HasSetting(DisableGlowbar)</visible>
+				<animation type="Conditional" condition="!String.IsEqual(Window.Property(actualItem),MainMenu)">
+					<effect type="zoom" end="100,66" time="320" easing="in" tween="cubic" />
+				</animation>
+				<include>Animation_VisibleChange400</include>
+				<include>PanelGlowFade</include>
+			</control>
+			<control type="image">
+				<left>356</left>
+				<top>200</top>
+				<width>1210</width>
+				<height>720</height>
+				<texture colordiffuse="$VAR[DialogColorVar]" border="50">osd/osd_settings_back.png</texture>
+				<animation type="Conditional" condition="!String.IsEqual(Window.Property(actualItem),MainMenu)">
+					<effect type="zoom" end="100,66" time="320" easing="in" tween="cubic" />
+				</animation>
+			</control>
+			<control type="image">
+				<left>375</left>
+				<top>232</top>
+				<width>1172</width>
+				<height>60</height>
+				<texture border="1">osd/osd_settings_buttonnf.png</texture>
+			</control>
+			<control type="label">
+				<left>420</left>
+				<top>225</top>
+				<width>600</width>
+				<height>60</height>
+				<label>Menubar Color Selector</label>
+				<font>Font_Bold33</font>
+				<textcolor>$VAR[TitleColorVar]</textcolor>
+			</control>
+			<control type="grouplist" id="450">
+				<left>375</left>
+				<top>292</top>
+				<width>1172</width>
+				<height>550</height>
+				<pagecontrol>60</pagecontrol>
+				<onleft>60</onleft>
+				<onright>60</onright>
+				<onup>450</onup>
+				<ondown>450</ondown>
+				<!-- white mod -->
+				<control type="button" id="475">
+     				<label>Menubar Text Highlight Color</label>
+					<label2>[COLOR $INFO[Skin.String(HomeMenuColor1)]]$INFO[Skin.String(HomeMenuColor1)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,HomeMenuColor1,10000)</onclick>
+					<onclick>Skin.SetString(HomeMenuColor1,$INFO[Skin.String(HomeMenuColor1)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+					
+				</control>
+				<control type="button" id="476">
+     				<label>Menubar Text Color</label>
+					<label2>[COLOR $INFO[Skin.String(HomeMenuColor2)]]$INFO[Skin.String(HomeMenuColor2)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,HomeMenuColor2,10000)</onclick>
+					<onclick>Skin.SetString(HomeMenuColor2,$INFO[Skin.String(HomeMenuColor2)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+					
+				</control>
+				<control type="button" id="477">
+     				<label>Time/Statsbar Text Color</label>
+					<label2>[COLOR $INFO[Skin.String(HomeMenuColor3)]]$INFO[Skin.String(HomeMenuColor3)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,HomeMenuColor3,10000)</onclick>
+					<onclick>Skin.SetString(HomeMenuColor3,$INFO[Skin.String(HomeMenuColor3)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+					
+				</control>
+				<control type="button" id="478">
+     				<label>Statsbar Text Highlight Color</label>
+					<label2>[COLOR $INFO[Skin.String(HomeMenuColor4)]]$INFO[Skin.String(HomeMenuColor4)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,HomeMenuColor4,10000)</onclick>
+					<onclick>Skin.SetString(HomeMenuColor4,$INFO[Skin.String(HomeMenuColor4)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+					
+				</control>
+				<control type="button" id="479">
+     				<label>Timebar Text Highlight Color</label>
+					<label2>[COLOR $INFO[Skin.String(HomeMenuColor5)]]$INFO[Skin.String(HomeMenuColor5)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,HomeMenuColor5,10000)</onclick>
+					<onclick>Skin.SetString(HomeMenuColor5,$INFO[Skin.String(HomeMenuColor5)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+					
+				</control>
+				<control type="button" id="481">
+     				<label>Submenu Text Highlight Color</label>
+					<label2>[COLOR $INFO[Skin.String(HomeMenuColor7)]]$INFO[Skin.String(HomeMenuColor7)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,HomeMenuColor7,10000)</onclick>
+					<onclick>Skin.SetString(HomeMenuColor7,$INFO[Skin.String(HomeMenuColor7)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+					
+				</control>
+				<control type="button" id="480">
+     				<label>Submenu Text Color</label>
+					<label2>[COLOR $INFO[Skin.String(HomeMenuColor6)]]$INFO[Skin.String(HomeMenuColor6)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,HomeMenuColor6,10000)</onclick>
+					<onclick>Skin.SetString(HomeMenuColor6,$INFO[Skin.String(HomeMenuColor6)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+					
+				</control>
+				<!-- white mod -->
+				<!-- colormod -->
+				<control type="button" id="482">
+     				<label>Stats Bar Color</label>
+					<label2>[COLOR $INFO[Skin.String(colorstatsbar)]]$INFO[Skin.String(colorstatsbar)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,colorstatsbar,10000)</onclick>
+					<onclick>Skin.SetString(colorstatsbar,$INFO[Skin.String(colorstatsbar)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+					
+				</control>
+				<control type="button" id="483">
+					<label>    Transparency</label>
+					<include>Objects_CommonSettingsButton</include>
+					<onclick>RunScript(script.color.picker,Skin.SetString(colorstatsbar,$INFO[Skin.String(colorstatsbar)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
+					<onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
+					
+				</control>
+				<control type="button" id="484">
+     				<label>Time Bar Color</label>
+					<label2>[COLOR $INFO[Skin.String(colortimebar)]]$INFO[Skin.String(colortimebar)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,colortimebar,10000)</onclick>
+					<onclick>Skin.SetString(colortimebar,$INFO[Skin.String(colortimebar)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+					
+				</control>
+				<control type="button" id="485">
+					<label>    Transparency</label>
+					<include>Objects_CommonSettingsButton</include>
+					<onclick>RunScript(script.color.picker,Skin.SetString(colortimebar,$INFO[Skin.String(colortimebar)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
+					<onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
+					
+				</control>
+				<control type="button" id="486">
+     				<label>Main Bar Color</label>
+					<label2>[COLOR $INFO[Skin.String(colormainbar)]]$INFO[Skin.String(colormainbar)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,colormainbar,10000)</onclick>
+					<onclick>Skin.SetString(colormainbar,$INFO[Skin.String(colormainbar)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+					
+				</control>
+				<control type="button" id="487">
+					<label>    Transparency</label>
+					<include>Objects_CommonSettingsButton</include>
+					<onclick>RunScript(script.color.picker,Skin.SetString(colormainbar,$INFO[Skin.String(colormainbar)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
+					<onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
+					
+				</control>
+				<control type="button" id="488">
+     				<label>Submenu Bar Color</label>
+					<label2>[COLOR $INFO[Skin.String(colorsubmenu)]]$INFO[Skin.String(colorsubmenu)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,colorsubmenu,10000)</onclick>
+					<onclick>Skin.SetString(colorsubmenu,$INFO[Skin.String(colorsubmenu)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+					
+				</control>
+				<control type="button" id="489">
+					<label>    Transparency</label>
+					<include>Objects_CommonSettingsButton</include>
+					<onclick>RunScript(script.color.picker,Skin.SetString(colorsubmenu,$INFO[Skin.String(colorsubmenu)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
+					<onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
+					
+				</control>
+				<!-- colormod -->
+			</control>
+		</control>
+	</controls>
+</window>
