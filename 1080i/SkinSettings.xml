@@ -78,6 +78,13 @@
 						<label>31641</label>
 						<onclick>noop</onclick>
 					</item>
+					<!-- Holiday / StarWarsMod -->
+					<item id="11">
+						<description>Holiday and Star Wars Mod</description>
+						<label>Effect Mod</label>
+						<onclick>noop</onclick>
+					</item>
+					<!-- Holiday / StarWarsMod -->
 				</content>
 			</control>
 			<control type="label">
@@ -707,6 +714,106 @@
 						<textcolor>grey2</textcolor>
 					</control>
 				</control>
+				<!-- Holiday / StarWarsMod -->
+				<control type="grouplist" id="9010">	
+					<left>387</left>
+					<top>150</top>
+					<width>1469</width>
+					<height>900</height>
+					<visible>Container(9000).Hasfocus(11)</visible>
+					<itemgap>1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9001</onup>
+					<ondown>9001</ondown>
+					
+					<control type="label">
+						<width>1960</width>
+						<height>38</height>
+						<textoffsetx>30</textoffsetx>
+						<aligny>bottom</aligny>
+						<label>[B]Holiday Mod[/B]</label>
+						<font>Font_Bold30_Caps</font>
+						<textcolor>grey2</textcolor>
+					</control>
+   			        <control type="radiobutton" id="6666">
+						<label>Halloween</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(halloween)</onclick>
+						<selected>Skin.HasSetting(halloween)</selected>
+					</control>
+					<control type="radiobutton" id="6667">
+						<label>Thanksgiving</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(thanksgiving)</onclick>
+						<selected>Skin.HasSetting(thanksgiving)</selected>
+					</control>
+					<control type="radiobutton" id="6668">
+						<label>Leaves</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(leaves)</onclick>
+						<selected>Skin.HasSetting(leaves)</selected>
+					</control>
+					<control type="radiobutton" id="6669">
+						<label>Christmas</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(christmas)</onclick>
+						<selected>Skin.HasSetting(christmas)</selected>
+					</control>
+					<control type="radiobutton" id="6670">
+						<label>Heavysnow</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(heavysnow)</onclick>
+						<selected>Skin.HasSetting(heavysnow)</selected>
+					</control>
+			        <control type="radiobutton" id="6671">
+						<label>Mediumsnow</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(mediumsnow)</onclick>
+						<selected>Skin.HasSetting(mediumsnow)</selected>
+					</control>
+					<control type="radiobutton" id="6672">
+						<label>Lightsnow</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(lightsnow)</onclick>
+						<selected>Skin.HasSetting(lightsnow)</selected>
+					</control>
+					<control type="label" id="6673">
+						<width>1960</width>
+						<height>38</height>
+						<textoffsetx>30</textoffsetx>
+						<aligny>bottom</aligny>
+						<label>[B]Star Wars Mod[/B]</label>
+						<font>Font_Bold30_Caps</font>
+						<textcolor>grey2</textcolor>
+					</control>
+   			        <control type="radiobutton" id="6674">
+						<label>Star Wars</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(starwars)</onclick>
+						<selected>Skin.HasSetting(starwars)</selected>
+					</control>
+					<control type="label" >
+						<width>1960</width>
+						<height>38</height>
+						<textoffsetx>30</textoffsetx>
+						<aligny>bottom</aligny>
+						<label>       -- Special credits goes to.......</label>
+						<font>Font_Reg22</font>
+						<textcolor>grey2</textcolor>
+					</control>
+					<control type="label" >
+						<width>1960</width>
+						<height>38</height>
+						<textoffsetx>30</textoffsetx>
+						<aligny>bottom</aligny>
+						<label>       -- [B]"latts9923"[/B] for making this mod.</label>
+						<font>Font_Reg22</font>
+						<textcolor>grey2</textcolor>
+					</control>
+				</control>
+				<!-- Holiday / StarWarsMod -->
 				<control type="grouplist" id="9009">
 					<left>387</left>
 					<top>195</top>
