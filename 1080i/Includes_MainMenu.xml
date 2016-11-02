@@ -6,9 +6,9 @@
 			<top>455</top>
 			<width>2120</width>
 			<height>225</height>
-			<!-- whitemod -->
-			<texture>home/white_homemenu_gradient.png</texture>
-			<!-- whitemod -->
+	                <!-- whitemod colormod overlay -->
+			<texture colordiffuse="$INFO[Skin.String(colormainbar)]">home/white_homemenu_gradient.png</texture>
+			<!-- whitemod colormod -->
 		</control>
 		<control type="image">
 			<top>453</top>
@@ -17,6 +17,15 @@
 			<texture colordiffuse="$VAR[DialogColorVar]">home/homemenu_overlay.png</texture>
 			<visible>Skin.HasSetting(glasshome)</visible>
 		</control>
+		<!-- colormod blacklines-->
+		<control type="image">
+			<left>0</left>
+			<top>453</top>
+			<width>1920</width>
+			<height>225</height>
+			<texture colordiffuse="FFFFFFFF">home/lines.png</texture>
+		</control>
+		<!-- colormod -->
 	</include>
 	<include name="MainMenuLabels">
 	        <!-- whitemod -->
@@ -451,7 +460,9 @@
 				<width>794</width>
 				<height>87</height>
 				<texture flipy="true" flipx="true">$VAR[TimePanelImageVar]</texture>
-				<colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+				<!-- colormod statspanal -->
+				<colordiffuse>$INFO[Skin.String(colorstatsbar)]</colordiffuse>
+				<!-- colormod -->
 				<animation effect="slide" end="-200" time="240" condition="Skin.HasSetting(shorterhomebars)">Conditional</animation>
 				<animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
 			</control>
@@ -508,7 +519,9 @@
 				<width>804</width>
 				<height>87</height>
 				<texture>$VAR[TimePanelImageVar]</texture>
-				<colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+				<!-- colormod timepanal -->
+				<colordiffuse>$INFO[Skin.String(colortimebar)]</colordiffuse>
+				<!-- colormod -->
 				<animation effect="slide" end="200" time="240" condition="Skin.HasSetting(shorterhomebars)">Conditional</animation>
 				<animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
 			</control>
