@@ -2754,14 +2754,18 @@
 			<control type="image">
 				<width>1860</width>
 				<height>87</height>
-				<texture colordiffuse="$VAR[ExtendedColorVar]" flipy="true" flipx="true" border="0,0,80,0">$VAR[TimePanelImageVar]</texture>
+				<!-- colormod -->
+				<texture colordiffuse="$INFO[Skin.String(colortimebar)]" flipy="true" flipx="true" border="0,0,80,0">$VAR[TimePanelImageVar]</texture>
+				<!-- colormod -->
 				<animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
 				<visible>!Skin.HasSetting(alternativerss)</visible>
 			</control>
 			<control type="image">
 				<width>1920</width>
 				<height>87</height>
-				<texture colordiffuse="$VAR[ExtendedColorVar]" flipy="true" flipx="true">$VAR[NavBarImageVar]</texture>
+				<!-- colormod -->
+				<texture colordiffuse="$INFO[Skin.String(colortimebar)]" flipy="true" flipx="true">$VAR[NavBarImageVar]</texture>
+				<!-- colormod -->
 				<animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
 				<visible>Skin.HasSetting(alternativerss)</visible>
 			</control>
