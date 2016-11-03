@@ -2449,7 +2449,7 @@
 					<left>720</left>
 					<top>978</top>
 					<!-- whitemod -->
-					<label>$VAR[NowPlayingPlayLabelVar]  $INFO[Player.Duration ] / $INFO[Player.Time] / $INFO[Player.TimeRemaining]</label>
+					<label>Time:[COLOR grey]$INFO[Player.Time][/COLOR]  Remaining:[COLOR grey]$INFO[Player.TimeRemaining][/COLOR]  Duration:[COLOR grey]$INFO[Player.Duration ][/COLOR]  Finish Time:[COLOR grey]$INFO[Player.FinishTime][/COLOR]</label>
 					<!-- whitemod -->
 					<font>Font_Reg31_Caps</font>
 					<textcolor>$VAR[TitleColorVar]</textcolor>
