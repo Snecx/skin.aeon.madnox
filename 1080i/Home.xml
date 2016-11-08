@@ -7,7 +7,6 @@
 	<onload condition="!Skin.HasSetting(backendmode)">Skin.SetBool(backendmode)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableAnimatedPosters)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableAddonsLookups)</onload>
-	<onload condition="System.HasAddon(plugin.image.mypicsdb)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
 	<onunload>ClearProperty(SkinHelper.WidgetContainer,home)</onunload>
 	<onunload>ClearProperty(Widget.CaseHome,home)</onunload>
 	<controls>
@@ -153,7 +152,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>Hand_26</font>
-					<visible>StringCompare(Control.GetLabel(3333),common/cdart/blank.png) + Skin.HasSetting(NowPlayingBelowBar) + !Skin.HasSetting(BelowMidCD) + !Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)</visible>
+					<visible>String.IsEqual(Control.GetLabel(3333),common/cdart/blank.png) + !Skin.HasSetting(BelowMidCD) + Skin.HasSetting(NowPlayingBelowBar)</visible>
 					<label> $INFO[MusicPlayer.Artist]</label>
 					<textcolor>black</textcolor>
 					<wrapmultiline>true</wrapmultiline>
@@ -174,7 +173,7 @@
 					<posy>1183</posy>
 					<align>center</align>
 					<font>Hand_26</font>
-					<visible>StringCompare(Control.GetLabel(3333),common/cdart/blank.png) + Skin.HasSetting(NowPlayingBelowBar) + !Skin.HasSetting(BelowMidCD) + !Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)</visible>
+					<visible>String.IsEqual(Control.GetLabel(3333),common/cdart/blank.png) + !Skin.HasSetting(BelowMidCD) + Skin.HasSetting(NowPlayingBelowBar)</visible>
 					<aligny>center</aligny>
 					<label> $INFO[MusicPlayer.Album]</label>
 					<textcolor>black</textcolor>
@@ -291,7 +290,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>Hand_26</font>
-					<visible>StringCompare(Control.GetLabel(3334),common/cdart/blank.png) + Skin.HasSetting(NowPlayingBelowBar) + Skin.HasSetting(BelowMidCD) + !Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)</visible>
+					<visible>String.IsEqual(Control.GetLabel(3334),common/cdart/blank.png) + Skin.HasSetting(BelowMidCD) + Skin.HasSetting(NowPlayingBelowBar)</visible>
 					<label> $INFO[MusicPlayer.Artist]</label>
 					<textcolor>black</textcolor>
 					<wrapmultiline>true</wrapmultiline>
@@ -312,7 +311,7 @@
 					<posy>1170</posy>
 					<align>center</align>
 					<font>Hand_26</font>
-					<visible>StringCompare(Control.GetLabel(3334),common/cdart/blank.png) + Skin.HasSetting(NowPlayingBelowBar) + Skin.HasSetting(BelowMidCD) + !Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)</visible>
+					<visible>String.IsEqual(Control.GetLabel(3334),common/cdart/blank.png) + Skin.HasSetting(BelowMidCD) + Skin.HasSetting(NowPlayingBelowBar)</visible>
 					<aligny>center</aligny>
 					<label> $INFO[MusicPlayer.Album]</label>
 					<textcolor>black</textcolor>
@@ -350,6 +349,7 @@
 				<texture colordiffuse="$INFO[Skin.String(BackgroundDarkness)]">common/bgcolor.png</texture>
 				<include>FullscreenDimensions</include>
 			</control>
+			
 			<control type="image">
 				<top>-150</top>
 				<width>1920</width>
@@ -393,6 +393,18 @@
 				<visible>[Control.IsVisible(8995) + !Skin.HasSetting(movenowplayingwidget)] | Control.HasFocus(7000) | Control.HasFocus(7020) | Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)</visible>
 			</control>
 		</control>
+		<!-- menubar mod -->
+		<control type="image">
+			<visible>!Skin.HasSetting(colormenubar) + Skin.HasSetting(menufromgraphic) + Skin.HasSetting(customizehome)</visible>
+			<top>785</top>
+			<width>1920</width>
+			<height>225</height>
+			<texture colordiffuse="$INFO[Skin.String(colormainbar)]">$INFO[Skin.String(menubarfolder)]homemenu_back.png</texture>
+			<!-- colordiffuse="$INFO[Skin.String(colormainbar)]" -->
+			<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+			<animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
+		</control>
+		<!-- menubar mod -->
 		<include>RSSPanel</include>
 		<include>MainMenuBottomBar</include>
 		<include>Widget1</include>
@@ -431,15 +443,36 @@
 						<animation effect="zoom" end="120" center="960,610" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
 						<animation effect="fade" start="100" end="0" time="240" condition="!Control.HasFocus(9010) + ![Integer.IsGreater(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
 						<animation effect="slide" end="0,-60" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) + ![Integer.IsGreater(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
+						<!-- menubar mod -->
 						<control type="image">
+							<visible>!Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic) | !Skin.HasSetting(customizehome)</visible>
+							<left>70</left>
+							<top>3</top>
+							<width>1300</width>
+							<height>87</height>
+							<texture colordiffuse="$VAR[ExtendedColorVar]">$VAR[SubMenuImageVar]</texture>
+						</control>
+					    <control type="image">
+							<visible>Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic) + Skin.HasSetting(customizehome)</visible> 
 							<left>70</left>
 							<top>3</top>
 							<width>1300</width>
 							<height>87</height>
 							<!-- colormod submenu-->
-							<texture colordiffuse="$INFO[Skin.String(colorsubmenu)]">$VAR[SubMenuImageVar]</texture>
+							<texture colordiffuse="$INFO[Skin.String(colorsubmenu)]">home/white_submenubar.png</texture>
 							<!-- colormod -->
 						</control>
+						<control type="image">
+							<visible>!Skin.HasSetting(colormenubar) + Skin.HasSetting(menufromgraphic) + Skin.HasSetting(customizehome)</visible>
+							<left>70</left>
+							<top>3</top>
+							<width>1300</width>
+							<height>87</height>
+							<!-- colormod submenu-->
+							<texture colordiffuse="$INFO[Skin.String(colorsubmenu)]">$INFO[Skin.String(menubarfolder)]submenubar.png</texture>
+							<!-- colormod -->
+						</control>
+						<!-- menubar mod -->
 						<include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList</include>
 						<include condition="!Skin.HasSetting(submenufixedlist)">SubMenuWrapList</include>
 					</control>
@@ -454,15 +487,18 @@
 					</control>
 					<!-- Home Menu Bar -->
 					<control type="image">
+					    <visible>!Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic)  | !Skin.HasSetting(customizehome)</visible>
 						<top>453</top>
 						<width>1920</width>
 						<height>225</height>
-						<!-- colormod fullbar -->
-						<texture colordiffuse="$INFO[Skin.String(colormainbar)]">$VAR[HomeMenuBackVar]</texture>
-						<!-- colormod -->
+						<texture colordiffuse="$VAR[DialogColorVar]">$VAR[HomeMenuBackVar]</texture>
 						<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
 						<animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
 					</control>
+					
+					<!-- *** -->
+					
+                    <!-- homebar mod -->					
 					<control type="group">
 						<animation effect="fade" end="20" time="600" condition="Player.HasMedia + Skin.HasSetting(glasshome)">Conditional</animation>
 						<animation effect="fade" end="30" time="600" condition="Player.HasMedia + !Skin.HasSetting(glasshome)">Conditional</animation>
@@ -477,7 +513,8 @@
 							<midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
 							<righttexture border="1"></righttexture>
 							<colordiffuse>$VAR[HomeMenuTextFocusVar]</colordiffuse>
-							<visible>[Skin.HasSetting(ProgressMainMenu) + !Skin.HasSetting(smallermainmenu)]</visible>
+							<!-- menubar mod -->
+							<visible>[Skin.HasSetting(ProgressMainMenu) + !Skin.HasSetting(smallermainmenu) + !Skin.HasSetting(customizehome)] | [Skin.HasSetting(ProgressMainMenu) + !Skin.HasSetting(smallermainmenu) + Skin.HasSetting(customizehome) + !Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic)]</visible> 
 						</control>
 						<control type="progress">
 							<left>-245</left>
@@ -490,25 +527,26 @@
 							<midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
 							<righttexture border="1"></righttexture>
 							<colordiffuse>$VAR[HomeMenuTextFocusVar]</colordiffuse>
-							<visible>[Skin.HasSetting(ProgressMainMenu) + Skin.HasSetting(smallermainmenu)]</visible>
+					  		<visible>[Skin.HasSetting(ProgressMainMenu) + Skin.HasSetting(smallermainmenu) + !Skin.HasSetting(customizehome)] | [Skin.HasSetting(ProgressMainMenu) + Skin.HasSetting(smallermainmenu) + Skin.HasSetting(customizehome) + !Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic)]</visible> 
+							<!-- menubar mod -->
 						</control>
 					</control>
-					<!-- whitemod colormod -->
-					<!--
+					<!-- menubar mod -->
 					<control type="image">
 						<top>453</top>
 						<width>1920</width>
 						<height>225</height>
-						<texture colordiffuse="$INFO[Skin.String(colormainbar)]">home/homemenu_back_glow.png</texture>
+						<texture colordiffuse="$VAR[ColorDiffuseVar]">home/homemenu_back_glow.png</texture>
 						<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
 						<include>PanelGlowFade</include>
 						<include>Animation_VisibleChange400</include>
 						<visible>!Skin.HasSetting(DisableGlowbar) | [Skin.HasSetting(ExtendedGlowMode) + Skin.HasSetting(glasshome)] | Skin.HasSetting(classichome)</visible>
+						<visible>!Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic) | !Skin.HasSetting(customizehome)</visible>
 					</control>
-                                        -->
-					<!-- whitemod colormod-->
+					<!-- menubar mod -->
 					<!-- Home OSD -->
 					<control type="label">
+					    <!-- is playing label -->
 						<top>445</top>
 						<width>1920</width>
 						<height>225</height>
@@ -516,7 +554,9 @@
 						<label>$VAR[HomeOSDLabelVar]</label>
 						<font>Font_MainClassic</font>
 						<textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
-						<visible>Player.HasMedia + System.IdleTime(8)</visible>
+						<!-- <visible>Player.HasMedia + System.IdleTime(8)</visible> -->
+						<!-- <visible>![Player.HasMedia + System.IdleTime(8)] | [Skin.HasSetting(customizehome) + Skin.HasSetting(colormenubar) | Skin.HasSetting(menufromgraphic) ]</visible> -->
+						<visible>![[[Skin.HasSetting(colormenubar) | Skin.HasSetting(menufromgraphic)] + Skin.HasSetting(customizehome)] | ![Player.HasMedia + System.IdleTime(8)]]</visible>
 						<animation effect="fade" end="100" time="840">Visible</animation>
 					</control>
 					<control type="group">
@@ -736,8 +776,7 @@
 					<scroll>true</scroll>
 					<visible>!Skin.HasSetting(BelowMidLogo)</visible>
 				</control>
-				<!-- whitemod -->
-				<!--
+				<!-- menubar mod -->
 				<control type="progress">
 					<animation effect="slide" time="250" start="-270,10" end="0,0" tween="back" easing="out" condition="Substring(Control.GetLabel(8318),empty.png) | String.IsEmpty(Skin.String(ArtistsLogosPath)) | !Skin.HasSetting(BelowMidLogo)">Conditional</animation>
 					<posx>0</posx>
@@ -752,9 +791,9 @@
 					<info>Player.Progress</info>
 					<visible>Substring(Control.GetLabel(8318),empty.png) | !Skin.HasSetting(BelowMidLogo)</visible>
 					<visible>Player.HasDuration</visible>
+					<visible>!Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic)  | !Skin.HasSetting(customizehome)</visible>
 				</control>
-                                -->
-				<!-- whitemod -->
+				<!-- menubar mod -->
 			</control>
 			<control type="group">
 				<animation effect="slide" start="0,200" end="0" time="560" tween="cubic" easing="inout" delay="350">WindowOpen</animation>
@@ -917,7 +956,7 @@
 			<content>special://skin/extras/Playlists/MoviesInProgress.xsp</content>
 			<autoscroll time="7000" delay="7000" repeat="7000">True</autoscroll>
 		</control>
-	<!--*   HOLIDAY MOD   *-->
+			<!--*   HOLIDAY MOD   *-->
 	<control type="group"><!-- Halloween -->
 	<visible>Skin.HasSetting(halloween)</visible>
 	<include>Halloween</include>
