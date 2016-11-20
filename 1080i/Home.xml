@@ -7,6 +7,7 @@
 	<onload condition="!Skin.HasSetting(backendmode)">Skin.SetBool(backendmode)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableAnimatedPosters)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableAddonsLookups)</onload>
+	<onload condition="System.HasAddon(plugin.image.mypicsdb)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
 	<onunload>ClearProperty(SkinHelper.WidgetContainer,home)</onunload>
 	<onunload>ClearProperty(Widget.CaseHome,home)</onunload>
 	<controls>
@@ -152,7 +153,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>Hand_26</font>
-					<visible>String.IsEqual(Control.GetLabel(3333),common/cdart/blank.png) + !Skin.HasSetting(BelowMidCD) + Skin.HasSetting(NowPlayingBelowBar)</visible>
+					<visible>StringCompare(Control.GetLabel(3333),common/cdart/blank.png) + Skin.HasSetting(NowPlayingBelowBar) + !Skin.HasSetting(BelowMidCD) + !Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)</visible>
 					<label> $INFO[MusicPlayer.Artist]</label>
 					<textcolor>black</textcolor>
 					<wrapmultiline>true</wrapmultiline>
@@ -173,7 +174,7 @@
 					<posy>1183</posy>
 					<align>center</align>
 					<font>Hand_26</font>
-					<visible>String.IsEqual(Control.GetLabel(3333),common/cdart/blank.png) + !Skin.HasSetting(BelowMidCD) + Skin.HasSetting(NowPlayingBelowBar)</visible>
+					<visible>StringCompare(Control.GetLabel(3333),common/cdart/blank.png) + Skin.HasSetting(NowPlayingBelowBar) + !Skin.HasSetting(BelowMidCD) + !Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)</visible>
 					<aligny>center</aligny>
 					<label> $INFO[MusicPlayer.Album]</label>
 					<textcolor>black</textcolor>
@@ -290,7 +291,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>Hand_26</font>
-					<visible>String.IsEqual(Control.GetLabel(3334),common/cdart/blank.png) + Skin.HasSetting(BelowMidCD) + Skin.HasSetting(NowPlayingBelowBar)</visible>
+					<visible>StringCompare(Control.GetLabel(3334),common/cdart/blank.png) + Skin.HasSetting(NowPlayingBelowBar) + Skin.HasSetting(BelowMidCD) + !Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)</visible>
 					<label> $INFO[MusicPlayer.Artist]</label>
 					<textcolor>black</textcolor>
 					<wrapmultiline>true</wrapmultiline>
@@ -311,7 +312,7 @@
 					<posy>1170</posy>
 					<align>center</align>
 					<font>Hand_26</font>
-					<visible>String.IsEqual(Control.GetLabel(3334),common/cdart/blank.png) + Skin.HasSetting(BelowMidCD) + Skin.HasSetting(NowPlayingBelowBar)</visible>
+					<visible>StringCompare(Control.GetLabel(3334),common/cdart/blank.png) + Skin.HasSetting(NowPlayingBelowBar) + Skin.HasSetting(BelowMidCD) + !Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)</visible>
 					<aligny>center</aligny>
 					<label> $INFO[MusicPlayer.Album]</label>
 					<textcolor>black</textcolor>
@@ -396,15 +397,76 @@
 		<!-- menubar mod -->
 		<control type="image">
 			<visible>!Skin.HasSetting(colormenubar) + Skin.HasSetting(menufromgraphic) + Skin.HasSetting(customizehome)</visible>
-			<top>785</top>
+			<top>798</top>
 			<width>1920</width>
-			<height>225</height>
+			<height>215</height>
 			<texture colordiffuse="$INFO[Skin.String(colormainbar)]">$INFO[Skin.String(menubarfolder)]homemenu_back.png</texture>
-			<!-- colordiffuse="$INFO[Skin.String(colormainbar)]" -->
 			<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
 			<animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
 		</control>
 		<!-- menubar mod -->
+		<!--*   HOLIDAY MOD ADDITIONS  *-->
+		<control type="group"><!-- Valentines -->
+			<visible>Skin.HasSetting(valentinesday)</visible>
+			<include>ValentineDay</include>
+		</control>
+		<control type="group"><!-- Coming Soon! -->
+			<visible>Skin.HasSetting(cs)</visible>
+			<include>cs</include>
+		</control>
+		<control type="group"><!-- Coming Soon! -->
+			<visible>Skin.HasSetting(cs1)</visible>
+			<include>cs1</include>
+		</control>
+		<control type="group"><!-- Coming Soon! -->
+			<visible>Skin.HasSetting(cs2)</visible>
+			<include>cs2</include>
+		</control>
+		<control type="group"><!-- Coming Soon! -->
+			<visible>Skin.HasSetting(cs3)</visible>
+			<include>cs3</include>
+		</control>
+		<control type="group"><!-- Fireworks -->
+			<visible>Skin.HasSetting(fireworks)</visible>
+			<include>Fireworks</include>
+		</control>
+		<control type="group"><!-- Confetti Heavy -->
+			<visible>Skin.HasSetting(confettih)</visible>
+			<include>ConfettiHeavy</include>
+		</control>
+		<control type="group"><!-- Confetti Medium -->
+			<visible>Skin.HasSetting(confettim)</visible>
+			<include>ConfettiMedium</include>
+		</control>
+		<control type="group"><!-- Coffetti Light -->
+			<visible>Skin.HasSetting(confettil)</visible>
+			<include>ConfettiLight</include>	
+		</control>
+		<control type="group"><!--Confetti Falling -->
+			<visible>Skin.HasSetting(confettif)</visible>
+			<include>confettif</include>
+		</control>
+		<control type="group"><!--Confetti Floor-->
+			<visible>Skin.HasSetting(confettifl)</visible>
+			<include>confettifl</include>
+		</control>
+		<control type="group">
+			<visible>Skin.HasSetting(confettim)</visible>
+			<include>ConfettiFloor</include>
+		</control>
+		<control type="group">
+			<visible>Skin.HasSetting(confettil)</visible>
+			<include>ConfettiFloor</include>
+		</control>
+			<control type="group"><!-- Heavy Snow -->
+			<visible>Skin.HasSetting(heavysnow)</visible>
+			<include>HeavySnow</include>
+		</control>
+		<control type="group"><!-- Medium Snow -->
+			<visible>Skin.HasSetting(mediumsnow)</visible>
+			<include>MediumSnow</include>
+		</control>
+		<!--*   HOLIDAY MOD ADDITIONS  *-->
 		<include>RSSPanel</include>
 		<include>MainMenuBottomBar</include>
 		<include>Widget1</include>
@@ -485,6 +547,17 @@
 						<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
 						<animation effect="fade" end="100" time="600" condition="Player.HasAudio + System.IdleTime(8)">Conditional</animation>
 					</control>
+					<!--* HOLIDAY ADDITOINS MOD --><!--################### Home Menu Bar ################ -->
+				    <control type="image">
+						<top>453</top>
+						<width>1920</width>
+						<height>225</height>
+						<texture colordiffuse="$VAR[DialogColorVar]">$VAR[HomeMenuBackVar]</texture>
+						<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+						<animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
+						<visible>!Skin.HasSetting(futurethree) + !Skin.HasSetting(future) + !Skin.HasSetting(futuretwo) + !Skin.HasSetting(customizehome) </visible>
+					</control>
+					<!--* HOLIDAY MOD --> 
 					<!-- Home Menu Bar -->
 					<control type="image">
 					    <visible>!Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic)  | !Skin.HasSetting(customizehome)</visible>
@@ -495,9 +568,6 @@
 						<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
 						<animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
 					</control>
-					
-					<!-- *** -->
-					
                     <!-- homebar mod -->					
 					<control type="group">
 						<animation effect="fade" end="20" time="600" condition="Player.HasMedia + Skin.HasSetting(glasshome)">Conditional</animation>
@@ -531,7 +601,7 @@
 							<!-- menubar mod -->
 						</control>
 					</control>
-					<!-- menubar mod -->
+					<!-- menubar mod 453-->
 					<control type="image">
 						<top>453</top>
 						<width>1920</width>
@@ -956,40 +1026,60 @@
 			<content>special://skin/extras/Playlists/MoviesInProgress.xsp</content>
 			<autoscroll time="7000" delay="7000" repeat="7000">True</autoscroll>
 		</control>
-			<!--*   HOLIDAY MOD   *-->
-	<control type="group"><!-- Halloween -->
-	<visible>Skin.HasSetting(halloween)</visible>
-	<include>Halloween</include>
-	</control>
-	<control type="group"><!-- Thanksgiving -->
-	<visible>Skin.HasSetting(thanksgiving)</visible>
-	<include>Thanksgiving</include>
-	</control>	
-	<control type="group"><!-- Leaves -->
-	<visible>Skin.HasSetting(leaves)</visible>
-	<include>Leaves</include>
-	</control>
-	<control type="group"><!-- Christmas -->
-	<visible>Skin.HasSetting(christmas)</visible>
-	<include>Christmas</include>
-	</control>
-	<control type="group"><!-- Heavy Snow -->
-	<visible>Skin.HasSetting(heavysnow)</visible>
-	<include>HeavySnow</include>
-	</control>
-	<control type="group"><!-- Medium Snow -->
-	<visible>Skin.HasSetting(mediumsnow)</visible>
-	<include>MediumSnow</include>
-	</control>
-	<control type="group"><!-- Light Snow -->
-	<visible>Skin.HasSetting(lightsnow)</visible>
-	<include>LightSnow</include>
-	</control>
-	<!--*   HOLIDAY MOD   *-->
-	<control type="group">
-	<visible>Skin.HasSetting(starwars)</visible>
-	<include>StarWars</include>
-	</control>
-	<!--*   STAR WARS MOD   *-->
+	   
+	   <!--*   HOLIDAY MOD ADDITIONS  *-->
+		<control type="group"><!-- New Years -->
+			<visible>Skin.HasSetting(newyears)</visible>
+			<include>NewYears</include>
+		</control>
+		<control type="group"><!-- Valentines -->
+			<visible>Skin.HasSetting(valentinesday)</visible>
+			<include>ValentinesDay</include>
+			</control>
+		<control type="group"><!-- Saint Patricks Day -->
+			<visible>Skin.HasSetting(stpatricksday)</visible>
+			<include>StPatricksDay</include>
+		</control>
+		<control type="group"><!-- Easter -->
+			<visible>Skin.HasSetting(easter)</visible>
+			<include>Easter</include>
+		</control>
+		<control type="group"><!-- Independance Day -->
+			<visible>Skin.HasSetting(julyfourth)</visible>
+			<include>JulyFourth</include>
+		</control>		
+		<!--*   HOLIDAY MOD ADDITIONS  *-->
+		<!--*   HOLIDAY MOD   *-->
+		<control type="group"><!-- Halloween -->
+			<visible>Skin.HasSetting(halloween)</visible>
+			<include>Halloween</include>
+		</control>
+		<control type="group"><!-- Thanksgiving -->
+			<visible>Skin.HasSetting(thanksgiving)</visible>
+			<include>Thanksgiving</include>
+		</control>	
+		<control type="group"><!-- ConfettiFloor -->
+			<visible>Skin.HasSetting(confettif)</visible>
+			<include>confettifl</include>
+		</control>
+		<control type="group"><!-- Leaves -->
+			<visible>Skin.HasSetting(leaves)</visible>
+			<include>Leaves</include>
+		</control>
+		<control type="group"><!-- Christmas -->
+			<visible>Skin.HasSetting(christmas)</visible>
+			<include>Christmas</include>
+		</control>
+		<control type="group"><!-- Light Snow -->
+			<visible>Skin.HasSetting(lightsnow)</visible>
+			<include>LightSnow</include>
+		</control>
+		<!--*   HOLIDAY MOD   *-->
+		<control type="group">
+			<visible>Skin.HasSetting(starwars)</visible>
+			<include>StarWars</include>
+		</control>
+		<!--*   STAR WARS MOD   *-->
+		
 	</controls>
 </window>
