@@ -825,7 +825,7 @@ msgid "DailyMotion"
 msgstr ""
 
 msgctxt "#31203"
-msgid "YouTube User Uploads"
+msgid "No information"
 msgstr ""
 
 msgctxt "#31204"
