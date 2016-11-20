@@ -2571,4 +2571,36 @@
 			</control>
 		</control>
 	</include>
+		<!--* HOLIDAY ADDITIONS MOD --><!--################## Menu Bar #################-->
+	<include name="Neon_Home">
+		<control type="group">
+			<visible>!Skin.HasSetting(DisableGlowbar) + !Skin.HasSetting(future) + !Skin.HasSetting(futuretwo) + !Skin.HasSetting(futurethree)</visible>
+			<include>Animation_VisibleChange400</include>
+			<control type="image">
+				<top>494</top>
+				<texture>common/topbar_left.png</texture>
+				<include>Topbar</include>
+				<include>TopbarPulseAnimationLeft</include>
+			</control>
+			<control type="image">
+				<top>494</top>
+				<texture>common/topbar_right.png</texture>
+				<include>Topbar</include>
+				<include>TopbarPulseAnimationRight</include>
+			</control>
+			<control type="image">
+				<top>590</top>
+				<texture>common/topbar_left.png</texture>
+				<include>Topbar</include>
+				<include>TopbarPulseAnimationLeft</include>
+			</control>
+			<control type="image">
+				<top>590</top>
+				<texture>common/topbar_right.png</texture>
+				<include>Topbar</include>
+				<include>TopbarPulseAnimationRight</include>
+			</control>
+		</control>
+	</include>
+	<!--* HOLIDAY ADDITIONS MOD --><!--################## Menu Bar #################-->
 </includes>
