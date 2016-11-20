@@ -692,36 +692,7 @@
 			<width>$PARAM[backWidth]</width>
 			<height>$PARAM[backHeight]</height>
 			<visible>Skin.HasSetting(Enable.GlobalWidgetBack)</visible>
-			<!-- colormod -->
-			<!-- <texture colordiffuse="$VAR[HomeWidgetBackColor]" border="40">$VAR[HomeWidgetBackgroundVar]</texture> -->
-			<texture colordiffuse="$INFO[Skin.String(colormainbar)]" border="40">$VAR[HomeWidgetBackgroundVar]</texture>
-			<!-- colormod -->
-			<include>HomeWidgetTrans</include>
-		</control>
-		<control type="image">
-			<left></left>
-			<centerleft>50%</centerleft>
-			<top>-21</top>
-			<width>$PARAM[backWidth]</width>
-			<height>$PARAM[backHeight]</height>
-			<visible>Skin.HasSetting(Enable.GlobalWidgetBack)</visible>
-			<!-- colormod -->
-			<!-- <texture colordiffuse="$VAR[HomeWidgetBackColor]" border="40">$VAR[HomeWidgetBackgroundVar]</texture> -->
-			<texture colordiffuse="$INFO[Skin.String(colormainbar)]" border="40">$VAR[HomeWidgetBackgroundVar]</texture>
-			<!-- colormod -->
-			<include>HomeWidgetTrans</include>
-		</control>
-		<control type="image">
-			<left></left>
-			<centerleft>50%</centerleft>
-			<top>-21</top>
-			<width>$PARAM[backWidth]</width>
-			<height>$PARAM[backHeight]</height>
-			<visible>Skin.HasSetting(Enable.GlobalWidgetBack)</visible>
-			<!-- colormod -->
-			<!-- <texture colordiffuse="$VAR[HomeWidgetBackColor]" border="40">$VAR[HomeWidgetBackgroundVar]</texture> -->
-			<texture colordiffuse="$INFO[Skin.String(colormainbar)]" border="40">$VAR[HomeWidgetBackgroundVar]</texture>
-			<!-- colormod -->
+			<texture colordiffuse="$VAR[HomeWidgetBackColor]" border="40">$VAR[HomeWidgetBackgroundVar]</texture>
 			<include>HomeWidgetTrans</include>
 		</control>
 		<control type="image">
@@ -731,10 +702,7 @@
 			<width>$PARAM[backWidth]</width>
 			<height>$PARAM[backHeight]</height>
 			<visible>!Skin.HasSetting(Enable.GlobalWidgetBack)</visible>
-			<!-- colormod -->
-			<texture colordiffuse="$INFO[Skin.String(colormainbar)]" border="40">$PARAM[Texture]</texture>
-			<!-- colormod -->
-			<!-- <texture colordiffuse="$PARAM[backColor]" border="40">$PARAM[Texture]</texture> -->
+			<texture colordiffuse="$PARAM[backColor]" border="40">$PARAM[Texture]</texture>
 			<include>HomeWidgetTrans</include>
 		</control>
 	</include>
