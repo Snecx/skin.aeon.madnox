@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<include name="Furniture_ClassicHomeGradient">
+		<!-- menubar mod -->
 		<control type="image">
 			<left>0</left>
 			<top>455</top>
 			<width>2120</width>
 			<height>225</height>
-	                <!-- whitemod colormod overlay -->
+			<texture>home/homemenu_gradient.png</texture>
+			<visible>!Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic)  | !Skin.HasSetting(customizehome)</visible>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>455</top>
+			<width>2120</width>
+			<height>225</height>
 			<texture colordiffuse="$INFO[Skin.String(colormainbar)]">home/white_homemenu_gradient.png</texture>
-			<!-- whitemod colormod -->
+			<visible>Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic) + Skin.HasSetting(customizehome)</visible>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>446</top>
+			<width>2120</width>
+			<height>225</height>
+			<texture colordiffuse="$INFO[Skin.String(colormainbaroverlay)]">$INFO[Skin.String(menubarfolder)]homemenu_gradient.png</texture>
+			<visible>!Skin.HasSetting(colormenubar) + Skin.HasSetting(menufromgraphic) + Skin.HasSetting(customizehome)</visible>
 		</control>
 		<control type="image">
 			<top>453</top>
@@ -16,26 +32,26 @@
 			<height>225</height>
 			<texture colordiffuse="$VAR[DialogColorVar]">home/homemenu_overlay.png</texture>
 			<visible>Skin.HasSetting(glasshome)</visible>
+			<visible>!Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic)  | !Skin.HasSetting(customizehome)</visible>
 		</control>
-		<!-- colormod blacklines-->
-		<control type="image">
-			<left>0</left>
-			<top>453</top>
-			<width>1920</width>
-			<height>225</height>
-			<texture colordiffuse="FFFFFFFF">home/lines.png</texture>
-		</control>
-		<!-- colormod -->
+		<!-- menubar mod -->
 	</include>
 	<include name="MainMenuLabels">
-	        <!-- whitemod -->
-		<top>0</top>
-		<!-- whitemod -->
+		<top>-3</top>
 		<height>225</height>
 		<align>center</align>
 		<label>$INFO[ListItem.Label]</label>
 		<font>Font_MainClassic</font>
 	</include>
+	<!-- menubar mod -->
+	<include name="MainMenuLabelsCustom">
+		<top>-2</top>
+		<height>225</height>
+		<align>center</align>
+		<label>$INFO[ListItem.Label]</label>
+		<font>MenubarFont</font>
+	</include>
+	<!-- menubar mod -->
 	<include name="MainMenuListContent">
 		<left>-338</left>
 		<top>450</top>
@@ -59,10 +75,10 @@
 		<include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
 		<include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
 		<include>DefaultControl</include>
-
-                <!-- whitemod -->
-		<visible>![Player.HasMedia + System.IdleTime(8) + Skin.HasSetting(stopprogress)]</visible>
-		<!-- whitemod -->
+	    <!--	<visible>![Player.HasMedia + System.IdleTime(8) + !Skin.HasSetting(customizehome) + !Skin.HasSetting(colormenubar)]</visible> -->
+	    <!-- menubar mod fade menu out after 8 seconds-->
+	    <visible>[[Skin.HasSetting(colormenubar) | Skin.HasSetting(menufromgraphic)] + Skin.HasSetting(customizehome)] | ![Player.HasMedia + System.IdleTime(8)]</visible>
+	    <!-- menubar mod -->
 		<orientation>horizontal</orientation>
 		<animation effect="slide" end="-302,0" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(biggergap)">Conditional</animation>
 		<animation effect="fade" end="100" time="160">Visible</animation>
@@ -123,40 +139,103 @@
 				<textcolor>$VAR[MainMenuFontColorVar]</textcolor>
 			</control>
 		</focusedlayout>
+		<!-- menubar text color -->
 		<itemlayout height="225" width="519" condition="!Skin.HasSetting(biggergap) + !Skin.HasSetting(mainmenuicons)">
 			<control type="label">
 				<left>0</left>
 				<width>519</width>
-				<!-- whitemod -->
+				<textcolor>white5</textcolor>
+				<include>MainMenuLabels</include>
+				<visible>!Skin.HasSetting(customizehome)</visible>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<width>519</width>
 				<textcolor>$INFO[Skin.String(HomeMenuColor2)]</textcolor>
 				<include>MainMenuLabels</include>
+				<visible>Skin.HasSetting(customizehome) + !Skin.HasSetting(fontfromfolder)</visible>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<width>519</width>
+				<textcolor>$INFO[Skin.String(HomeMenuColor2)]</textcolor>
+				<include>MainMenuLabelsCustom</include>
+				<visible>Skin.HasSetting(customizehome) + Skin.HasSetting(fontfromfolder)</visible>
 			</control>
 		</itemlayout>
+		<!-- menubar text highlight color -->
 		<focusedlayout height="225" width="519" condition="!Skin.HasSetting(biggergap) + !Skin.HasSetting(mainmenuicons)">
+			<control type="label">
+				<left>0</left>
+				<width>519</width>
+				<textcolor>$VAR[MainMenuFontColorVar]</textcolor>
+				<include>MainMenuLabels</include>
+				<visible>!Skin.HasSetting(customizehome)</visible>
+			</control>
 			<control type="label">
 				<left>0</left>
 				<width>519</width>
 				<textcolor>$INFO[Skin.String(HomeMenuColor1)]</textcolor>
 				<include>MainMenuLabels</include>
+				<visible>Skin.HasSetting(customizehome) + !Skin.HasSetting(fontfromfolder)</visible>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<width>519</width>
+				<textcolor>$INFO[Skin.String(HomeMenuColor1)]</textcolor>
+				<include>MainMenuLabelsCustom</include>
+				<visible>Skin.HasSetting(customizehome) + Skin.HasSetting(fontfromfolder)</visible>
 			</control>
 		</focusedlayout>
+		<!-- menubar text color big gaps -->
 		<itemlayout height="225" width="639" condition="Skin.HasSetting(biggergap)">
 			<control type="label">
 				<left>0</left>
 				<width>639</width>
-				<textcolor>$INFO[Skin.String(HomeMenuColor2)]</textcolor>
-				<!-- whitemod -->
+				<textcolor>white5</textcolor>
 				<include>MainMenuLabels</include>
+				<visible>!Skin.HasSetting(customizehome)</visible>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<width>639</width>
+				<textcolor>$INFO[Skin.String(HomeMenuColor2)]</textcolor>
+				<include>MainMenuLabels</include>
+				<visible>Skin.HasSetting(customizehome) + !Skin.HasSetting(fontfromfolder)</visible>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<width>639</width>
+				<textcolor>$INFO[Skin.String(HomeMenuColor2)]</textcolor>
+				<include>MainMenuLabelsCustom</include>
+				<visible>Skin.HasSetting(customizehome) + Skin.HasSetting(fontfromfolder)</visible>
 			</control>
 		</itemlayout>
+		<!-- menubar text color highlight big gaps --> 
 		<focusedlayout height="225" width="639" condition="Skin.HasSetting(biggergap)">
 			<control type="label">
 				<left>0</left>
 				<width>639</width>
 				<textcolor>$VAR[MainMenuFontColorVar]</textcolor>
 				<include>MainMenuLabels</include>
+				<visible>!Skin.HasSetting(customizehome)</visible>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<width>639</width>
+				<textcolor>$INFO[Skin.String(HomeMenuColor1)]</textcolor>
+				<include>MainMenuLabels</include>
+				<visible>Skin.HasSetting(customizehome) + !Skin.HasSetting(fontfromfolder)</visible>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<width>639</width>
+				<textcolor>$INFO[Skin.String(HomeMenuColor1)]</textcolor>
+				<include>MainMenuLabelsCustom</include>
+				<visible>Skin.HasSetting(customizehome) + Skin.HasSetting(fontfromfolder)</visible>
 			</control>
 		</focusedlayout>
+		<!-- menubar text color -->
 		<content>
 			<include>skinshortcuts-mainmenu</include>
 		</content>
@@ -174,7 +253,6 @@
 		<scrolltime tween="quadratic">300</scrolltime>
 		<onup>9000</onup>
 		<onback>SetFocus(9000)</onback>
-
 		<!-- Silvo -->
 		<!--ondown condition="Control.IsVisible(90020)">90020</ondown>
 		<ondown condition="!Control.IsVisible(90020) + Control.IsVisible(90010)">90010</ondown>
@@ -188,8 +266,18 @@
 		<ondown condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(bottomindicator) + Control.IsVisible(90020)">90020</ondown>
 		<ondown condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(bottomindicator) + !Control.IsVisible(90020) + Control.IsVIsible(90010)">90010</ondown>
 		<ondown condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(bottomindicator) + !Control.IsVisible(90020) + Control.IsVIsible(90010)">9000</ondown>
-
+        <!-- menubar mod -->
 		<itemlayout width="230" height="50">
+			<control type="label">
+				<left>1</left>
+				<width>194</width>
+				<height>50</height>
+				<align>center</align>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>grey2</textcolor>
+				<visible>!Skin.HasSetting(customizehome)</visible>				
+			</control>
 			<control type="label">
 				<left>1</left>
 				<width>194</width>
@@ -199,6 +287,7 @@
 				<font>Font_Reg28_Caps</font>
 				<!-- whitemod -->
 				<textcolor>$INFO[Skin.String(HomeMenuColor6)]</textcolor>
+				<visible>Skin.HasSetting(customizehome)</visible>				
 			</control>
 		</itemlayout>
 		<focusedlayout width="230" height="50">
@@ -209,10 +298,39 @@
 				<align>center</align>
 				<label>$INFO[ListItem.Label]</label>
 				<font>Font_Reg28_Caps</font>
+				<textcolor>grey2</textcolor>
+				<animation effect="zoom" center="112,25" start="100" end="120" time="160" tween="quadratic">Focus</animation>
+				<animation effect="zoom" center="112,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
+				<scroll>true</scroll>
+				<visible>!Skin.HasSetting(customizehome)</visible>				
+			</control>
+			<control type="label">
+				<left>10</left>
+				<width>202</width>
+				<height>52</height>
+				<align>center</align>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
+				<animation effect="zoom" center="112,25" start="100" end="120" time="160" tween="quadratic">Focus</animation>
+				<animation effect="zoom" center="112,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
+				<scroll>true</scroll>
+				<include>Animation_VisibleChange200</include>
+				<visible>Control.HasFocus(9010)</visible>
+				<visible>!Skin.HasSetting(customizehome)</visible>				
+			</control>
+			<control type="label">
+				<left>10</left>
+				<width>202</width>
+				<height>52</height>
+				<align>center</align>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Font_Reg28_Caps</font>
 				<textcolor>$INFO[Skin.String(HomeMenuColor6)]</textcolor>
 				<animation effect="zoom" center="112,25" start="100" end="120" time="160" tween="quadratic">Focus</animation>
 				<animation effect="zoom" center="112,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
 				<scroll>true</scroll>
+				<visible>Skin.HasSetting(customizehome)</visible>				
 			</control>
 			<control type="label">
 				<left>10</left>
@@ -222,13 +340,14 @@
 				<label>$INFO[ListItem.Label]</label>
 				<font>Font_Reg28_Caps</font>
 				<textcolor>$INFO[Skin.String(HomeMenuColor7)]</textcolor>
-				<!-- whitemod -->
 				<animation effect="zoom" center="112,25" start="100" end="120" time="160" tween="quadratic">Focus</animation>
 				<animation effect="zoom" center="112,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
 				<scroll>true</scroll>
 				<include>Animation_VisibleChange200</include>
 				<visible>Control.HasFocus(9010)</visible>
+				<visible>Skin.HasSetting(customizehome)</visible>				
 			</control>
+			<!-- menubar mod -->
 		</focusedlayout>
 		<content>
 			<include>skinshortcuts-submenu</include>
@@ -382,7 +501,6 @@
 	<include name="DefaultControl30">
 		<defaultcontrol>30</defaultcontrol>
 	</include>
-
 	<include name="MainMenuBottomBar">
 		<control type="group">
 			<visible>!Window.IsActive(1159) + Skin.HasSetting(bottomMenu)</visible>
@@ -455,27 +573,53 @@
 			<animation effect="slide" start="-750,0" end="0,0" delay="800" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
 			<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
 			<animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
+			<!-- menubar mod -->
 			<control type="image">
+			    <visible>!Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic) | !Skin.HasSetting(customizehome)</visible>
 				<top>-1</top>
 				<width>794</width>
 				<height>87</height>
 				<texture flipy="true" flipx="true">$VAR[TimePanelImageVar]</texture>
+				<colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+				<animation effect="slide" end="-200" time="240" condition="Skin.HasSetting(shorterhomebars)">Conditional</animation>
+				<animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
+			</control>
+			<control type="image">
+			    <visible>Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic) + Skin.HasSetting(customizehome)</visible>
+				<top>-1</top>
+				<width>794</width>
+				<height>87</height>
+				<texture flipy="true" flipx="true">home/white_timepanel_mid.png</texture>
 				<!-- colormod statspanal -->
 				<colordiffuse>$INFO[Skin.String(colorstatsbar)]</colordiffuse>
 				<!-- colormod -->
 				<animation effect="slide" end="-200" time="240" condition="Skin.HasSetting(shorterhomebars)">Conditional</animation>
 				<animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
 			</control>
+			<control type="image">
+			    <visible>!Skin.HasSetting(colormenubar) + Skin.HasSetting(menufromgraphic) + Skin.HasSetting(customizehome)</visible>
+				<top>-1</top>
+				<width>794</width>
+				<height>87</height>
+				<texture flipy="true" flipx="true">$INFO[Skin.String(menubarfolder)]timepanel_mid.png</texture>
+				<!-- colormod statspanal -->
+				<colordiffuse>$INFO[Skin.String(colorstatsbar)]</colordiffuse>
+				<!-- colormod -->
+				<animation effect="slide" end="-200" time="240" condition="Skin.HasSetting(shorterhomebars)">Conditional</animation>
+				<animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
+			</control>
+			<!-- menubar mod -->
+			<!-- menubar mod -->
 			<control type="label">
 				<left>15</left>
 				<width>703</width>
 				<height>36</height>
 				<label>$VAR[LibraryStatsVar]</label>
 				<font>Font_Reg28_Caps</font>
-				<!-- whitemod -->
-				<textcolor>$INFO[Skin.String(HomeMenuColor4)]</textcolor>
+				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
 				<scroll>true</scroll>
 				<visible>!Skin.HasSetting(shorterhomebars)</visible>
+				<visible>!Skin.HasSetting(customizehome)</visible>
 			</control>
 			<control type="label">
 				<left>15</left>
@@ -484,11 +628,37 @@
 				<height>36</height>
 				<label>$VAR[ShortLibraryStatsVar]</label>
 				<font>Font_Reg28_Caps</font>
+				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<scroll>true</scroll>
+				<visible>Skin.HasSetting(shorterhomebars)</visible>
+				<visible>!Skin.HasSetting(customizehome)</visible>
+			</control>
+			<control type="label">
+				<left>15</left>
+				<width>703</width>
+				<height>36</height>
+				<label>$VAR[LibraryStatsVarColor]</label>
+				<font>Font_Reg28_Caps</font>
+				<!-- whitemod -->
+				<textcolor>$INFO[Skin.String(HomeMenuColor4)]</textcolor>
+				<scroll>true</scroll>
+				<visible>!Skin.HasSetting(shorterhomebars)</visible>
+				<visible>Skin.HasSetting(customizehome)</visible>
+			</control>
+			<control type="label">
+				<left>15</left>
+				<top>-1</top>
+				<width>503</width>
+				<height>36</height>
+				<label>$VAR[ShortLibraryStatsVarColor]</label>
+				<font>Font_Reg28_Caps</font>
 				<textcolor>$INFO[Skin.String(HomeMenuColor4)]</textcolor>
 				<!-- whitemod -->
 				<scroll>true</scroll>
 				<visible>Skin.HasSetting(shorterhomebars)</visible>
+				<visible>Skin.HasSetting(customizehome)</visible>
 			</control>
+			<!-- menubar mod -->
 		</control>
 	</include>
 	<include name="PlayListStatsList">
@@ -513,28 +683,89 @@
 			<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(timehomehigh)">Conditional</animation>
 			<animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
 			<animation effect="slide" start="750" end="0" time="240">VisibleChange</animation>
+			<!-- menubar mod -->
 			<control type="image">
+				<visible>!Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic) | !Skin.HasSetting(customizehome)</visible>
 				<left>-45</left>
 				<top>-46</top>
 				<width>804</width>
 				<height>87</height>
 				<texture>$VAR[TimePanelImageVar]</texture>
+				<colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+				<animation effect="slide" end="200" time="240" condition="Skin.HasSetting(shorterhomebars)">Conditional</animation>
+				<animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
+			</control>
+			<control type="image">
+			    <visible>Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic) + Skin.HasSetting(customizehome)</visible>
+				<left>-45</left>
+				<top>-46</top>
+				<width>804</width>
+				<height>87</height>
+				<texture>home/white_timepanel_mid.png</texture>
 				<!-- colormod timepanal -->
 				<colordiffuse>$INFO[Skin.String(colortimebar)]</colordiffuse>
 				<!-- colormod -->
 				<animation effect="slide" end="200" time="240" condition="Skin.HasSetting(shorterhomebars)">Conditional</animation>
 				<animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
 			</control>
+			<control type="image">
+			    <visible>!Skin.HasSetting(colormenubar) + Skin.HasSetting(menufromgraphic) + Skin.HasSetting(customizehome)</visible>
+				<left>-45</left>
+				<top>-46</top>
+				<width>804</width>
+				<height>87</height>
+				<texture>$INFO[Skin.String(menubarfolder)]timepanel_mid.png</texture>
+				<!-- colormod timepanal -->
+				<colordiffuse>$INFO[Skin.String(colortimebar)]</colordiffuse>
+				<!-- colormod -->
+				<animation effect="slide" end="200" time="240" condition="Skin.HasSetting(shorterhomebars)">Conditional</animation>
+				<animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
+			</control>
+			<!-- menubar mod -->
+			<!-- menubar mod -->
 			<control type="label">
 				<left>150</left>
 				<width>600</width>
 				<height>36</height>
 				<align>right</align>
-				<!-- whitemod -->
+				<label>[COLOR grey]$INFO[System.Date(ddd)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<visible>!Skin.HasSetting(shorterhomebars) + Skin.HasSetting(W_condition_image)</visible>
+				<visible>!Skin.HasSetting(customizehome)</visible>				
+			</control>
+			<control type="label">
+				<left>150</left>
+				<width>600</width>
+				<height>36</height>
+				<align>right</align>
+				<label>[COLOR grey]$INFO[System.Date(DDD)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<visible>Skin.HasSetting(shorterhomebars)</visible>
+				<visible>!Skin.HasSetting(customizehome)</visible>				
+			</control>
+			<control type="label">
+				<left>150</left>
+				<width>600</width>
+				<height>36</height>
+				<align>right</align>
+				<label>[COLOR grey]$INFO[System.Date(DDD)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<visible>!Skin.HasSetting(W_condition_image)</visible>
+				<visible>!Skin.HasSetting(customizehome)</visible>				
+			</control>
+			<control type="label">
+				<left>150</left>
+				<width>600</width>
+				<height>36</height>
+				<align>right</align>
 				<label>[COLOR $INFO[Skin.String(HomeMenuColor3)]]$INFO[System.Date(ddd)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
 				<font>Font_Reg28_Caps</font>
 				<textcolor>$INFO[Skin.String(HomeMenuColor5)]</textcolor>
 				<visible>!Skin.HasSetting(shorterhomebars) + Skin.HasSetting(W_condition_image)</visible>
+				<visible>Skin.HasSetting(customizehome)</visible>				
 			</control>
 			<control type="label">
 				<left>150</left>
@@ -545,6 +776,7 @@
 				<font>Font_Reg28_Caps</font>
 				<textcolor>$INFO[Skin.String(HomeMenuColor5)]</textcolor>
 				<visible>Skin.HasSetting(shorterhomebars)</visible>
+				<visible>Skin.HasSetting(customizehome)</visible>				
 			</control>
 			<control type="label">
 				<left>150</left>
@@ -555,10 +787,51 @@
 				<font>Font_Reg28_Caps</font>
 				<textcolor>$INFO[Skin.String(HomeMenuColor5)]</textcolor>
 				<visible>!Skin.HasSetting(W_condition_image)</visible>
+				<visible>Skin.HasSetting(customizehome)</visible>				
+			</control>
+			<!-- menubar mod -->
+			<!-- menubar mod weather -->
+			<control type="grouplist">
+				<left>30</left>
+				<visible>Weather.IsFetched + !Skin.HasSetting(shorterhomebars)</visible>
+				<visible>!Skin.HasSetting(customizehome)</visible>				
+				<include>Animation_VisibleChange400</include>
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<animation effect="slide" end="50" time="240" condition="!Skin.HasSetting(W_condition_image)">Conditional</animation>
+				<control type="label">
+					<width min="0" max="700">auto</width>
+					<height>36</height>
+					<label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey]• [/COLOR]</label>
+					<font>Font_Reg28_Caps</font>
+					<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				</control>
+				<control type="image">
+					<left>-20</left>
+					<top>-13</top>
+					<width>65</width>
+					<height>65</height>
+					<colordiffuse>white2</colordiffuse>
+					<texture>$VAR[Realweatherimg]$INFO[Weather.FanartCode].png</texture>
+					<visible>!Skin.HasSetting(W_condition_image)</visible>
+					<animation effect="slide" end="20" time="320" condition="Skin.HasSetting(W_real_image)">Conditional</animation>
+				</control>
+				<control type="label">
+					<top>-3</top>
+					<width>275</width>
+					<height>40</height>
+					<aligny>top</aligny>
+					<label>$INFO[Window(Weather).Property(Current.Condition)]</label>
+					<font>Font_Reg33_Caps</font>
+					<textcolor>grey</textcolor>
+					<scroll>true</scroll>
+					<visible>Skin.HasSetting(W_condition_image)</visible>
+				</control>
 			</control>
 			<control type="grouplist">
 				<left>30</left>
 				<visible>Weather.IsFetched + !Skin.HasSetting(shorterhomebars)</visible>
+				<visible>Skin.HasSetting(customizehome)</visible>				
 				<include>Animation_VisibleChange400</include>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
@@ -593,6 +866,7 @@
 					<visible>Skin.HasSetting(W_condition_image)</visible>
 				</control>
 			</control>
+			<!-- menubar mod -->
 		</control>
 	</include>
 	<include name="RSSPanel">
