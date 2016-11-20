@@ -78,13 +78,18 @@
 						<label>31641</label>
 						<onclick>noop</onclick>
 					</item>
-					<!-- Holiday / StarWarsMod -->
+					<!--Holiday Mods + Holiday Mod Additions-->
 					<item id="11">
-						<description>Holiday and Star Wars Mod</description>
-						<label>Effect Mod</label>
+						<description>The Mod Hub</description>
+						<label>Extras</label>
 						<onclick>noop</onclick>
 					</item>
-					<!-- Holiday / StarWarsMod -->
+					<!--item id="12">
+						<description>Effects</description>
+						<label>Reload</label>
+						<onclick>ReloadSkin()</onclick>
+					</item>
+					<!--Holiday Mods + Holiday Mod Additions-->
 				</content>
 			</control>
 			<control type="label">
@@ -312,15 +317,6 @@
 						<include>Default_SettingButton</include>
 						<onclick>ActivateWindow(1168)</onclick>
 					</control>
-				        <!-- colormod -->
-					<control type="button" id="521">
-						<label>Customize Menubar Colors</label>
-						<include>Default_SettingButton</include>
-						<onclick>SetProperty(actualItem,MainMenu,1132)</onclick>
-						<onclick>ActivateWindow(home)</onclick>
-						<onclick>ActivateWindow(1132)</onclick>
-					</control>
-					<!-- colormod -->					
 					<control type="button" id="517">
 						<label>$LOCALIZE[31809]</label>
 						<include>Default_SettingButton</include>
@@ -723,12 +719,112 @@
 						<textcolor>grey2</textcolor>
 					</control>
 				</control>
-				<!-- Holiday / StarWarsMod -->
-				<control type="grouplist" id="9010">	
-					<left>387</left>
-					<top>150</top>
-					<width>1469</width>
+			    <!--Holiday Mod Additions-->
+				<control type="panel" id="9099"><!--Holiday Mod Additions-->
+					<left>487</left>
+					<top>226</top>
+					<width>1400</width>
 					<height>900</height>
+					<visible>Container(9000).Hasfocus(11)</visible>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<focusedlayout height="300" width="425">
+						<control type="group">
+						<control type="image">	
+							<aspectratio>strech</aspectratio><!--#############Focus-->
+							<width>400</width>
+							<height>250</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="image"><!--#############Focus-->
+							<aspectratio>strech</aspectratio>
+							<width>400</width>
+							<height>250</height>
+							<texture colordiffuse="$VAR[AreaColorVar]">$INFO[ListItem.Icon]</texture>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="textbox">
+							<posx>10</posx>
+							<posy>20</posy>
+							<animation type="Focus" reversible="true">
+								<effect type="fade" start="0" end="100" delay="1000" time="500" tween="cubic"/>
+							</animation>
+							<animation type="UnFocus" reversible="true">
+								<effect type="fade" start="100" end="0" time="500" tween="cubic"/>
+							</animation>
+							<width>380</width>
+							<height>140</height>
+							<autoscroll delay="3000" time="2000" repeat="8001">true</autoscroll>
+							<label>$INFO[ListItem.Property(Description)]</label>
+							<font>Font_Reg25_2</font>
+							<align>center</align>
+						</control>
+						<control type="label">
+							<width>400</width>
+							<height>50</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Font_Bold34_Caps</font>
+							<align>center</align>
+						</control>
+					</control>
+				</focusedlayout>
+				<itemlayout height="300" width="425">
+				<control type="image">
+						<width>400</width>
+						<height>250</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<bordertexture border="5">button-nofocus.png</bordertexture>
+						<bordersize>5</bordersize>
+					</control>
+					<control type="image">
+						<posy>13</posy>
+						<posx>5</posx>
+						<width>390</width>
+						<height>220</height>
+						<texture colordiffuse="55FFFFFF">common/bgcolor.png</texture>
+					</control>
+					<control type="label" id="8003">
+						<width>400</width>
+						<height>50</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Font_Bold34_Caps</font>
+						<align>center</align>
+						<textcolor>white2</textcolor>
+					</control>
+				</itemlayout>
+				<content>
+					<item id="1">
+						<label>HOLIDAYS</label>
+						<property name="description"></property>
+						<onclick>ActivateWindow(5000)</onclick>
+						<selected></selected>
+						<icon>special://skin/media/holiday_additions/holidays_icon.jpg</icon>
+					</item>
+					<item id="2">
+						<label>EFFECTS</label>
+						<property name="description"></property>
+						<onclick>ActivateWindow(5001)</onclick>
+						<icon>special://skin/media/holiday_additions/effects_icon.jpg</icon>
+					</item>
+					<item id="3">
+						<label>THEMES</label>
+						<property name="description"></property>
+						<onclick>ActivateWindow(5003)</onclick>
+						<icon>special://skin/media/holiday_additions/theme_icon.jpg</icon>
+					</item>					
+				</content>
+			</control>
+			<control type="grouplist" id="9920">	<!--Holiday Mod Additions-->
+					<left>387</left>
+					<top>500</top>
+					<width>1469</width>
+					<height>732</height>
 					<visible>Container(9000).Hasfocus(11)</visible>
 					<itemgap>1</itemgap>
 					<pagecontrol>60</pagecontrol>
@@ -736,93 +832,41 @@
 					<onright>60</onright>
 					<onup>9001</onup>
 					<ondown>9001</ondown>
-					
+					<control type="image">	
+						<left>1</left>
+						<top>1</top>
+						<width>1468</width>
+						<height>2</height>
+						<texture>views/lowlistpanel_line.png</texture>
+					</control>
+					<control type="image">	
+						<left>1</left>
+						<top>-400</top>
+						<width>1468</width>
+						<height>2</height>
+						<texture>views/lowlistpanel_line.png</texture>
+					</control>
 					<control type="label">
-						<width>1960</width>
-						<height>38</height>
+						<width>1400</width>
+						<height>150</height>
 						<textoffsetx>30</textoffsetx>
-						<aligny>bottom</aligny>
-						<label>[B]Holiday Mod[/B]</label>
-						<font>Font_Bold30_Caps</font>
+						<align>center</align>
+						<label>Special THANK YOU and credits goes to.......</label>
+						<font>Font_Bold34_Caps</font>
 						<textcolor>grey2</textcolor>
 					</control>
-   			        <control type="radiobutton" id="6666">
-						<label>Halloween</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(halloween)</onclick>
-						<selected>Skin.HasSetting(halloween)</selected>
-					</control>
-					<control type="radiobutton" id="6667">
-						<label>Thanksgiving</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(thanksgiving)</onclick>
-						<selected>Skin.HasSetting(thanksgiving)</selected>
-					</control>
-					<control type="radiobutton" id="6668">
-						<label>Leaves</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(leaves)</onclick>
-						<selected>Skin.HasSetting(leaves)</selected>
-					</control>
-					<control type="radiobutton" id="6669">
-						<label>Christmas</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(christmas)</onclick>
-						<selected>Skin.HasSetting(christmas)</selected>
-					</control>
-					<control type="radiobutton" id="6670">
-						<label>Heavysnow</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(heavysnow)</onclick>
-						<selected>Skin.HasSetting(heavysnow)</selected>
-					</control>
-			        <control type="radiobutton" id="6671">
-						<label>Mediumsnow</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(mediumsnow)</onclick>
-						<selected>Skin.HasSetting(mediumsnow)</selected>
-					</control>
-					<control type="radiobutton" id="6672">
-						<label>Lightsnow</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(lightsnow)</onclick>
-						<selected>Skin.HasSetting(lightsnow)</selected>
-					</control>
-					<control type="label" id="6673">
-						<width>1960</width>
-						<height>38</height>
+					<control type="label">
+						<left>25</left>
+						<width>1400</width>
+						<height>100</height>
 						<textoffsetx>30</textoffsetx>
-						<aligny>bottom</aligny>
-						<label>[B]Star Wars Mod[/B]</label>
-						<font>Font_Bold30_Caps</font>
-						<textcolor>grey2</textcolor>
-					</control>
-   			        <control type="radiobutton" id="6674">
-						<label>Star Wars</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(starwars)</onclick>
-						<selected>Skin.HasSetting(starwars)</selected>
-					</control>
-					<control type="label" >
-						<width>1960</width>
-						<height>38</height>
-						<textoffsetx>30</textoffsetx>
-						<aligny>bottom</aligny>
-						<label>       -- Special credits goes to.......</label>
-						<font>Font_Reg22</font>
-						<textcolor>grey2</textcolor>
-					</control>
-					<control type="label" >
-						<width>1960</width>
-						<height>38</height>
-						<textoffsetx>30</textoffsetx>
-						<aligny>bottom</aligny>
-						<label>       -- [B]"latts9923"[/B] for making this mod.</label>
-						<font>Font_Reg22</font>
+						<align>center</align>
+						<label>-- [B]"latts9923"[/B] for making the original holiday and menubar mod and allowing us you use it.[CR]Also thanks for advice and time spent reviewing some of the code.[CR]--[B]"_Andy_"[/B] for porting porting the original mod and giving us a great foundation to expand on. [CR]-- [B]"ShadowTek"[/B] for helping complie and customize the graphics. [CR]-- [B]"Mike_Doc"[/B] for many few words of advice and solving the "Menubar Blunder".</label>
+						<font>Font_Reg25</font>
 						<textcolor>grey2</textcolor>
 					</control>
 				</control>
-				<!-- Holiday / StarWarsMod -->
+			<!--Holiday Mod Additions-->		
 				<control type="grouplist" id="9009">
 					<left>387</left>
 					<top>195</top>
@@ -877,6 +921,84 @@
 						<onclick condition="String.IsEqual(Skin.String(LibraryStructure),1)">Skin.SetString(LibraryStructure,2)</onclick>
 					</control>
 				</control>
+			<control type="grouplist" id="9910">	<!--Holiday Mods + Holiday Mod Additions-->
+					<left>387</left>
+					<top>200</top>
+					<width>1469</width>
+					<height>732</height>
+					<visible>Container(9000).Hasfocus(12)</visible>
+					<itemgap>1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9001</onup>
+					<ondown>9001</ondown>
+														
+					<control type="label">
+						<width>1960</width>
+						<height>100</height>
+						<textoffsetx>125</textoffsetx>
+						<aligny>bottom</aligny>
+						<label>[B][CR]These are extra Effects that can be added to supplement the Holidays Effects. [/B]</label>
+						<font>Font_Bold30_Caps</font>
+						<textcolor>white</textcolor>
+					</control>		
+					<control type="radiobutton" id="7690">
+						<label>Fireworks</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(fireworks)</onclick>
+						<selected>Skin.HasSetting(fireworks)</selected>
+					</control>
+					<control type="radiobutton" id="7691">
+						<label>Heavy Confetti</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(confettih)</onclick>
+						<selected>Skin.HasSetting(confettih)</selected>
+					</control>
+					<control type="radiobutton" id="7692">
+						<label>Medium Confetti</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(confettim)</onclick>
+						<selected>Skin.HasSetting(confettim)</selected>
+					</control>
+					<control type="radiobutton" id="7693">
+						<label>Light Confetti</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(confettil)</onclick>
+						<selected>Skin.HasSetting(confettil)</selected>
+					</control>
+					<control type="radiobutton" id="7695">
+					<label>Coming Soon!</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(cs3)</onclick>
+						<selected>Skin.HasSetting(cs3)</selected>
+					</control>					
+					<control type="radiobutton" id="7696">
+						<label>Leaves</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(leaves)</onclick>
+						<selected>Skin.HasSetting(leaves)</selected>
+					</control>
+					<control type="radiobutton" id="7697">
+						<label>Heavy Snow</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(heavysnow)</onclick>
+						<selected>Skin.HasSetting(heavysnow)</selected>
+					</control>
+			        <control type="radiobutton" id="7698">
+						<label>Medium Snow</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(mediumsnow)</onclick>
+						<selected>Skin.HasSetting(mediumsnow)</selected>
+					</control>
+					<control type="radiobutton" id="7699">
+						<label>Light Snow</label>
+						<include>Default_SettingRadioButton</include>
+						<onclick>Skin.ToggleSetting(lightsnow)</onclick>
+						<selected>Skin.HasSetting(lightsnow)</selected>
+					</control>
+					</control>
+					<!--Holiday Mods + Holiday Mod Additions-->
 			</control>
 			<control type="group">
 				<left>1170</left>
