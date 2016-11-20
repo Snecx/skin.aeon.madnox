@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Holiday Effects -->
+<window type="dialog" id="5001">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<coordinates>
+		<left>0</left>
+		<top>-55</top>
+		<system>1</system>
+	</coordinates>
+	<include>Animation_DialogPopup</include>
+	<controls>
+		<control type="image">
+			<left>-115</left>
+			<top>15</top>
+			<width>2150</width>
+			<height>1100</height>
+			<texture colordiffuse="$VAR[ColorDiffuseVar]">frames/panel_back.png</texture>
+		</control>
+		<control type="image">
+			<left>36</left>
+			<top>75</top>
+			<width>1946</width>
+			<height>1106</height>
+			<texture colordiffuse="$VAR[ColorDiffuseVar]">osd/osd_settings_back_glow.png</texture>
+			<visible>!Skin.HasSetting(DisableGlowbar)</visible>
+			<include>PanelGlowFade</include>
+		</control>
+		<control type="image">
+			<left>36</left>
+			<top>75</top>
+			<width>1846</width>
+			<height>1006</height>
+			<texture colordiffuse="$VAR[DialogColorVar]">osd/osd_settings_back.png</texture>
+		</control>
+		<control type="image">	
+			<left>155</left>
+			<top>880</top>
+			<width>1600</width>
+			<height>2</height>
+			<texture>views/lowlistpanel_line.png</texture>
+		</control>
+		<control type="image">	
+			<left>155</left>
+			<top>915</top>
+			<width>1600</width>
+			<height>2</height>
+			<texture>views/lowlistpanel_line.png</texture>
+		</control>
+		<control type="list" id="9000">
+				<left>36</left>
+				<top>75</top>
+				<width>1946</width>
+				<height>1106</height>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<scrolltime tween="sine">300</scrolltime>
+				<orientation>horizontal</orientation>
+				<visible>!Window.IsActive(script-skinshortcuts.xml)</visible>
+				<itemlayout height="1106" width="1946">
+					<!--control type="label">
+						<left>0</left>
+						<width>1</width>
+						<height>1</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Font_Bold34_Caps</font>
+						<textcolor>grey2</textcolor>
+					</control-->
+				</itemlayout>
+				<focusedlayout height="1106" width="1946">
+					<control type="image" >
+						<left>300</left>
+						<top>75</top>
+						<width>1244</width>
+						<height>700</height>
+						<aspectratio scalediffuse="true">strech</aspectratio>
+						<texture background="true" diffuse="views/other/episode_diffuse.png">$INFO[ListItem.Property(screenshot)]</texture>
+					</control>
+					<control type="image" >
+						<left>300</left>
+						<top>785</top>
+						<width>74</width>
+						<height>74</height>
+						<texture>$VAR[OnOffVar]</texture>
+					</control>
+					<control type="label">
+						<left>-50</left>
+						<top>785</top>
+						<align>center</align>
+						<width>1920</width>
+						<height>74</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Font_Bold34_Caps</font>
+						<textcolor>grey2</textcolor>
+					</control>
+					<control type="label" >
+						<left>-50</left>
+						<top>850</top>
+						<align>center</align>
+						<width>1920</width>
+						<height>74</height>
+						<label>$INFO[ListItem.Property(description)]</label>
+					</control>					
+					</focusedlayout>
+				<content>
+					<item id="91">
+						<property name="description">There are multiple options for the Confetti, with three differnet density levels allow for individual tastes.[CR] The floor option take several seconds before any visible animation is noticable. Be Patient its worth the wait! </property>
+						<property name="screenshot">holiday_additions/confetti/screenshot.png</property>
+						<property name="toggle">true</property>
+						<label>Confetti Options</label>
+						<include>RadioButtonShorter</include>
+						<onclick>ActivateWindow(5007)</onclick>
+						<onclick>noop</onclick>
+					</item>
+					<item id="92">
+						<property name="description">Just a little someting extra to add to your New Years or Independance Day theme.</property>
+						<property name="screenshot">holiday_additions/fireworks/screenshot.png</property>
+						<label>Fireworks</label>
+						<onclick>ActivateWindow(5008)</onclick>
+						<onclick>noop</onclick>
+					</item>
+					<item id="93">
+						<property name="description">Is it that time of year again, or maybe you wish it was?</property>
+						<property name="screenshot">holidays/leaves/screenshot.png</property>
+						<label>Leaves</label>
+						<include>RadioButtonShorter</include>
+						<onclick>ActivateWindow(5009)</onclick>
+					<onclick>noop</onclick>
+					</item>
+					<item id="94">
+						<property name="description">You want a white Christmas, or Christmas in July but there is no snow in sight, pick a level to help the mood.</property>
+						<property name="screenshot">holidays/snow/screenshot.png</property>
+						<label>Snow Options</label>
+						<include>RadioButtonShorter</include>
+						<onclick>ActivateWindow(5010)</onclick>
+						<selected>[Skin.HasSetting(lightsnow) | Skin.HasSetting(mediumsnow) | Skin.HasSetting(heavysnow)]</selected>
+						<onclick>noop</onclick>
+					</item>
+					<!--item id="95">
+						<property name="description"></property>
+						<property name="screenshot"></property>						
+						<label>Reload</label>
+						<onclick>ReloadSkin()</onclick>
+						<onclick>noop</onclick>
+					</item-->
+				</content>
+		</control>		
+	</controls>
+</window>

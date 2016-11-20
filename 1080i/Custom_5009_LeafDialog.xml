@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Leaf Dialog-->
+<window type="dialog" id="5009">
+	<defaultcontrol always="true">450</defaultcontrol>
+	<coordinates>
+		<left>0</left>
+		<top>-55</top>
+		<system>1</system>
+	</coordinates>
+	<include>Animation_DialogPopup</include>
+	<controls>
+		<control type="image">
+			<left>260</left>
+			<top>150</top>
+			<width>1400</width>
+			<height>560</height>
+			<texture colordiffuse="$VAR[ColorDiffuseVar]">frames/panel_back.png</texture>
+		</control>
+		<control type="image">
+			<left>357</left>
+			<top>180</top>
+			<width>1212</width>
+			<height>500</height>
+			<texture colordiffuse="$VAR[ColorDiffuseVar]">osd/osd_settings_back_glow.png</texture>
+			<visible>!Skin.HasSetting(DisableGlowbar)</visible>
+			<include>PanelGlowFade</include>
+		</control>
+		<control type="image">
+			<left>357</left>
+			<top>180</top>
+			<width>1212</width>
+			<height>500</height>
+			<texture colordiffuse="$VAR[DialogColorVar]">osd/osd_settings_back.png</texture>
+		</control>
+		<control type="image">
+			<left>375</left>
+			<top>212</top>
+			<width>1172</width>
+			<height>60</height>
+			<texture border="1">osd/osd_settings_buttonnf.png</texture>
+		</control>
+		<control type="label">
+			<left>820</left>
+			<top>205</top>
+			<width>600</width>
+			<height>75</height>
+			<font>Font_Bold30_Caps</font>
+			<textcolor>white</textcolor>
+			<label>[B]Leaf Settings[/B]</label>
+			<font>Font_Bold30_Caps</font>
+			<textcolor>white</textcolor>
+		</control>
+		<control type="image" >
+				<left>800</left>
+				<top>274</top>
+				<width>725</width>
+				<height>368</height>
+				<texture>frames/frame-cadre.png</texture>
+			</control>
+		<control type="image" >
+				<left>804</left>
+				<top>279</top>
+				<width>725</width>
+				<height>358</height>
+				<texture>holidays/leaves/screenshot.png</texture>
+			</control>
+		<control type="grouplist" id="450">
+			<left>375</left>
+			<top>272</top>
+			<width>1172</width>
+			<height>540</height>
+			<pagecontrol>60</pagecontrol>
+			<onleft>60</onleft>
+			<onright>60</onright>
+			<onup>450</onup>
+			<ondown>450</ondown>
+			<control type="radiobutton" id="109">
+				<label>Leaves</label>
+				<include>RadioButtonShorter</include>
+				<onclick>Skin.ToggleSetting(leaves)</onclick>
+				<selected>Skin.HasSetting(leaves)</selected>
+			</control>
+		</control>
+</controls>
+</window>

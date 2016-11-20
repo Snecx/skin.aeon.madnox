@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Calender Holidays -->
+<window id="5000">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
+	<animation type="WindowOpen" reversible="false" condition="![Window.Previous(SettingsCategory.xml) | Window.Previous(1116) | Window.Previous(settings)]">
+		<effect type="zoom" start="150" end="100" center="960,540" time="240" tween="cubic" />
+		<effect type="fade" end="100" time="240" />
+	</animation>
+	<animation type="WindowClose" reversible="false" condition="![Window.Next(SettingsCategory.xml) | Window.Next(1116) | Window.Next(settings)]">
+		<effect type="fade" start="100" end="0" time="240" />
+		<effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
+	</animation>
+	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=2&amp;group=mainmenu|madnox-quicknav)</onunload>
+	<controls>
+		<include>CommonSettingsBackground</include>
+		<include>CommonMediaPlayingBackground</include>
+		<include>Furniture_SettingsFloor</include>
+		<control type="group">
+			<align>center</align>
+			<aligny>center</aligny>
+			<animation effect="zoom" end="91" center="960,360" time="320" tween="cubic" easing="inout" condition="true">Conditional</animation>
+			<include>Furniture_SettingsBackPanel3</include>
+			<control type="list" id="9000">
+				<left>63</left>
+				<top>125</top>
+				<width>750</width>
+				<height>768</height>
+				<onleft>ActivateWindow(1121)</onleft>
+				<onright>9010</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<scrolltime tween="sine">300</scrolltime>
+				<visible>!Window.IsActive(script-skinshortcuts.xml)</visible>
+				<itemlayout height="74" width="570">
+					<control type="label">
+						<left>30</left>
+						<width>306</width>
+						<height>74</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Font_Bold34_Caps</font>
+						<textcolor>grey2</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout height="74" width="570">
+					<control type="image">
+						<width>324</width>
+						<height>74</height>
+						<texture colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texture>
+						<animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
+					</control>
+					<control type="label">
+						<left>30</left>
+						<width>306</width>
+						<height>74</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Font_Bold34_Caps</font>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="91">
+						<property name="description">New Year's</property>
+						<property name="screenshot">holiday_additions/newyears/screenshot.png</property>
+						<label>New Year's</label>
+						<onclick>Skin.ToggleSetting(newyears)</onclick>
+						<selected>Skin.HasSetting(newyears)</selected>
+						<onclick>noop</onclick>
+						
+					</item>
+					<item id="92">
+						<property name="description">Valentine's Day</property>
+						<property name="screenshot">holiday_additions/valentinesday/screenshot.png</property>
+						<label>Valentine's Day</label>
+						<onclick>Skin.ToggleSetting(valentinesday)</onclick>
+						<selected>Skin.HasSetting(valentinesday)</selected>
+						<onclick>noop</onclick>
+					</item>
+					<item id="93">
+						<property name="description">St. Patrick's Day</property>
+						<property name="screenshot">holiday_additions/stpatricksday/screenshot.png</property>
+						<label>St. Patrick Day</label>
+						<onclick>Skin.ToggleSetting(cs)</onclick>
+						<selected>Skin.HasSetting(cs)</selected>
+						<onclick>noop</onclick>
+					</item>
+					<item id="94">
+						<property name="description">Easter</property>
+						<property name="screenshot">holiday_additions/easter/screenshot.png</property>
+						<label>Easter</label>
+						<onclick>Skin.ToggleSetting(cs1)</onclick>
+						<selected>Skin.HasSetting(cs1)</selected>
+						<onclick>noop</onclick>
+					</item>
+					<item id="95">
+						<property name="description">Independance Day</property>
+						<property name="screenshot">holiday_additions/julyfourth/screenshot.png</property>
+						<label>July 4th</label>
+						<onclick>Skin.ToggleSetting(cs2)</onclick>
+						<selected>Skin.HasSetting(cs2)</selected>
+						<onclick>noop</onclick>
+					</item>
+					<item id="96">
+						<property name="description">Halloween</property>
+						<property name="screenshot">holidays/halloween/screenshot.png</property>
+						<label>Halloween</label>
+						<onclick>Skin.ToggleSetting(halloween)</onclick>
+						<selected>Skin.HasSetting(halloween)</selected>
+						<onclick>noop</onclick>
+					</item>
+					<item id="97">
+						<property name="description">Thanksgiving</property>
+						<property name="screenshot">holidays/thanksgiving/screenshot.png</property>
+						<label>Thanksgiving</label>
+						<onclick>Skin.ToggleSetting(thanksgiving)</onclick>
+						<selected>Skin.HasSetting(thanksgiving)</selected>
+						<onclick>noop</onclick>
+					</item>
+					<item id="98">
+						<property name="description">Christmas</property>
+						<property name="screenshot">holidays/christmas/screenshot.png</property>						
+						<label>Christmas</label>
+						<onclick>Skin.ToggleSetting(christmas)</onclick>
+						<selected>Skin.HasSetting(christmas)</selected>
+						<onclick>noop</onclick>
+					</item>
+					<!--item id="99">
+						<label>Reload</label>
+						<onclick>ReloadSkin()</onclick>
+						<onclick>noop</onclick>
+					</item-->
+				</content>
+			</control>
+			<control type="label">
+				<left>400</left>
+				<top>-800</top>
+				<width>400</width>
+				<align>center</align>
+				<label>$INFO[Container(9000).ListItem.Property(Description)]</label>
+				<font>font_cdvv_48</font>
+				<shadowcolor>black</shadowcolor>
+				<visible>!Container(9000).Hasfocus(1) + !Window.IsActive(script-skinshortcuts.xml)</visible>
+			</control>
+			<control type="image" >
+				<left>814</left>
+				<top>94</top>
+				<width>1010</width>
+				<height>573</height>
+				<texture>frames/frame-cadre.png</texture>
+			</control>
+			<control type="image" >
+				<left>818</left>
+				<top>99</top>
+				<width>1000</width>
+				<height>563</height>
+				<texture>$INFO[Container(9000).ListItem.Property(screenshot)]</texture>
+			</control>
+			
+			<control type="group" id="9010">
+				<visible>!Window.IsActive(script-skinshortcuts.xml)</visible>
+			<control type="grouplist" id="9002"> <!-- newyears-->
+					<left>387</left>
+					<top>226</top>
+					<width>1469</width>
+					<height>732</height>
+					<visible>Container(9000).Hasfocus(91)</visible>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>7002</onright>
+					<onup>9002</onup>
+					<ondown>9002</ondown>
+					<control type="radiobutton" id="7000">
+						<label></label>
+						<include>RadioButtonSoShort</include>
+						<onclick>Skin.ToggleSetting(newyears)</onclick>
+						<selected>Skin.HasSetting(newyears)</selected>
+					</control>
+					<control type="label" id="7001">
+						<left>387</left>
+						<top>226</top>
+						<width>400</width>
+						<height>148</height>
+						<align>center</align>
+						<label>Recommended[CR]Background Effects</label>
+					</control>					
+					<control type="radiobutton" id="7002">
+						<label>Fireworks</label>
+						<include>RadioButtonShorter</include>
+						<onclick>ActivateWindow(5008)</onclick>
+						<selected>Skin.HasSetting(fireworks)</selected>
+					</control>
+					<control type="radiobutton" id="7003">
+						<label>Confetti Options</label>
+						<include>RadioButtonShorter</include>
+						<onclick>ActivateWindow(5007)</onclick>
+						<selected>[Skin.HasSetting(confettil) | Skin.HasSetting(confettim) | Skin.HasSetting(confettih) | Skin.HasSetting(confettif)]</selected>
+						<selected>Skin.HasSetting(confettifl)</selected>
+					</control>
+				</control>
+				<control type="grouplist" id="9003"><!-- valentinesdayDay -->
+					<left>387</left>
+					<top>226</top>
+					<width>1469</width>
+					<height>732</height>
+					<visible>Container(9000).Hasfocus(92)</visible>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>7012</onright>
+					<onup>9002</onup>
+					<ondown>9002</ondown>
+					<control type="radiobutton" id="7010">
+						<label></label>
+						<include>RadioButtonSoShort</include>
+						<onclick>Skin.ToggleSetting(valentinesday)</onclick>
+						<selected>Skin.HasSetting(valentinesday)</selected>
+					</control>
+					<control type="label" id="7011">
+						<left>387</left>
+						<top>226</top>
+						<width>400</width>
+						<height>148</height>
+						<align>center</align>
+						<label>Recommended[CR]Background Effects</label>
+					</control>	
+					<control type="radiobutton" id="7012">
+					<label>Coming Soon!</label>
+						<include>RadioButtonShorter</include>
+						<onclick>Skin.ToggleSetting(cs3)</onclick>
+						<selected>Skin.HasSetting(cs3)</selected>
+					</control>
+				</control>	
+				<control type="grouplist" id="9004"><!--stpatricksday-->
+					<left>387</left>
+					<top>226</top>
+					<width>1469</width>
+					<height>732</height>
+					<visible>Container(9000).Hasfocus(93)</visible>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onup>450</onup>
+					<ondown>9004</ondown>
+					<onup>9004</onup>
+					<onright>7022</onright>
+					<control type="radiobutton" id="7020">
+						<label></label>
+						<include>RadioButtonSoShort</include>
+						<onclick>Skin.ToggleSetting(cs)</onclick>
+						<selected>Skin.HasSetting(cs)</selected>
+					</control>
+					<control type="label" id="7021">
+						<left>387</left>
+						<top>226</top>
+						<width>400</width>
+						<height>148</height>
+						<align>center</align>
+						<label>Recommended[CR]Background Effects</label>
+					</control>
+					<control type="radiobutton" id="7022">
+					<label>Coming Soon!</label>
+						<include>RadioButtonShorter</include>
+						<onclick>Skin.ToggleSetting(cs3)</onclick>
+						<selected>Skin.HasSetting(cs3)</selected>
+					</control>
+				</control>	
+				<control type="grouplist" id="9005"><!--easter-->
+					<left>387</left>
+					<top>226</top>
+					<width>1469</width>
+					<height>732</height>
+					<visible>Container(9000).Hasfocus(94)</visible>
+					<itemgap>-1</itemgap>
+					<pagecontrol>61</pagecontrol>
+					<onleft>9004</onleft>
+					<onright>7032</onright>
+					<onup>9009</onup>
+					<ondown>9009</ondown>
+					<control type="radiobutton" id="7030">
+						<label></label>
+						<include>RadioButtonSoShort</include>
+						<onclick>Skin.ToggleSetting(cs1)</onclick>
+						<selected>Skin.HasSetting(cs1)</selected>
+					</control>
+					<control type="label" id="7031">
+						<left>387</left>
+						<top>226</top>
+						<width>400</width>
+						<height>148</height>
+						<align>center</align>
+						<label>Recommended[CR]Background Effects</label>
+					</control>	
+						<control type="radiobutton" id="7032">
+					<label>Coming Soon!</label>
+						<include>RadioButtonShorter</include>
+						<onclick>Skin.ToggleSetting(cs3)</onclick>
+						<selected>Skin.HasSetting(cs3)</selected>
+					</control>
+				</control>	
+				<control type="grouplist" id="9006"><!--julyfourth-->
+					<left>387</left>
+					<top>226</top>
+					<width>1469</width>
+					<height>732</height>
+					<visible>Container(9000).Hasfocus(95)</visible>
+					<itemgap>-1</itemgap>
+					<pagecontrol>61</pagecontrol>
+					<onleft>9004</onleft>
+					<onright>7042</onright>
+					<onup>9009</onup>
+					<ondown>9009</ondown>
+					<control type="radiobutton" id="7040">
+						<label></label>
+						<include>RadioButtonSoShort</include>
+						<onclick>Skin.ToggleSetting(cs2)</onclick>
+						<selected>Skin.HasSetting(cs2)</selected>
+					</control>
+					<control type="label" id="7041">
+						<left>387</left>
+						<top>226</top>
+						<width>400</width>
+						<height>148</height>
+						<align>center</align>
+						<label>Recommended[CR]Background Effects</label>
+					</control>
+					<control type="radiobutton" id="7042">
+						<label>Fireworks</label>
+						<include>RadioButtonShorter</include>
+						<onclick>ActivateWindow(5008)</onclick>
+						<selected>Skin.HasSetting(fireworks)</selected>
+					</control>
+				</control>	
+				<control type="grouplist" id="9007"><!--halloween-->
+					<left>387</left>
+					<top>226</top>
+					<width>1469</width>
+					<height>732</height>
+					<visible>Container(9000).Hasfocus(96)</visible>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onup>450</onup>
+					<ondown>9004</ondown>
+					<onup>9004</onup>
+					<onright>7052</onright>
+					<control type="radiobutton" id="7050">
+						<label></label>
+						<include>RadioButtonSoShort</include>
+						<onclick>Skin.ToggleSetting(halloween)</onclick>
+						<selected>Skin.HasSetting(halloween)</selected>
+					</control>
+					<control type="label" id="7051">
+						<left>387</left>
+						<top>226</top>
+						<width>400</width>
+						<height>148</height>
+						<align>center</align>
+						<label>Recommended[CR]Background Effects</label>
+					</control>
+					<control type="radiobutton" id="7052">
+						<left>387</left>
+						<top>596</top>
+						<label>Leaves</label>
+						<include>RadioButtonShorter</include>
+						<onclick>ActivateWindow(5009)</onclick>
+						<selected>Skin.HasSetting(leaves)</selected>
+					</control>		
+				</control>
+				<control type="grouplist" id="9008"><!--thanksgiving-->
+					<left>387</left>
+					<top>226</top>
+					<width>1469</width>
+					<height>732</height>
+					<visible>Container(9000).Hasfocus(97)</visible>
+					<itemgap>-1</itemgap>
+					<pagecontrol>61</pagecontrol>
+					<onleft>9004</onleft>
+					<onright>7062</onright>
+					<onup>9009</onup>
+					<ondown>9009</ondown>
+					<control type="radiobutton" id="7060">
+						<label></label>
+						<include>RadioButtonSoShort</include>
+						<onclick>Skin.ToggleSetting(thanksgiving)</onclick>
+						<selected>Skin.HasSetting(thanksgiving)</selected>
+					</control>
+					<control type="label" id="7061">
+						<left>387</left>
+						<top>226</top>
+						<width>400</width>
+						<height>148</height>
+						<align>center</align>
+						<label>Recommended[CR]Background Effects</label>
+					</control>
+					<control type="radiobutton" id="7062">
+						<left>387</left>
+						<top>596</top>
+						<label>Leaves</label>
+						<include>RadioButtonShorter</include>
+						<onclick>ActivateWindow(5009)</onclick>
+						<selected>Skin.HasSetting(leaves)</selected>
+					</control>
+				</control>	
+				<control type="grouplist" id="9009"><!--christmas-->
+					<left>387</left>
+					<top>226</top>
+					<width>1469</width>
+					<height>732</height>
+					<visible>Container(9000).Hasfocus(98)</visible>
+					<itemgap>-1</itemgap>
+					<pagecontrol>61</pagecontrol>
+					<onleft>9004</onleft>
+					<onright>7072</onright>
+					<onup>9009</onup>
+					<ondown>9009</ondown>
+					<control type="radiobutton" id="7070">
+						<label></label>
+						<include>RadioButtonSoShort</include>
+						<onclick>Skin.ToggleSetting(christmas)</onclick>
+						<selected>Skin.HasSetting(christmas)</selected>
+					</control>
+					<control type="label" id="7071">
+						<left>387</left>
+						<top>226</top>
+						<width>400</width>
+						<height>148</height>
+						<align>center</align>
+						<label>Recommended[CR]Background Effects</label>
+					</control>
+					<control type="radiobutton" id="7072">
+						<label>Snow Options</label>
+						<include>RadioButtonShorter</include>
+						<onclick>ActivateWindow(5010)</onclick>
+						<selected>[Skin.HasSetting(lightsnow) | Skin.HasSetting(mediumsnow) | Skin.HasSetting(heavysnow)]</selected>
+					</control>
+				</control>
+				<control type="grouplist" id="9011"><!--RELOAD-->
+					<left>387</left>
+					<top>500</top>
+					<width>1469</width>
+					<height>732</height>
+					<visible>Container(9000).Hasfocus(99)</visible>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onup>450</onup>
+					<ondown>9004</ondown>
+					<onup>9004</onup>
+					<onright>9009</onright>
+					<!--control type="button" id="2021">
+						<label>Reload Skin</label>
+						<posx>500</posx>
+						<width>462</width>
+						<height>58</height>
+						<textoffsety>212</textoffsety>
+						<align>center</align>
+						<font>Font_Reg30_2</font>
+						<textcolor>context</textcolor>
+						<focusedcolor>white2</focusedcolor>
+						<texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_nofocus.png</texturenofocus>
+						<onclick>ReloadSkin()</onclick>
+					</control-->
+				</control>					
+			</control>			
+		</control>
+		<control type="image">
+			<texture>common/bgcolor.png</texture>
+			<include>FullscreenDimensions</include>
+			<animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+			<visible>Window.IsActive(1116)</visible>
+			<include>Animation_VisibleChange400</include>
+		</control>
+		<control type="group">
+			<include>Animation_HideBreadCrumbs</include>
+			<include>Breadcrumbs_BackBar</include>
+			<include>BreadcrumbsContent</include>
+			<include>Breadcrumbs_Furniture</include>
+		</control>
+		<include>Furniture_NowPlayingWidget</include>
+	</controls>
+</window>
