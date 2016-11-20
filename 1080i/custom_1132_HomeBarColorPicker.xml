@@ -7,7 +7,6 @@
 		<system>1</system>
 	</coordinates>
 	<include>Animation_DialogPopup</include>
-	<onunload>ActivateWindow(skinsettings)</onunload>
 	<controls>
 		<control type="group">
 			<top>-130</top>
@@ -68,7 +67,6 @@
 		     		<onclick>SetProperty(colordialog,HomeMenuColor1,10000)</onclick>
 					<onclick>Skin.SetString(HomeMenuColor1,$INFO[Skin.String(HomeMenuColor1)])</onclick>
      		        <onclick>ActivateWindow(1138)</onclick>
-					
 				</control>
 				<control type="button" id="476">
      				<label>Menubar Text Color</label>
@@ -77,7 +75,6 @@
 		     		<onclick>SetProperty(colordialog,HomeMenuColor2,10000)</onclick>
 					<onclick>Skin.SetString(HomeMenuColor2,$INFO[Skin.String(HomeMenuColor2)])</onclick>
      		        <onclick>ActivateWindow(1138)</onclick>
-					
 				</control>
 				<control type="button" id="477">
      				<label>Time/Statsbar Text Color</label>
@@ -86,7 +83,6 @@
 		     		<onclick>SetProperty(colordialog,HomeMenuColor3,10000)</onclick>
 					<onclick>Skin.SetString(HomeMenuColor3,$INFO[Skin.String(HomeMenuColor3)])</onclick>
      		        <onclick>ActivateWindow(1138)</onclick>
-					
 				</control>
 				<control type="button" id="478">
      				<label>Statsbar Text Highlight Color</label>
@@ -95,7 +91,6 @@
 		     		<onclick>SetProperty(colordialog,HomeMenuColor4,10000)</onclick>
 					<onclick>Skin.SetString(HomeMenuColor4,$INFO[Skin.String(HomeMenuColor4)])</onclick>
      		        <onclick>ActivateWindow(1138)</onclick>
-					
 				</control>
 				<control type="button" id="479">
      				<label>Timebar Text Highlight Color</label>
@@ -104,91 +99,133 @@
 		     		<onclick>SetProperty(colordialog,HomeMenuColor5,10000)</onclick>
 					<onclick>Skin.SetString(HomeMenuColor5,$INFO[Skin.String(HomeMenuColor5)])</onclick>
      		        <onclick>ActivateWindow(1138)</onclick>
-					
 				</control>
-				<control type="button" id="481">
+				<control type="button" id="480">
      				<label>Submenu Text Highlight Color</label>
 					<label2>[COLOR $INFO[Skin.String(HomeMenuColor7)]]$INFO[Skin.String(HomeMenuColor7)][/COLOR]</label2>
 					<include>Objects_CommonSettingsButton</include>
 		     		<onclick>SetProperty(colordialog,HomeMenuColor7,10000)</onclick>
 					<onclick>Skin.SetString(HomeMenuColor7,$INFO[Skin.String(HomeMenuColor7)])</onclick>
      		        <onclick>ActivateWindow(1138)</onclick>
-					
 				</control>
-				<control type="button" id="480">
+				<control type="button" id="481">
      				<label>Submenu Text Color</label>
 					<label2>[COLOR $INFO[Skin.String(HomeMenuColor6)]]$INFO[Skin.String(HomeMenuColor6)][/COLOR]</label2>
 					<include>Objects_CommonSettingsButton</include>
 		     		<onclick>SetProperty(colordialog,HomeMenuColor6,10000)</onclick>
 					<onclick>Skin.SetString(HomeMenuColor6,$INFO[Skin.String(HomeMenuColor6)])</onclick>
      		        <onclick>ActivateWindow(1138)</onclick>
-					
 				</control>
 				<!-- white mod -->
 				<!-- colormod -->
-				<control type="button" id="482">
+				<control type="radiobutton" id="482">
+					<label>Color Menubar</label>
+					<include>Objects_CommonSettingsButton</include>
+					<selected>Skin.HasSetting(colormenubar)</selected>
+					<onclick>Skin.ToggleSetting(colormenubar)</onclick>
+					<onclick>Skin.Reset(menufromgraphic)</onclick>					
+				</control>
+				<control type="radiobutton" id="496">
+					<label>Use font from folder</label>
+					<include>Objects_CommonSettingsButton</include>
+					<selected>Skin.HasSetting(fontfromfolder)</selected>
+					<onclick>Skin.ToggleSetting(fontfromfolder)</onclick>
+				</control>
+				<control type="radiobutton" id="483">
+					<label>Menubar from folder</label>
+					<include>Objects_CommonSettingsButton</include>
+					<selected>Skin.HasSetting(menufromgraphic)</selected>
+					<onclick>Skin.ToggleSetting(menufromgraphic)</onclick>
+					<onclick>Skin.Reset(colormenubar)</onclick>					
+				</control>
+				<control type="button" id="484">
+						<label>   Select path to menubar folder</label>
+						<include>Objects_CommonSettingsButton</include>
+						<onclick>Skin.SetPath(menubarfolder)</onclick>
+						<onclick>RunScript(script.Fonts,$INFO[Skin.String(menubarfolder)])</onclick>
+						<onclick>Skin.Reset(fontfromfolder)</onclick>
+						<visible>Skin.HasSetting(menufromgraphic)</visible>				
+				</control>
+				<control type="button" id="485">
+						<label>   Clear path</label>
+						<label2>[COLOR white]$INFO[Skin.String(menubarfolder)][/COLOR]</label2>
+						<include>Objects_CommonSettingsButton</include>
+						<onclick>Skin.Reset(menubarfolder)</onclick>
+						<onclick>Skin.Reset(menufromgraphic)</onclick>
+						<visible>!String.IsEmpty(Skin.String(menubarfolder))</visible>
+						<visible>Skin.HasSetting(menufromgraphic)</visible>				
+				</control>
+				<control type="button" id="486">
      				<label>Stats Bar Color</label>
 					<label2>[COLOR $INFO[Skin.String(colorstatsbar)]]$INFO[Skin.String(colorstatsbar)][/COLOR]</label2>
 					<include>Objects_CommonSettingsButton</include>
 		     		<onclick>SetProperty(colordialog,colorstatsbar,10000)</onclick>
 					<onclick>Skin.SetString(colorstatsbar,$INFO[Skin.String(colorstatsbar)])</onclick>
      		        <onclick>ActivateWindow(1138)</onclick>
-					
 				</control>
-				<control type="button" id="483">
+				<control type="button" id="487">
 					<label>    Transparency</label>
 					<include>Objects_CommonSettingsButton</include>
 					<onclick>RunScript(script.color.picker,Skin.SetString(colorstatsbar,$INFO[Skin.String(colorstatsbar)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
 					<onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
-					
 				</control>
-				<control type="button" id="484">
+				<control type="button" id="488">
      				<label>Time Bar Color</label>
 					<label2>[COLOR $INFO[Skin.String(colortimebar)]]$INFO[Skin.String(colortimebar)][/COLOR]</label2>
 					<include>Objects_CommonSettingsButton</include>
 		     		<onclick>SetProperty(colordialog,colortimebar,10000)</onclick>
 					<onclick>Skin.SetString(colortimebar,$INFO[Skin.String(colortimebar)])</onclick>
      		        <onclick>ActivateWindow(1138)</onclick>
-					
 				</control>
-				<control type="button" id="485">
+				<control type="button" id="489">
 					<label>    Transparency</label>
 					<include>Objects_CommonSettingsButton</include>
 					<onclick>RunScript(script.color.picker,Skin.SetString(colortimebar,$INFO[Skin.String(colortimebar)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
 					<onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
-					
 				</control>
-				<control type="button" id="486">
+				<control type="button" id="490">
      				<label>Main Bar Color</label>
 					<label2>[COLOR $INFO[Skin.String(colormainbar)]]$INFO[Skin.String(colormainbar)][/COLOR]</label2>
 					<include>Objects_CommonSettingsButton</include>
 		     		<onclick>SetProperty(colordialog,colormainbar,10000)</onclick>
 					<onclick>Skin.SetString(colormainbar,$INFO[Skin.String(colormainbar)])</onclick>
      		        <onclick>ActivateWindow(1138)</onclick>
-					
 				</control>
-				<control type="button" id="487">
+				<control type="button" id="491">
 					<label>    Transparency</label>
 					<include>Objects_CommonSettingsButton</include>
 					<onclick>RunScript(script.color.picker,Skin.SetString(colormainbar,$INFO[Skin.String(colormainbar)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
 					<onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
-					
 				</control>
-				<control type="button" id="488">
+				<control type="button" id="492">
+     				<label>Main Bar Overlay Color</label>
+					<label2>[COLOR $INFO[Skin.String(colormainbaroverlay)]]$INFO[Skin.String(colormainbaroverlay)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,colormainbaroverlay,10000)</onclick>
+					<onclick>Skin.SetString(colormainbaroverlay,$INFO[Skin.String(colormainbaroverlay)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+					<visible>Skin.HasSetting(menufromgraphic)</visible>
+				</control>
+				<control type="button" id="493">
+					<label>    Transparency</label>
+					<include>Objects_CommonSettingsButton</include>
+					<onclick>RunScript(script.color.picker,Skin.SetString(colormainbaroverlay,$INFO[Skin.String(colormainbaroverlay)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
+					<onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
+					<visible>Skin.HasSetting(menufromgraphic)</visible>
+				</control>
+				<control type="button" id="494">
      				<label>Submenu Bar Color</label>
 					<label2>[COLOR $INFO[Skin.String(colorsubmenu)]]$INFO[Skin.String(colorsubmenu)][/COLOR]</label2>
 					<include>Objects_CommonSettingsButton</include>
 		     		<onclick>SetProperty(colordialog,colorsubmenu,10000)</onclick>
 					<onclick>Skin.SetString(colorsubmenu,$INFO[Skin.String(colorsubmenu)])</onclick>
      		        <onclick>ActivateWindow(1138)</onclick>
-					
 				</control>
-				<control type="button" id="489">
+				<control type="button" id="495">
 					<label>    Transparency</label>
 					<include>Objects_CommonSettingsButton</include>
 					<onclick>RunScript(script.color.picker,Skin.SetString(colorsubmenu,$INFO[Skin.String(colorsubmenu)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
 					<onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
-					
 				</control>
 				<!-- colormod -->
 			</control>
