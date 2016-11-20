@@ -160,7 +160,8 @@
 					<onclick>Skin.ToggleSetting(ProgressMainMenu)</onclick>
 					<visible>String.IsEqual(Window.Property(actualItem),MainMenu)</visible>
 				</control>
-				<control type="button" id="451">
+				<!--* HOLIDAY ADDITIONS MOD --><!--################## Menu Bar #################-->
+				<!--control type="button" id="451">
 					<label>31602</label>
 					<label2>[COLOR $VAR[FontColorVar]]$VAR[StyleLabelVar][/COLOR]</label2>
 					<include>Objects_CommonSettingsButton</include>
@@ -169,7 +170,41 @@
 					<onclick condition="Skin.HasSetting(glasshome)">Skin.Reset(glasshome)</onclick>
 					<onclick condition="Skin.HasSetting(classichome)">Skin.Reset(classichome)</onclick>
 					<visible>String.IsEqual(Window.Property(actualItem),MainMenu)</visible>
+				</control-->
+				<control type="button" id="451">
+					<label>31602</label>
+					<label2>[COLOR $VAR[FontColorVar]]$VAR[StyleLabelVar][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+					<onclick condition="!Skin.HasSetting(classichome) + !Skin.HasSetting(glasshome) + !Skin.HasSetting(future) + !Skin.HasSetting(futuretwo) + !Skin.HasSetting(futurethree)">Skin.SetBool(glasshome)</onclick>
+					<onclick condition="Skin.HasSetting(glasshome)">Skin.SetBool(classichome)</onclick>
+					<onclick condition="Skin.HasSetting(glasshome)">Skin.Reset(glasshome)</onclick>
+					<onclick condition="Skin.HasSetting(classichome)">Skin.Setbool(future)</onclick>
+					<onclick condition="Skin.HasSetting(classichome)">Skin.Reset(classichome)</onclick>
+					<onclick condition="Skin.HasSetting(future)">Skin.Setbool(futuretwo)</onclick>
+					<onclick condition="Skin.HasSetting(future)">Skin.Reset(future)</onclick>
+					<onclick condition="Skin.HasSetting(futuretwo)">Skin.Setbool(futurethree)</onclick>
+					<onclick condition="Skin.HasSetting(futuretwo)">Skin.Reset(futuretwo)</onclick>
+					<onclick condition="Skin.HasSetting(futurethree)">Skin.Reset(futurethree)</onclick>
+					<visible>String.IsEqual(Window.Property(actualItem),MainMenu)</visible>
 				</control>
+				<!--* HOLIDAY ADDITIONS MOD --><!--################## Menu Bar #################-->
+				<!-- menumod -->
+				<control type="radiobutton" id="458">
+					<label>Customize Menubar</label>
+					<include>Objects_CommonSettingsButton</include>
+					<selected>Skin.HasSetting(customizehome)</selected>
+					<onclick>Skin.ToggleSetting(customizehome)</onclick>
+					<visible>String.IsEqual(Window.Property(actualItem),MainMenu)</visible>
+				</control>
+				<control type="button" id="459">
+					<label>    Customize</label>
+					<include>Objects_CommonSettingsButton</include>
+					<visible>Skin.HasSetting(customizehome)</visible>
+					<visible>String.IsEqual(Window.Property(actualItem),MainMenu)</visible>
+					<onclick>SetProperty(actualItem,MainMenu,1132)</onclick>
+					<onclick>ActivateWindow(1132)</onclick>
+				</control>
+				<!-- menumod -->
 				<control type="button" id="456">
 					<label>$LOCALIZE[31694]:</label>
 					<label2>[COLOR $VAR[FontColorVar]]$VAR[MainMenuFixedListVar][/COLOR]</label2>
@@ -188,6 +223,40 @@
 					<onclick>Skin.ToggleSetting(showsubmenu)</onclick>
 					<selected>Skin.HasSetting(showsubmenu)</selected>
 					<visible>String.IsEqual(Window.Property(actualItem),MainMenu)</visible>
+				</control>
+				<control type="button" id="470">
+					<label>$LOCALIZE[31691]</label>
+					<label2>[COLOR $VAR[FontColorVar]] $LOCALIZE[31628]: $VAR[FurniturePositionVar][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+					<enable>!Skin.HasSetting(DisableRSS)</enable>
+					<onclick>Skin.ToggleSetting(rsshomelow)</onclick>
+					<visible>String.IsEqual(Window.Property(actualItem),RSS)</visible>
+				</control>
+				<control type="radiobutton" id="471">
+					<label>$LOCALIZE[31696]</label>
+					<include>Objects_CommonSettingsButton</include>
+					<onclick>Skin.ToggleSetting(alternativerss)</onclick>
+					<selected>Skin.HasSetting(alternativerss)</selected>
+					<enable>!Skin.HasSetting(DisableRSS)</enable>
+					<visible>String.IsEqual(Window.Property(actualItem),RSS)</visible>
+				</control>
+				<control type="radiobutton" id="472">
+					<label>$LOCALIZE[31696]</label>
+					<include>Objects_CommonSettingsButton</include>
+					<onclick>Skin.ToggleSetting(AlternateTimeStats)</onclick>
+					<selected>Skin.HasSetting(AlternateTimeStats)</selected>
+					<enable>!Skin.HasSetting(DisableLibraryStats) + !Skin.HasSetting(DisableTimePanel)</enable>
+					<visible>String.IsEqual(Window.Property(actualItem),LibraryStats) | String.IsEqual(Window.Property(actualItem),TimePanel)</visible>
+				</control>
+				<control type="button" id="473">
+					<label>31909</label>
+					<label2>[COLOR $VAR[FontColorVar]]$VAR[BarStyleLabelVar][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+					<onclick condition="!Skin.HasSetting(shadowbars) + Skin.HasSetting(colorpanels)">Skin.SetBool(shadowbars)</onclick>
+					<onclick condition="!Skin.HasSetting(shadowbars) + !Skin.HasSetting(colorpanels)">Skin.SetBool(colorpanels)</onclick>
+					<onclick condition="Skin.HasSetting(shadowbars)">Skin.Reset(shadowbars)</onclick>
+					<onclick condition="Skin.HasSetting(shadowbars)">Skin.Reset(colorpanels)</onclick>
+					<visible>String.IsEqual(Window.Property(actualItem),LibraryStats) | String.IsEqual(Window.Property(actualItem),TimePanel)</visible>
 				</control>
 			</control>
 		</control>
