@@ -246,12 +246,10 @@
 				<width>1920</width>
 				<height>1080</height>
 				<onclick>noop</onclick>
-				<!-- whitemod -->
 				<!--
 				<texturefocus>noop</texturefocus>
 				<texturenofocus>noop</texturenofocus>
-                                -->
-				<!-- whitemod -->
+				-->
 				<onleft>6000</onleft>
 				<onright>6000</onright>
 				<onup>6000</onup>
@@ -518,12 +516,10 @@
 				<width>1920</width>
 				<height>1080</height>
 				<onclick>noop</onclick>
-				<!-- whitemod -->
 				<!--
 				<texturefocus>noop</texturefocus>
 				<texturenofocus>noop</texturenofocus>
-                                -->
-				<!-- whitemod -->
+				-->
 				<onleft>7000</onleft>
 				<onright>7000</onright>
 				<onup>7000</onup>
