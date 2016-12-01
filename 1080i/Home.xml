@@ -397,10 +397,14 @@
 		<!-- menubar mod -->
 		<control type="image">
 			<visible>!Skin.HasSetting(colormenubar) + Skin.HasSetting(menufromgraphic) + Skin.HasSetting(customizehome)</visible>
-			<top>798</top>
+			<top>460</top>
 			<width>1920</width>
 			<height>215</height>
 			<texture colordiffuse="$INFO[Skin.String(colormainbar)]">$INFO[Skin.String(menubarfolder)]homemenu_back.png</texture>
+			
+			<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			
+			<animation effect="zoom" end="80" center="960,510" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
 			<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
 			<animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
 		</control>
