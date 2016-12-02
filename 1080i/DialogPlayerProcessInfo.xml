@@ -7,90 +7,91 @@
 	<onunload>Action(PlayerDebug)</onunload>
 	<controls>
 		<control type="group">
-		<visible>Player.HasVideo</visible>	
+		<visible>Player.HasVideo</visible>
+		        <include content="OutlineFont">
+				    <param name="labvar">$LOCALIZE[39900]:$INFO[Player.Process(videodecoder)]($VAR[VideoHWDecoder])</param>
+					<param name="x1">15</param>
+					<param name="x2">18</param>
+					<param name="x3">12</param>
+					<param name="y1">200</param>
+					<param name="y2">203</param>
+					<param name="y3">197</param>
+				</include>
+                
+				<include content="OutlineFont">
+				    <param name="labvar">$LOCALIZE[39901]:$INFO[Player.Process(pixformat)]</param>
+					<param name="x1">15</param>
+					<param name="x2">18</param>
+					<param name="x3">12</param>
+					<param name="y1">250</param>
+					<param name="y2">253</param>
+					<param name="y3">247</param>
+				</include>		
+				<include content="OutlineFont">
+				    <param name="labvar">$LOCALIZE[39902]:$INFO[Player.Process(deintmethod)]</param>
+					<param name="x1">15</param>
+					<param name="x2">18</param>
+					<param name="x3">12</param>
+					<param name="y1">300</param>
+					<param name="y2">303</param>
+					<param name="y3">297</param>
+				</include>				
+				<include content="OutlineFont">
+				    <param name="labvar">$LOCALIZE[39903]:$INFO[Player.Process(videowidth)]x$INFO[Player.Process(videoheight)]px$COMMA $INFO[Player.Process(videodar)]AR $COMMA $INFO[Player.Process(videofps)] FPS</param>
+					<param name="x1">15</param>
+					<param name="x2">18</param>
+					<param name="x3">12</param>
+					<param name="y1">350</param>
+					<param name="y2">353</param>
+					<param name="y3">347</param>
+				</include>				
+				<include content="OutlineFont">
+				    <param name="labvar">$LOCALIZE[39904]:$INFO[Player.Process(audiochannels)]$COMMA $INFO[Player.Process(audiodecoder)]$COMMA $INFO[Player.Process(audiobitspersample)]bits$COMMA $INFO[Player.Process(audiosamplerate)] Hz</param>
+					<param name="x1">15</param>
+					<param name="x2">18</param>
+					<param name="x3">12</param>
+					<param name="y1">400</param>
+					<param name="y2">403</param>
+					<param name="y3">397</param>
+				</include>				
+			    <include content="OutlineFont">
+				    <param name="labvar">$LOCALIZE[39905]:$INFO[System.Memory(used.percent)]  $LOCALIZE[39906]:$INFO[System.CpuUsage]</param>
+					<param name="x1">15</param>
+					<param name="x2">18</param>
+					<param name="x3">12</param>
+					<param name="y1">450</param>
+					<param name="y2">453</param>
+					<param name="y3">447</param>
+				</include>				
+
+				<include content="OutlineFont">
+				    <param name="labvar">$LOCALIZE[39907]:$INFO[Player.CacheLevel]%</param>
+					<param name="x1">15</param>
+					<param name="x2">18</param>
+					<param name="x3">12</param>
+					<param name="y1">500</param>
+					<param name="y2">503</param>
+					<param name="y3">497</param>
+				</include>		
+			
+				<include content="OutlineFont">
+				    <param name="labvar">$LOCALIZE[39908]:$INFO[Player.Filenameandpath]</param>
+					<param name="x1">15</param>
+					<param name="x2">18</param>
+					<param name="x3">12</param>
+					<param name="y1">550</param>
+					<param name="y2">553</param>
+					<param name="y3">547</param>
+				</include>
 						
-				<control type="label">
-				    <posx>15</posx>
-					<posy>195</posy>
-					<width>1600</width>
-					<height>50</height>
-					<aligny>bottom</aligny>
-					<label>$INFO[Player.Process(pixformat),[COLOR processinfo]$LOCALIZE[39901]:[/COLOR] ]</label>
-					<font>font15</font>
-					<shadowcolor>black</shadowcolor>
-					<visible>Player.HasVideo</visible>					
-				</control>
-				<control type="label">
-				    <posx>15</posx>
-					<posy>245</posy>
-					<width>1600</width>
-					<height>50</height>
-					<aligny>bottom</aligny>
-					<label>$INFO[Player.Process(deintmethod),[COLOR processinfo]$LOCALIZE[39902]:[/COLOR] ]</label>
-					<font>font15</font>
-					<shadowcolor>black</shadowcolor>
-					<visible>Player.HasVideo</visible>					
-				</control>
-				<control type="label">
-				<posx>15</posx>
-					<posy>295</posy>
-					<width>1600</width>
-					<height>50</height>
-					<aligny>bottom</aligny>
-					<label>$INFO[Player.Process(videowidth),[COLOR processinfo]$LOCALIZE[39903]:[/COLOR] ,x]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]</label>
-					<font>font17</font>
-					<shadowcolor>black</shadowcolor>
-					<visible>Player.HasVideo</visible>					
-				</control>
-				<control type="label">
-				<posx>15</posx>
-					<posy>345</posy>
-					<width>1600</width>
-					<height>50</height>
-					<aligny>bottom</aligny>
-					<label>[COLOR processinfo]$LOCALIZE[39904]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]</label>
-					<font>font17</font>
-					<shadowcolor>black</shadowcolor>
-				</control>
-				<control type="label">
-				<posx>15</posx>
-					<posy>395</posy>
-					<width>1600</width>
-					<height>50</height>
-					<aligny>bottom</aligny>
-					<label>$INFO[System.Memory(used.percent),[COLOR processinfo]$LOCALIZE[39905]:[/COLOR] ,       ]$INFO[System.CpuUsage,[COLOR processinfo]$LOCALIZE[39906][/COLOR] ]</label>
-					<font>font17</font>
-					<shadowcolor>black</shadowcolor>
-				</control>
-				<control type="label">
-				<posx>15</posx>
-					<posy>445</posy>
-					<width>1600</width>
-					<height>50</height>
-					<aligny>bottom</aligny>
-					<label>[COLOR processinfo]$LOCALIZE[39907]:[/COLOR]$INFO[Player.CacheLevel]%</label>
-					<font>font17</font>
-					<shadowcolor>black</shadowcolor>
-				</control>
-				<control type="label">
-				<posx>15</posx>
-					<posy>495</posy>
-					<width>1600</width>
-					<height>50</height>
-					<aligny>bottom</aligny>
-					<label>[COLOR processinfo]$LOCALIZE[39908]:[/COLOR]$INFO[Player.Filenameandpath]</label>
-					<font>font17</font>
-					<shadowcolor>black</shadowcolor>
-				</control>
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>1920</width>
-				<height>550</height>
-				 <colordiffuse>50FFFFFF</colordiffuse>
-				<texture border="20">buttons/back40.png</texture>
-			</control> 
-		</control>
-	
+			    <control type="image">
+				   <left>0</left>
+				   <top>0</top>
+				   <width>1920</width>
+				   <height>600</height>
+				   <colordiffuse>30FFFFFF</colordiffuse>
+				   <texture border="20">buttons/back40.png</texture>
+			  	   </control> 
+		        </control>
 	</controls>
 </window>
