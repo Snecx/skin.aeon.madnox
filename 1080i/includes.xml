@@ -3245,4 +3245,56 @@
 			</item>
 		</definition>
 	</include>
+	<include name="OutlineFont">
+		        <control type="label">
+				    <posx>$PARAM[x2]</posx>
+					<posy>$PARAM[y1]</posy>
+					<width>1920</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>[COLOR black]$PARAM[labvar][/COLOR]</label>
+					<font>font15</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+				    <posx>$PARAM[x3]</posx>
+					<posy>$PARAM[y1]</posy>
+					<width>1920</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>[COLOR black]$PARAM[labvar][/COLOR]</label>
+					<font>font15</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+				    <posx>$PARAM[x1]</posx>
+					<posy>$PARAM[y2]</posy>
+					<width>1920</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>[COLOR black]$PARAM[labvar][/COLOR]</label>
+					<font>font15</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+				    <posx>$PARAM[x1]</posx>
+					<posy>$PARAM[y3]</posy>
+					<width>1920</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>[COLOR black]$PARAM[labvar][/COLOR]</label>
+					<font>font15</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				
+				<control type="label">
+				    <posx>$PARAM[x1]</posx>
+					<posy>$PARAM[y1]</posy>
+					<width>1920</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>[COLOR processinfo]$PARAM[labvar][/COLOR]</label>
+					<font>font15</font>
+				</control>
+	</include>
 </includes>
