@@ -28,6 +28,13 @@
 		</font>
 		<!--HOLIDAY ADDITIONS-->
 		<font>
+			<name>fontOutline</name>
+			<filename>aeon_common.ttf</filename>
+			<style>bold</style>
+			<aspect>0.8</aspect>
+			<size>32</size>
+		</font>
+		<font>
 			<name>font15</name>
 			<filename>aeon_common.ttf</filename>
 			<style></style>
