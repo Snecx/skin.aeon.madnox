@@ -4068,4 +4068,8 @@
 		<value condition="ControlGroup(9001).HasFocus(50) + Container.Content(albums)">$LOCALIZE[182]$INFO[Container(50).NumItems, [COLOR grey3](,)[/COLOR]]</value>
 		<value condition="ControlGroup(9001).HasFocus(50) + Container.Content(artists)">$LOCALIZE[21888]$INFO[Container(50).NumItems, [COLOR grey3](,)[/COLOR]]</value>
 	</variable>
+	<variable name="VideoHWDecoder">
+		<value condition="Player.Process(videohwdecoder)">Hardware</value>
+		<value>Software</value>
+	</variable>
 </includes>
