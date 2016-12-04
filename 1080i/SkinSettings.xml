@@ -813,10 +813,10 @@
 						<icon>special://skin/media/holiday_additions/effects_icon.jpg</icon>
 					</item>
 					<item id="3">
-						<label>THEMES</label>
+						<label>Star Wars</label>
 						<property name="description"></property>
-						<onclick>ActivateWindow(5003)</onclick>
-						<icon>special://skin/media/holiday_additions/theme_icon.jpg</icon>
+						<onclick>ActivateWindow(5020)</onclick>
+						<icon>special://skin/media/starwars/starwars_icon.jpg</icon>
 					</item>					
 				</content>
 			</control>
