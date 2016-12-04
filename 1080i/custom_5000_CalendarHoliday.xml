@@ -123,11 +123,15 @@
 						<selected>Skin.HasSetting(christmas)</selected>
 						<onclick>noop</onclick>
 					</item>
-					<!--item id="99">
-						<label>Reload</label>
-						<onclick>ReloadSkin()</onclick>
+					<!--
+					<item id="99">
+						<property name="description">Star Wars</property>
+						<property name="screenshot">starwars/screenshot.png</property>						
+						<label>Star Wars</label>
+						<onclick>Skin.ToggleSetting(starwars)</onclick>
+						<selected>Skin.HasSetting(starwars)</selected>
 						<onclick>noop</onclick>
-					</item-->
+					</item>-->
 				</content>
 			</control>
 			<control type="label">
@@ -434,9 +438,9 @@
 						<selected>[Skin.HasSetting(lightsnow) | Skin.HasSetting(mediumsnow) | Skin.HasSetting(heavysnow)]</selected>
 					</control>
 				</control>
-				<control type="grouplist" id="9011"><!--RELOAD-->
+				<control type="grouplist" id="9011"><!--star wars-->
 					<left>387</left>
-					<top>500</top>
+					<top>226</top>
 					<width>1469</width>
 					<height>732</height>
 					<visible>Container(9000).Hasfocus(99)</visible>
@@ -447,6 +451,12 @@
 					<ondown>9004</ondown>
 					<onup>9004</onup>
 					<onright>9009</onright>
+					<control type="radiobutton" id="7080">
+						<label></label>
+						<include>RadioButtonSoShort</include>
+						<onclick>Skin.ToggleSetting(starwars)</onclick>
+						<selected>Skin.HasSetting(starwars)</selected>
+					</control>
 					<!--control type="button" id="2021">
 						<label>Reload Skin</label>
 						<posx>500</posx>
