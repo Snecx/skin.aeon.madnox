@@ -410,10 +410,11 @@
 		</control>
 		<!-- menubar mod -->
 		<!--*   HOLIDAY MOD ADDITIONS  *-->
-		<control type="group"><!-- Valentines -->
+		<!--
+		<control type="group"><!-- Valentines 
 			<visible>Skin.HasSetting(valentinesday)</visible>
 			<include>ValentineDay</include>
-		</control>
+		</control>-->
 		<control type="group"><!-- Coming Soon! -->
 			<visible>Skin.HasSetting(cs)</visible>
 			<include>cs</include>
@@ -454,15 +455,7 @@
 			<visible>Skin.HasSetting(confettifl)</visible>
 			<include>confettifl</include>
 		</control>
-		<control type="group">
-			<visible>Skin.HasSetting(confettim)</visible>
-			<include>ConfettiFloor</include>
-		</control>
-		<control type="group">
-			<visible>Skin.HasSetting(confettil)</visible>
-			<include>ConfettiFloor</include>
-		</control>
-			<control type="group"><!-- Heavy Snow -->
+		<control type="group"><!-- Heavy Snow -->
 			<visible>Skin.HasSetting(heavysnow)</visible>
 			<include>HeavySnow</include>
 		</control>
@@ -1036,10 +1029,13 @@
 			<visible>Skin.HasSetting(newyears)</visible>
 			<include>NewYears</include>
 		</control>
-		<control type="group"><!-- Valentines -->
+	
+	
+     	<control type="group"><!-- Valentines -->
 			<visible>Skin.HasSetting(valentinesday)</visible>
 			<include>ValentinesDay</include>
-			</control>
+		</control>
+	
 		<control type="group"><!-- Saint Patricks Day -->
 			<visible>Skin.HasSetting(stpatricksday)</visible>
 			<include>StPatricksDay</include>
