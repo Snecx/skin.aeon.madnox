@@ -27,6 +27,7 @@
 			<size>48</size>
 		</font>
 		<!--HOLIDAY ADDITIONS-->
+		
 		<font>
 			<name>fontOutline</name>
 			<filename>aeon_common.ttf</filename>
@@ -38,8 +39,8 @@
 			<name>font15</name>
 			<filename>aeon_common.ttf</filename>
 			<style></style>
-			<aspect>1.2</aspect>
-			<size>31</size>
+			<aspect>1.0</aspect>
+			<size>34</size>
 		</font>
 		<font>
 			<name>Font_Reg22_2</name>
