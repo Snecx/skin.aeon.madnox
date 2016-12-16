@@ -1131,7 +1131,7 @@
 		    <left>1226</left>
 		    <top>90</top>
 		    <width>665</width>
-		    <height>370</height>
+		    <height>373</height>
 		</control>
                 <control type="videowindow">
 			<visible>Player.HasVideo</visible>
@@ -1140,7 +1140,7 @@
 			<left>1226</left>
 			<top>90</top>
 			<width>665</width>
-			<height>370</height>
+			<height>373</height>
 		</control>			
 	</controls>
 </window>
