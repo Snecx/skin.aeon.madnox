@@ -1122,5 +1122,25 @@
 		<include>Furniture_NowPlayingWidget</include>
 		<include>Media_Menu</include>
 		<include>ContextMenuOverlay</include>
+		<!--Window for Trailer / Tv Tunes video-->
+	        <control type="image">
+		    <visible>Player.HasVideo</visible>
+		    <visible>Control.IsVisible(750)</visible>
+		    <include>Animation_CommonFade</include>
+		    <texture background="true" fallback="videoblack.png">videoblack.png</texture>
+		    <left>1226</left>
+		    <top>90</top>
+		    <width>665</width>
+		    <height>370</height>
+		</control>
+                <control type="videowindow">
+			<visible>Player.HasVideo</visible>
+			<visible>Control.IsVisible(750)</visible>
+			<include>Animation_CommonFade</include>
+			<left>1226</left>
+			<top>90</top>
+			<width>665</width>
+			<height>370</height>
+		</control>			
 	</controls>
 </window>
