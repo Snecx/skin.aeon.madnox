@@ -6,92 +6,96 @@
 	<onload>Action(PlayerDebug)</onload>
 	<onunload>Action(PlayerDebug)</onunload>
 	<controls>
-		<control type="group">
+		<control type="group" id="5550">
 		<visible>Player.HasVideo</visible>
 		        <include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39900]:$INFO[Player.Process(videodecoder)]($VAR[VideoHWDecoder])</param>
-					<param name="x1">15</param>
-					<param name="x2">18</param>
-					<param name="x3">12</param>
-					<param name="y1">200</param>
-					<param name="y2">203</param>
-					<param name="y3">197</param>
+     				<param name="x">10</param>
+					<param name="y">192</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
 				</include>
-                
 				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39901]:$INFO[Player.Process(pixformat)]</param>
-					<param name="x1">15</param>
-					<param name="x2">18</param>
-					<param name="x3">12</param>
-					<param name="y1">250</param>
-					<param name="y2">253</param>
-					<param name="y3">247</param>
-				</include>		
+     				<param name="x">10</param>
+					<param name="y">242</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+				</include>
 				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39902]:$INFO[Player.Process(deintmethod)]</param>
-					<param name="x1">15</param>
-					<param name="x2">18</param>
-					<param name="x3">12</param>
-					<param name="y1">300</param>
-					<param name="y2">303</param>
-					<param name="y3">297</param>
-				</include>				
+     				<param name="x">10</param>
+					<param name="y">292</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+				</include>
 				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39903]:$INFO[Player.Process(videowidth)]x$INFO[Player.Process(videoheight)]px$COMMA $INFO[Player.Process(videodar)]AR $COMMA $INFO[Player.Process(videofps)] FPS</param>
-					<param name="x1">15</param>
-					<param name="x2">18</param>
-					<param name="x3">12</param>
-					<param name="y1">350</param>
-					<param name="y2">353</param>
-					<param name="y3">347</param>
-				</include>				
+     				<param name="x">10</param>
+					<param name="y">342</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+				</include>
 				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39904]:$INFO[Player.Process(audiochannels)]$COMMA $INFO[Player.Process(audiodecoder)]$COMMA $INFO[Player.Process(audiobitspersample)]bits$COMMA $INFO[Player.Process(audiosamplerate)] Hz</param>
-					<param name="x1">15</param>
-					<param name="x2">18</param>
-					<param name="x3">12</param>
-					<param name="y1">400</param>
-					<param name="y2">403</param>
-					<param name="y3">397</param>
-				</include>				
-			    <include content="OutlineFont">
+     				<param name="x">10</param>
+					<param name="y">392</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+				</include>
+				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39905]:$INFO[System.Memory(used.percent)]  $LOCALIZE[39906]:$INFO[System.CpuUsage]</param>
-					<param name="x1">15</param>
-					<param name="x2">18</param>
-					<param name="x3">12</param>
-					<param name="y1">450</param>
-					<param name="y2">453</param>
-					<param name="y3">447</param>
-				</include>				
-
+     				<param name="x">10</param>
+					<param name="y">442</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+				</include>
 				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39907]:$INFO[Player.CacheLevel]%</param>
-					<param name="x1">15</param>
-					<param name="x2">18</param>
-					<param name="x3">12</param>
-					<param name="y1">500</param>
-					<param name="y2">503</param>
-					<param name="y3">497</param>
-				</include>		
-			
+     				<param name="x">10</param>
+					<param name="y">492</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+				</include>
 				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39908]:$INFO[Player.Filenameandpath]</param>
-					<param name="x1">15</param>
-					<param name="x2">18</param>
-					<param name="x3">12</param>
-					<param name="y1">550</param>
-					<param name="y2">553</param>
-					<param name="y3">547</param>
+     				<param name="x">10</param>
+					<param name="y">542</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
 				</include>
-						
-			    <control type="image">
+                <control type="image">
 				   <left>0</left>
 				   <top>0</top>
 				   <width>1920</width>
 				   <height>600</height>
 				   <colordiffuse>30FFFFFF</colordiffuse>
 				   <texture border="20">buttons/back40.png</texture>
-			  	   </control> 
-		        </control>
+			  	</control>
+                <control type="image">
+				   <left>1820</left>
+				   <top>5</top>
+				   <width>84</width>
+				   <height>124</height>
+				   <colordiffuse>30FFFFFF</colordiffuse>
+				   <texture border="20">logo.png</texture>
+			  	</control> 				
+		</control>        
 	</controls>
 </window>
