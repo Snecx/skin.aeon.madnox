@@ -3313,6 +3313,15 @@
 					<label>[COLOR FF000000]$PARAM[labvar][/COLOR]</label>
 					<font>font15</font>
 				</control>
+		                <control type="label">
+				        <left>0</left>
+					<top>$PARAM[top]</top>
+					<width>1920</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>[COLOR FF000000]$PARAM[labvar][/COLOR]</label>
+					<font>font15</font>
+				</control>
 		</control>
 		<control type="label">
 			    <left>$PARAM[x]</left>
