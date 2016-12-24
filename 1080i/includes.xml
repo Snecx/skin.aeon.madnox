@@ -3245,10 +3245,10 @@
 			</item>
 		</definition>
 	</include>
-    <include name="OutlineFont">
+	<include name="OutlineFont">
         <control type="group">  
 			    <left>$PARAM[x]</left>
-                            <top>$PARAM[y]</top>
+                <top>$PARAM[y]</top>
 	
 				<control type="label">
 				    <left>$PARAM[left]</left>
@@ -3313,8 +3313,8 @@
 					<label>[COLOR FF000000]$PARAM[labvar][/COLOR]</label>
 					<font>font15</font>
 				</control>
-		                <control type="label">
-				        <left>0</left>
+				<control type="label">
+				    <left>$PARAM[0]</left>
 					<top>$PARAM[top]</top>
 					<width>1920</width>
 					<height>50</height>

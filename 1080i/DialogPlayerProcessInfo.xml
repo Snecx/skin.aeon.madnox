@@ -80,11 +80,20 @@
 					<param name="top">-2</param>
 					<param name="bottom">2</param>
 				</include>
+				<include content="OutlineFont">
+				    <param name="labvar">WANIP:$INFO[Window(Home).Property(SkinHelperIP.wanip)]   CPU Temp:$INFO[Window(Home).Property(SkinHelperIP.cputemp)]   CPU Usage:$INFO[Window(Home).Property(SkinHelperIP.cpulast)]   GPU Temp:$INFO[Window(Home).Property(SkinHelperIP.gputemp)]   GPU Usage:$INFO[Window(Home).Property(SkinHelperIP.gpulast)]   GPU Video Engine:$INFO[Window(Home).Property(SkinHelperIP.gpulastengine)]</param>
+     				<param name="x">10</param>
+					<param name="y">592</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+				</include>
                 <control type="image">
 				   <left>0</left>
 				   <top>0</top>
 				   <width>1920</width>
-				   <height>600</height>
+				   <height>650</height>
 				   <colordiffuse>30FFFFFF</colordiffuse>
 				   <texture border="20">buttons/back40.png</texture>
 			  	</control>
