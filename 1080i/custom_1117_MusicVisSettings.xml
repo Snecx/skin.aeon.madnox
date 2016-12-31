@@ -167,6 +167,21 @@
 					<font>Font_Bold33</font>
 					<textcolor>$VAR[TitleColorVar]</textcolor>
 				</control>
+				<!-- Video Lyrics -->
+				<control type="radiobutton" id="418204">
+					<label>Video Lyrics</label>
+					<include>Objects_CommonSettingsButton</include>
+					<onclick>Skin.ToggleSetting(graphiclyrics)</onclick>
+					<selected>Skin.HasSetting(graphiclyrics)</selected>
+				</control>
+				 <control type="label" id="418205">
+					<width>1000</width>
+					<height>60</height>
+					<label>              Special THX to [COLOR $VAR[FontColorVar]]'manfeed'[/COLOR] for his great Video Lyrics mod!</label>
+					<font>Font_Bold33</font>
+					<textcolor>grey</textcolor>
+				</control>
+                <!-- Video Lyrics -->
 				<control type="button" id="451666">
 					<label>Music Visualisation </label>
 					<label2>[COLOR $VAR[FontColorVar]]$VAR[MusicVizSettingsVar][/COLOR]</label2>
