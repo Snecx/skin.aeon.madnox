@@ -453,20 +453,33 @@
 					<height>87</height>
 					<texture>osd/osd_progress_bar_back.png</texture>
 				</control>
-				<control type="progress">
-					<left>645</left>
-					<top>57</top>
-					<width>630</width>
-					<height>20</height>
-					<info>Player.ProgressCache</info>
-				</control>
-				<control type="progress" id="23">
-					<left>645</left>
-					<top>57</top>
-					<width>630</width>
-					<height>20</height>
-					<info>Player.Progress</info>
-				</control>
+				<!-- color progress bar -->
+			<control type="progress">
+						<left>645</left>
+						<top>57</top>
+						<width>630</width>
+						<height>20</height>
+					    <info>Player.ProgressCache</info>  
+						<texturebg>osd/info/osd_progress_back.png</texturebg>
+			            <lefttexture border="1">osd/info/osd_progress_left.png</lefttexture>
+			            <midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
+			            <righttexture border="1">osd/info/osd_progress_right.png</righttexture>
+			            <colordiffuse>$INFO[Skin.String(colorcacheprogressbar)]</colordiffuse>
+					</control>
+					<control type="progress" id="23">
+						<left>645</left>
+						<top>57</top>
+						<width>630</width>
+						<height>20</height>
+						<info>Player.Progress</info> 
+						<colordiffuse>$INFO[Skin.String(colorprogressbar)]</colordiffuse>
+						<texturebg>osd/info/osd_progress_back.png</texturebg>
+			            <lefttexture border="1">osd/info/osd_progress_left.png</lefttexture>
+			            <midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
+			            <righttexture border="1">osd/info/osd_progress_right.png</righttexture>
+			            
+					</control>
+					<!-- color progress bar -->
 				<control type="label">
 					<left>340</left>
 					<top>45</top>
@@ -584,20 +597,33 @@
 						<height>87</height>
 						<texture>osd/osd_progress_bar_back.png</texture>
 					</control>
+					<!-- color progress bar -->
 					<control type="progress">
 						<left>645</left>
 						<top>57</top>
 						<width>630</width>
 						<height>20</height>
-						<info>Player.ProgressCache</info>
+					    <info>Player.ProgressCache</info>  
+						<texturebg>osd/info/osd_progress_back.png</texturebg>
+			            <lefttexture border="1">osd/info/osd_progress_left.png</lefttexture>
+			            <midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
+			            <righttexture border="1">osd/info/osd_progress_right.png</righttexture>
+			            <colordiffuse>$INFO[Skin.String(colorcacheprogressbar)]</colordiffuse>
 					</control>
 					<control type="progress" id="23">
 						<left>645</left>
 						<top>57</top>
 						<width>630</width>
 						<height>20</height>
-						<info>Player.Progress</info>
+						<info>Player.Progress</info> 
+						<colordiffuse>$INFO[Skin.String(colorprogressbar)]</colordiffuse>
+						<texturebg>osd/info/osd_progress_back.png</texturebg>
+			            <lefttexture border="1">osd/info/osd_progress_left.png</lefttexture>
+			            <midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
+			            <righttexture border="1">osd/info/osd_progress_right.png</righttexture>
+			            
 					</control>
+					<!-- color progress bar -->
 					<control type="label">
 						<left>340</left>
 						<top>45</top>

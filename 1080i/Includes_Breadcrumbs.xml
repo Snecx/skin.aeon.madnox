@@ -111,19 +111,23 @@
 				<visible>Player.HasAudio + Player.Playing</visible>
 				<colordiffuse>$VAR[TitleColorVar]</colordiffuse>
 			</control>
+			<!-- color progress bar -->
 			<control type="progress">
 				<left>0</left>
 				<top>0</top>
 				<width>660</width>
 				<height>45</height>
 				<info>Player.Progress</info>
-				<texturebg>osd/info/osd_progress_back_cache.png</texturebg>
+				<texturebg>osd/info/osd_progress_back.png</texturebg>
 				<lefttexture></lefttexture>
-				<midtexture colordiffuse="$VAR[HomeMenuTextFocusVar]">osd/info/osd_progress_mid.png</midtexture>
+				<!-- <midtexture colordiffuse="$VAR[HomeMenuTextFocusVar]">osd/info/osd_progress_mid.png</midtexture> -->
+				<midtexture colordiffuse="$INFO[Skin.String(colorprogressbar)]">osd/info/osd_progress_mid.png</midtexture>
 				<righttexture></righttexture>
+				<colordiffuse>$INFO[Skin.String(colorprogressbar)]</colordiffuse>
 				<visible>Player.HasMedia + Skin.HasSetting(ProgressNowPlaying)</visible>
 				<animation effect="fade" end="35" time="600" condition="Player.HasMedia">Conditional</animation>
 			</control>
+			<!-- color progress bar -->
 			<control type="image">
 				<left>12</left>
 				<top>9</top>

@@ -117,6 +117,7 @@
 					<midtexture colordiffuse="FFff4081">progress-end.png</midtexture>
 					<righttexture colordiffuse="FFff4081">progress-end.png</righttexture>
 				</control>
+				<!-- color progress bar -->
 				<control type="progress" id="23">
 					<description>Progress Bar</description>
 					<left>380</left>
@@ -124,7 +125,13 @@
 					<bottom>10</bottom>
 					<height>8</height>
 					<info>Player.Progress</info>
+					<colordiffuse>$INFO[Skin.String(colorprogressbar)]</colordiffuse>
+					<texturebg>osd/info/osd_progress_back.png</texturebg>
+			        <lefttexture border="1">osd/info/osd_progress_left.png</lefttexture>
+			        <midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
+			        <righttexture border="1">osd/info/osd_progress_right.png</righttexture>
 				</control>
+				<!-- color progress bar -->
 			</control>
 		</control>
 		<control type="label" description="Total Time">

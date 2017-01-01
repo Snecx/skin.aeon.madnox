@@ -569,34 +569,39 @@
 					<control type="group">
 						<animation effect="fade" end="20" time="600" condition="Player.HasMedia + Skin.HasSetting(glasshome)">Conditional</animation>
 						<animation effect="fade" end="30" time="600" condition="Player.HasMedia + !Skin.HasSetting(glasshome)">Conditional</animation>
+						<!-- color progress bar -->
 						<control type="progress">
 							<left>-5</left>
 							<top>502</top>
 							<width>1920</width>
 							<height>119</height>
 							<info>Player.Progress</info>
-							<texturebg>osd/info/osd_progress_back_cache.png</texturebg>
+							<texturebg>osd/info/osd_progress_back.png</texturebg>
 							<lefttexture border="1"></lefttexture>
 							<midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
 							<righttexture border="1"></righttexture>
-							<colordiffuse>$VAR[HomeMenuTextFocusVar]</colordiffuse>
+							<!--<colordiffuse>$VAR[HomeMenuTextFocusVar]</colordiffuse>-->
+							<colordiffuse>$INFO[Skin.String(colorprogressbar)]</colordiffuse>
 							<!-- menubar mod -->
 							<visible>[Skin.HasSetting(ProgressMainMenu) + !Skin.HasSetting(smallermainmenu) + !Skin.HasSetting(customizehome)] | [Skin.HasSetting(ProgressMainMenu) + !Skin.HasSetting(smallermainmenu) + Skin.HasSetting(customizehome) + !Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic)]</visible> 
 						</control>
+						<!-- color progress bar -->
+						<!-- color progress bar -->
 						<control type="progress">
 							<left>-245</left>
 							<top>502</top>
 							<width>2420</width>
 							<height>119</height>
 							<info>Player.Progress</info>
-							<texturebg>osd/info/osd_progress_back_cache.png</texturebg>
+							<texturebg>osd/info/osd_progress_back.png</texturebg>
 							<lefttexture border="1"></lefttexture>
 							<midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
 							<righttexture border="1"></righttexture>
-							<colordiffuse>$VAR[HomeMenuTextFocusVar]</colordiffuse>
+							<colordiffuse>$INFO[Skin.String(colorprogressbar)]</colordiffuse>
 					  		<visible>[Skin.HasSetting(ProgressMainMenu) + Skin.HasSetting(smallermainmenu) + !Skin.HasSetting(customizehome)] | [Skin.HasSetting(ProgressMainMenu) + Skin.HasSetting(smallermainmenu) + Skin.HasSetting(customizehome) + !Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic)]</visible> 
 							<!-- menubar mod -->
 						</control>
+						<!-- color progress bar -->
 					</control>
 					<!-- menubar mod 453-->
 					<control type="image">
@@ -844,6 +849,7 @@
 					<visible>!Skin.HasSetting(BelowMidLogo)</visible>
 				</control>
 				<!-- menubar mod -->
+				<!-- color progress bar -->
 				<control type="progress">
 					<animation effect="slide" time="250" start="-270,10" end="0,0" tween="back" easing="out" condition="Substring(Control.GetLabel(8318),empty.png) | String.IsEmpty(Skin.String(ArtistsLogosPath)) | !Skin.HasSetting(BelowMidLogo)">Conditional</animation>
 					<posx>0</posx>
@@ -859,7 +865,9 @@
 					<visible>Substring(Control.GetLabel(8318),empty.png) | !Skin.HasSetting(BelowMidLogo)</visible>
 					<visible>Player.HasDuration</visible>
 					<visible>!Skin.HasSetting(colormenubar) + !Skin.HasSetting(menufromgraphic)  | !Skin.HasSetting(customizehome)</visible>
+					<colordiffuse>$INFO[Skin.String(colorprogressbar)]</colordiffuse>
 				</control>
+				<!-- color progress bar -->
 				<!-- menubar mod -->
 			</control>
 			<control type="group">

@@ -575,6 +575,7 @@
 				<label>$INFO[VideoPlayer.NextDuration]</label>
 				<visible>!String.IsEmpty(VideoPlayer.NextTitle)</visible>
 			</control>
+			<!-- color progress bar -->
 			<control type="progress" id="1">
 				<left>380</left>
 				<top>940</top>
@@ -585,8 +586,10 @@
 				<texturebg border="3,0,3,0">new_pvr/texturebg_border_white.png</texturebg>
 				<lefttexture>-</lefttexture>
 				<righttexture>-</righttexture>
-				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
+				<colordiffuse>$INFO[Skin.String(colorprogressbar)]</colordiffuse>
+				<!--<colordiffuse>$VAR[FontColorVar]</colordiffuse>-->
 			</control>
+			<!-- color progress bar -->
 		</control>
 		<control type="group" id="1">
 			<visible>!VideoPlayer.HasEpg</visible>

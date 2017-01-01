@@ -133,6 +133,36 @@
 				<onclick>Skin.ToggleSetting(WeatherInfoOnPause)</onclick>
 				<selected>Skin.HasSetting(WeatherInfoOnPause)</selected>
 			</control>
+			<!-- color progress bar -->
+			<control type="button" id="17033">
+     				<label>Progress Bar Color</label>
+					<label2>[COLOR $INFO[Skin.String(colorprogressbar)]]$INFO[Skin.String(colorprogressbar)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,colorprogressbar,10000)</onclick>
+					<onclick>Skin.SetString(colorprogressbar,$INFO[Skin.String(colorprogressbar)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+			</control>
+			<control type="button" id="17034">
+					<label>    Transparency</label>
+					<include>Objects_CommonSettingsButton</include>
+					<onclick>RunScript(script.color.picker,Skin.SetString(colorprogressbar,$INFO[Skin.String(colorprogressbar)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
+					<onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
+			</control>
+			<control type="button" id="17035">
+     				<label>Cache Progress Bar Color</label>
+					<label2>[COLOR $INFO[Skin.String(colorcacheprogressbar)]]$INFO[Skin.String(colorcacheprogressbar)][/COLOR]</label2>
+					<include>Objects_CommonSettingsButton</include>
+		     		<onclick>SetProperty(colordialog,colorcacheprogressbar,10000)</onclick>
+					<onclick>Skin.SetString(colorcacheprogressbar,$INFO[Skin.String(colorcacheprogressbar)])</onclick>
+     		        <onclick>ActivateWindow(1138)</onclick>
+			</control>
+			<control type="button" id="17036">
+					<label>    Transparency</label>
+					<include>Objects_CommonSettingsButton</include>
+					<onclick>RunScript(script.color.picker,Skin.SetString(colorcacheprogressbar,$INFO[Skin.String(colorcacheprogressbar)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
+					<onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
+			</control>
+            <!-- color progress bar -->			
 		</control>
 		<control type="scrollbar" id="60">
 			<include>Objects_CommonSettingsScrollbar</include>
