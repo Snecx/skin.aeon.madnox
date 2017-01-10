@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
 	<defaultcontrol always="true">95</defaultcontrol>
+	<onload condition="System.HasAddon(script.FFMpegVersion)">RunScript(script.FFMpegVersion)</onload>
 	<include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
 	<animation type="WindowOpen" reversible="false" condition="!Window.Previous(settings)">
 		<effect type="zoom" start="150" end="100" center="960,540" time="720" tween="cubic" />
@@ -109,6 +110,14 @@
 			<control type="group">
 				<left>415</left>
 				<top>195</top>
+				<control type="label">
+					<top>-400</top>
+					<width>1125</width>
+					<label>FFMPEG: $INFO[Window(Home).Property(FFMpegVersion.version)]</label>
+					<font>Font_Bold34_Caps</font>
+					<textcolor>white3</textcolor>
+					<visible>Control.HasFocus(97)</visible>
+				</control>
 				<control type="label" id="2">
 					<top>-700</top>
 					<width>1125</width>
