@@ -357,6 +357,10 @@
 				<onback>50</onback>
 				<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus</visible>
 				<animation effect="fade" time="160" delay="1000">Hidden</animation>
+				<control type="button" id="10">
+					<include>Objects_MediaMenuButtonIcons</include>
+					<visible>Control.IsEnabled(10)</visible>
+				</control>
 				<control type="button" id="1802">
 					<label>[B]$INFO[Container.Viewmode][/B]</label>
 					<include>Objects_MediaMenuButtonIcons</include>
@@ -402,6 +406,42 @@
 				<visible>ControlGroup(9000).HasFocus</visible>
 				<animation effect="fade" time="220">Visible</animation>
 				<animation effect="fade" time="160" delay="1000">Hidden</animation>
+				
+				<control type="image">
+					<texture>special://skin/extras/BigIcons/Microphone.png</texture>
+					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(10)">Conditional</animation>
+					<include>MediaMenuIcons</include>
+					<visible>Control.IsVisible(10) + Window.IsActive(music)</visible>
+				</control>
+				<!--
+				<control type="image">
+					<texture>special://skin/extras/BigIcons/ButtonReload.png</texture>
+					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(2665)">Conditional</animation>
+					<include>MediaMenuIcons</include>
+					<visible>Control.IsVisible(10) + Window.IsActive(videos)</visible>
+				</control>
+				-->
+				<control type="image">
+					<texture>special://skin/extras/BigIcons/ButtonCheck.png</texture>
+					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(10)">Conditional</animation>
+					<include>MediaMenuIcons</include>
+					<visible>Control.IsVisible(10) + Window.IsActive(videos) + String.IsEqual(Control.GetLabel(10),$LOCALIZE[16102])</visible>
+				</control>
+				<control type="image">
+					<texture>special://skin/extras/BigIcons/ButtonRemove.png</texture>
+					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(10)">Conditional</animation>
+					<include>MediaMenuIcons</include>
+					<visible>Control.IsVisible(10) + Window.IsActive(videos) + String.IsEqual(Control.GetLabel(10),$LOCALIZE[16101])</visible>
+				</control>
+				<control type="image">
+					<texture>special://skin/extras/BigIcons/ButtonAdd.png</texture>
+					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(10)">Conditional</animation>
+					<include>MediaMenuIcons</include>
+					<visible>Control.IsVisible(10) + Window.IsActive(videos)</visible>
+					<visible>!String.IsEqual(Control.GetLabel(10),$LOCALIZE[16101])</visible>
+					<visible>!String.IsEqual(Control.GetLabel(10),$LOCALIZE[16102])</visible>
+				</control>
+	
 				<control type="image">
 					<texture>special://skin/extras/BigIcons/Presentation.png</texture>
 					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(1802)">Conditional</animation>
@@ -438,12 +478,7 @@
 					<include>MediaMenuIcons</include>
 					<visible>Control.IsVisible(9) + Window.IsActive(music)</visible>
 				</control>
-				<control type="image">
-					<texture>special://skin/extras/BigIcons/Microphone.png</texture>
-					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(10)">Conditional</animation>
-					<include>MediaMenuIcons</include>
-					<visible>Control.IsVisible(10) + Window.IsActive(music)</visible>
-				</control>
+				
 				<control type="image">
 					<texture>special://skin/extras/BigIcons/Search.png</texture>
 					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(8)">Conditional</animation>
@@ -541,32 +576,10 @@
 					<include>MediaMenuIcons</include>
 					<visible>Control.IsVisible(17) + Window.IsActive(music)</visible>
 				</control>
-				<control type="image">
-					<texture>special://skin/extras/BigIcons/ButtonReload.png</texture>
-					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(2665)">Conditional</animation>
-					<include>MediaMenuIcons</include>
-					<visible>Control.IsVisible(10) + Window.IsActive(videos)</visible>
-				</control>
-				<control type="image">
-					<texture>special://skin/extras/BigIcons/ButtonCheck.png</texture>
-					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(10)">Conditional</animation>
-					<include>MediaMenuIcons</include>
-					<visible>Control.IsVisible(10) + Window.IsActive(videos) + String.IsEqual(Control.GetLabel(10),$LOCALIZE[16102])</visible>
-				</control>
-				<control type="image">
-					<texture>special://skin/extras/BigIcons/ButtonRemove.png</texture>
-					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(10)">Conditional</animation>
-					<include>MediaMenuIcons</include>
-					<visible>Control.IsVisible(10) + Window.IsActive(videos) + String.IsEqual(Control.GetLabel(10),$LOCALIZE[16101])</visible>
-				</control>
-				<control type="image">
-					<texture>special://skin/extras/BigIcons/ButtonAdd.png</texture>
-					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(10)">Conditional</animation>
-					<include>MediaMenuIcons</include>
-					<visible>Control.IsVisible(10) + Window.IsActive(videos)</visible>
-					<visible>!String.IsEqual(Control.GetLabel(10),$LOCALIZE[16101])</visible>
-					<visible>!String.IsEqual(Control.GetLabel(10),$LOCALIZE[16102])</visible>
-				</control>
+				
+				
+				
+				
 				<control type="image">
 					<texture>special://skin/extras/BigIcons/QUICKPAR.png</texture>
 					<animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(7)">Conditional</animation>
