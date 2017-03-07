@@ -4,107 +4,247 @@
 	<animation effect="fade" start="0" end="100" time="10">WindowOpen</animation>
 	<animation effect="fade" start="100" end="0" time="10">WindowClose</animation>
 	<onload>Action(PlayerDebug)</onload>
+	<onload condition="System.HasAddon(script.skinhelper.mediainfo)">RunScript(script.skinhelper.mediainfo,$INFO[Player.Filenameandpath])</onload>
 	<onunload>Action(PlayerDebug)</onunload>
 	<controls>
 		<control type="group" id="5550">
 		<visible>Player.HasVideo</visible>
 		        <include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39900]:$INFO[Player.Process(videodecoder)]($VAR[VideoHWDecoder])</param>
+					<param name="scrol">false</param>
      				<param name="x">10</param>
-					<param name="y">192</param>
+					<param name="y">380</param>
 					<param name="left">-2</param>
 					<param name="right">2</param>
 					<param name="top">-2</param>
 					<param name="bottom">2</param>
+					<param name="w">1920</param>
 				</include>
 				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39901]:$INFO[Player.Process(pixformat)]</param>
+					<param name="scrol">false</param>
+     				<param name="x">10</param>
+					<param name="y">430</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+					<param name="w">1920</param>
+				</include>
+				
+				<include content="OutlineFont">
+				    <param name="scrol">false</param>
+				    <param name="labvar">$LOCALIZE[39908]:</param>
      				<param name="x">10</param>
 					<param name="y">242</param>
 					<param name="left">-2</param>
 					<param name="right">2</param>
 					<param name="top">-2</param>
 					<param name="bottom">2</param>
+					<param name="w">1920</param>
+				</include>
+				<include content="OutlineFont">
+				    <param name="labvar">$INFO[Player.Filenameandpath]</param>
+					<param name="scrol">true</param>
+     				<param name="x">160</param>
+					<param name="y">242</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+					<param name="w">1700</param>
 				</include>
 				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39902]:$INFO[Player.Process(deintmethod)]</param>
+					<param name="scrol">false</param>
      				<param name="x">10</param>
-					<param name="y">292</param>
+					<param name="y">192</param>
 					<param name="left">-2</param>
 					<param name="right">2</param>
 					<param name="top">-2</param>
 					<param name="bottom">2</param>
+					<param name="w">1920</param>
 				</include>
 				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39903]:$INFO[Player.Process(videowidth)]x$INFO[Player.Process(videoheight)]px$COMMA $INFO[Player.Process(videodar)]AR $COMMA $INFO[Player.Process(videofps)] FPS</param>
+					<param name="scrol">false</param>
      				<param name="x">10</param>
-					<param name="y">342</param>
+					<param name="y">480</param>
 					<param name="left">-2</param>
 					<param name="right">2</param>
 					<param name="top">-2</param>
 					<param name="bottom">2</param>
+					<param name="w">1920</param>
 				</include>
 				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39904]:$INFO[Player.Process(audiochannels)]$COMMA $INFO[Player.Process(audiodecoder)]$COMMA $INFO[Player.Process(audiobitspersample)]bits$COMMA $INFO[Player.Process(audiosamplerate)] Hz</param>
+					<param name="scrol">false</param>
      				<param name="x">10</param>
-					<param name="y">392</param>
+					<param name="y">530</param>
 					<param name="left">-2</param>
 					<param name="right">2</param>
 					<param name="top">-2</param>
 					<param name="bottom">2</param>
+					<param name="w">1920</param>
 				</include>
+				
 				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39905]:$INFO[System.Memory(used.percent)]  $LOCALIZE[39906]:$INFO[System.CpuUsage]</param>
      				<param name="x">10</param>
-					<param name="y">442</param>
+					<param name="y">580</param>
 					<param name="left">-2</param>
 					<param name="right">2</param>
 					<param name="top">-2</param>
 					<param name="bottom">2</param>
+					<param name="w">1920</param>
+					<param name="scrol">false</param>
 				</include>
+				
 				<include content="OutlineFont">
 				    <param name="labvar">$LOCALIZE[39907]:$INFO[Player.CacheLevel]%</param>
      				<param name="x">10</param>
-					<param name="y">492</param>
+					<param name="y">630</param>
 					<param name="left">-2</param>
 					<param name="right">2</param>
 					<param name="top">-2</param>
 					<param name="bottom">2</param>
+					<param name="w">1920</param>
+					<param name="scrol">false</param>
 				</include>
 				<include content="OutlineFont">
-				    <param name="labvar">$LOCALIZE[39908]:$INFO[Player.Filenameandpath]</param>
+				    <param name="labvar">LANIP:$INFO[Window(Home).Property(SkinHelperIP.lanip)]</param>
      				<param name="x">10</param>
-					<param name="y">542</param>
+					<param name="y">680</param>
 					<param name="left">-2</param>
 					<param name="right">2</param>
 					<param name="top">-2</param>
 					<param name="bottom">2</param>
+					<param name="w">1920</param>
+					<param name="scrol">false</param>
 				</include>
+				<include content="OutlineFont">
+				    <param name="labvar">WANIP:$INFO[Window(Home).Property(SkinHelperIP.wanip)]</param>
+     				<param name="x">10</param>
+					<param name="y">730</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+					<param name="w">1920</param>
+					<param name="scrol">false</param>
+				</include>
+				<include content="OutlineFont">
+				    <param name="labvar">CPU Temp:$INFO[Window(Home).Property(SkinHelperIP.cputemp)]   CPU Usage:$INFO[Window(Home).Property(SkinHelperIP.cpulast)]</param>
+     				<param name="x">10</param>
+					<param name="y">780</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+					<param name="w">1920</param>
+					<param name="scrol">false</param>
+				</include>
+				
+				<include content="OutlineFont">
+				    <param name="labvar">GPU Temp:$INFO[Window(Home).Property(SkinHelperIP.gputemp)]   GPU Usage:$INFO[Window(Home).Property(SkinHelperIP.gpulast)]</param>
+     				<param name="x">10</param>
+					<param name="y">830</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+					<param name="w">1920</param>
+					<param name="scrol">false</param>
+				</include>
+				<include content="OutlineFont">
+				    <param name="labvar">GPU Video Engine:$INFO[Window(Home).Property(SkinHelperIP.gpulastengine)]</param>
+     				<param name="x">10</param>
+					<param name="y">880</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+					<param name="w">1920</param>
+					<param name="scrol">false</param>
+				</include>
+				<!--
 				<include content="OutlineFont">
 				    <param name="labvar">WANIP:$INFO[Window(Home).Property(SkinHelperIP.wanip)]   CPU Temp:$INFO[Window(Home).Property(SkinHelperIP.cputemp)]   CPU Usage:$INFO[Window(Home).Property(SkinHelperIP.cpulast)]   GPU Temp:$INFO[Window(Home).Property(SkinHelperIP.gputemp)]   GPU Usage:$INFO[Window(Home).Property(SkinHelperIP.gpulast)]   GPU Video Engine:$INFO[Window(Home).Property(SkinHelperIP.gpulastengine)]</param>
+					<param name="scrol">false</param>
      				<param name="x">10</param>
-					<param name="y">592</param>
+					<param name="y">245</param>
 					<param name="left">-2</param>
 					<param name="right">2</param>
 					<param name="top">-2</param>
 					<param name="bottom">2</param>
+					<param name="w">1920</param>
 				</include>
+				-->
+				<include content="OutlineFont2">
+				    <param name="labvar">$INFO[VideoPlayer.VideoCodec]</param>
+     				<param name="x">330</param>
+					<param name="y">910</param>
+					<param name="left">-3</param>
+					<param name="right">3</param>
+					<param name="top">-3</param>
+					<param name="bottom">3</param>
+					<param name="w">1920</param>
+					<param name="scrol">false</param>
+				</include>
+				
+				<control type="textbox" id="22">
+                      <left>1030</left>
+                      <top>360</top>
+                      <width>1800</width>
+                      <height>650</height>
+                      <visible>true</visible>
+                      <font>fontConsole</font>
+                      <textcolor>FFFFFFFF</textcolor>
+                      <pulseonselect></pulseonselect>
+                      <pagecontrol>62</pagecontrol>
+                      <label>$INFO[Window(Home).Property(skinhelper.mediainfo.info)]</label>
+                      <align>left</align>
+                </control>
+							
+                <control type="scrollbar" id="62">
+					<top>370</top>
+					<left>1888</left>
+					<width>20</width>
+					<height>650</height>
+					<onleft>50</onleft>
+					<onright>50</onright>
+					<ondown>20</ondown>
+					<onup>20</onup>
+					<texturesliderbackground>scrollbar/texturesliderbackground3.png</texturesliderbackground>
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar3.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
+					<showonepage>true</showonepage>
+					<orientation>vertical</orientation>
+				</control>
                 <control type="image">
-				   <left>0</left>
-				   <top>0</top>
-				   <width>1920</width>
-				   <height>650</height>
-				   <colordiffuse>30FFFFFF</colordiffuse>
-				   <texture border="20">buttons/back40.png</texture>
+				   <left>2</left>
+				   <top>2</top>
+				   <width>1916</width>
+				   <height>300</height>
+				   <colordiffuse>77FFFFFF</colordiffuse>
+				   <texture>back1.png</texture>
 			  	</control>
-                <control type="image">
-				   <left>1820</left>
-				   <top>5</top>
-				   <width>84</width>
-				   <height>124</height>
-				   <colordiffuse>30FFFFFF</colordiffuse>
-				   <texture border="20">logo.png</texture>
-			  	</control> 				
+				<control type="image">
+				   <left>2</left>
+				   <top>350</top>
+				   <width>980</width>
+				   <height>700</height>
+				   <colordiffuse>77FFFFFF</colordiffuse>
+				   <texture>back2.png</texture>
+			  	</control>
+				<control type="image">
+				   <left>1018</left>
+				   <top>350</top>
+				   <width>900</width>
+				   <height>700</height>
+				   <colordiffuse>77FFFFFF</colordiffuse>
+				   <texture>back2.png</texture>
+			  	</control>
 		</control>        
 	</controls>
 </window>
