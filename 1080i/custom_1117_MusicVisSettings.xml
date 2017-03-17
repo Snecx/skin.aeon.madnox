@@ -170,8 +170,8 @@
 					<control type="radiobutton" id="4367">
 					<label>manfeeds Video Lyrics</label>
 					<include>Objects_CommonSettingsButton</include>
-					<onclick>Skin.ToggleSetting(graphiclyrics)</onclick>
-					<selected>Skin.HasSetting(graphiclyrics)</selected>
+					<onclick>Skin.ToggleSetting(manfeedlyrics)</onclick>
+					<selected>Skin.HasSetting(manfeedlyrics)</selected>
 				</control>
 				<control type="button" id="451666">
 					<label>Music Visualisation </label>
