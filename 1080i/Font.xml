@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <fonts>
 	<fontset id="Default" idloc="31390">
+	    <!-- script.Font -->
+        <font>
+            <name>MenubarFont</name>
+            <filename>Jelly_Crazies.ttf</filename>
+            <linespacing>1</linespacing>
+            <aspect>0.8</aspect>
+            <size>45</size>
+            <style>uppercase</style>
+        </font>
+        <!-- script.Font -->
+		<!--HOLIDAY ADDITIONS-->
+		<font>
+			<name>font_cdvv_36</name>
+			<filename>Mikodacs.ttf</filename>
+			<linespacing>0.75</linespacing>
+			<style>uppercase</style>
+			<size>36</size>
+		</font>
+		<font>
+			<name>font_cdvv_48</name>
+			<filename>Mikodacs.ttf</filename>
+			<linespacing>0.75</linespacing>
+			<style>uppercase</style>
+			<size>48</size>
+		</font>
+		<!--HOLIDAY ADDITIONS-->
 		<font>
 			<name>lyr0</name>
 			<filename>lyrics/Fredoka One.ttf</filename>
