@@ -1220,7 +1220,7 @@
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),TV Show Playlist)">[COLOR $INFO[Skin.String(HomeMenuColor3)]]$LOCALIZE[20343]:[/COLOR]$INFO[Window(Home).Property(PlaylistTVShowCount)][COLOR $INFO[Skin.String(HomeMenuColor3)]]  •  $LOCALIZE[20360]:[/COLOR]$INFO[Window(Home).Property(PlaylistEpisodes)][COLOR $INFO[Skin.String(HomeMenuColor3)]]  •  $LOCALIZE[16101]:[/COLOR]$INFO[Window(Home).Property(PlaylistEpisodesUnWatched)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),Music Video playlist) + Integer.IsGreater(Window(Home).Property(PlaylistInProgress),0)">[COLOR $INFO[Skin.String(HomeMenuColor3)]]$LOCALIZE[20389]:[/COLOR]$INFO[Window(Home).Property(PlaylistCount)][COLOR $INFO[Skin.String(HomeMenuColor3)]]  •  $LOCALIZE[16102]:[/COLOR]$INFO[Window(Home).Property(PlaylistWatched)][COLOR $INFO[Skin.String(HomeMenuColor3)]]  •  $LOCALIZE[16101]:[/COLOR]$INFO[Window(Home).Property(PlaylistUnWatched)][COLOR $INFO[Skin.String(HomeMenuColor3)]]  •  $LOCALIZE[575]:[/COLOR]$INFO[Window(Home).Property(PlaylistInProgress)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),Music Video playlist)">[COLOR $INFO[Skin.String(HomeMenuColor3)]]$LOCALIZE[20389]:[/COLOR]$INFO[Window(Home).Property(PlaylistCount)][COLOR $INFO[Skin.String(HomeMenuColor3)]]  •  $LOCALIZE[16102]:[/COLOR]$INFO[Window(Home).Property(PlaylistWatched)][COLOR $INFO[Skin.String(HomeMenuColor3)]]  •  $LOCALIZE[16101]:[/COLOR]$INFO[Window(Home).Property(PlaylistUnWatched)]</value>
-    	<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),IP/CPU/GPU Stats)">$INFO[Window(Home).Property(SkinHelperIP.wanip)][COLOR $INFO[Skin.String(HomeMenuColor3)]] • CPU:[/COLOR]$INFO[Window(Home).Property(SkinHelperIP.cputemp)]/$INFO[Window(Home).Property(SkinHelperIP.cpulast)][COLOR $INFO[Skin.String(HomeMenuColor3)]] • GPU:[/COLOR]$INFO[Window(Home).Property(SkinHelperIP.gputemp)]/$INFO[Window(Home).Property(SkinHelperIP.gpulast)]/$INFO[Window(Home).Property(SkinHelperIP.gpulastengine)]</value>
+    	<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),IP/CPU/GPU Stats)">[COLOR $INFO[Skin.String(HomeMenuColor3)]]CPU:[/COLOR]$INFO[Window(Home).Property(SkinHelperIP.cputemp)]/$INFO[Window(Home).Property(SkinHelperIP.cpulast)][COLOR $INFO[Skin.String(HomeMenuColor3)]] • GPU:[/COLOR]$INFO[Window(Home).Property(SkinHelperIP.gputemp)]/$INFO[Window(Home).Property(SkinHelperIP.gpulast)]/$INFO[Window(Home).Property(SkinHelperIP.gpulastengine)]</value>
         <!-- whitemod -->		
 		<value condition="Window.IsActive(1131)">$LOCALIZE[31683]</value>
 	</variable>
@@ -1242,7 +1242,7 @@
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),TV Show Playlist)">$INFO[Window(Home).Property(PlaylistTVShowCount),[COLOR grey]$LOCALIZE[20343]:[/COLOR] ]$INFO[Window(Home).Property(PlaylistEpisodes),[COLOR grey]  •  $LOCALIZE[20360]:[/COLOR] ]$INFO[Window(Home).Property(PlaylistEpisodesUnWatched),[COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] ]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),Music Video playlist) + Integer.IsGreater(Window(Home).Property(PlaylistInProgress),0)">$INFO[Window(Home).Property(PlaylistCount),[COLOR grey]$LOCALIZE[20389]:[/COLOR] ]$INFO[Window(Home).Property(PlaylistWatched),[COLOR grey]  •  $LOCALIZE[16102]:[/COLOR] ]$INFO[Window(Home).Property(PlaylistUnWatched),[COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] ]$INFO[Window(Home).Property(PlaylistInProgress),[COLOR grey]  •  $LOCALIZE[575]:[/COLOR] ]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),Music Video playlist)">$INFO[Window(Home).Property(PlaylistCount),[COLOR grey]$LOCALIZE[20389]:[/COLOR] ]$INFO[Window(Home).Property(PlaylistWatched),[COLOR grey]  •  $LOCALIZE[16102]:[/COLOR] ]$INFO[Window(Home).Property(PlaylistUnWatched),[COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] ]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),IP/CPU/GPU Stats)">$INFO[Window(Home).Property(SkinHelperIP.wanip)][COLOR grey] • CPU:[/COLOR]$INFO[Window(Home).Property(SkinHelperIP.cputemp)]/$INFO[Window(Home).Property(SkinHelperIP.cpulast)][COLOR grey]] • GPU:[/COLOR]$INFO[Window(Home).Property(SkinHelperIP.gputemp)]/$INFO[Window(Home).Property(SkinHelperIP.gpulast)]/$INFO[Window(Home).Property(SkinHelperIP.gpulastengine)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),IP/CPU/GPU Stats)">[COLOR grey]CPU:[/COLOR]$INFO[Window(Home).Property(SkinHelperIP.cputemp)]/$INFO[Window(Home).Property(SkinHelperIP.cpulast)][COLOR grey]] • GPU:[/COLOR]$INFO[Window(Home).Property(SkinHelperIP.gputemp)]/$INFO[Window(Home).Property(SkinHelperIP.gpulast)]/$INFO[Window(Home).Property(SkinHelperIP.gpulastengine)]</value>
 		<value condition="Window.IsActive(1131)">$LOCALIZE[31683]</value>
 	</variable>
 	<variable name="PlaylistStatsContentVar">
@@ -4190,5 +4190,9 @@
 		<value condition="[String.EndsWith(Container(110).Currentitem,8)]">fffffaf0</value>
 		<value condition="[String.EndsWith(Container(110).Currentitem,9)]">ffb39ddb</value>
 		<value>fff395b5</value>
+	</variable>
+	<variable name="VideoHWDecoder">
+		<value condition="Player.Process(videohwdecoder)">Hardware</value>
+		<value>Software</value>
 	</variable>
 </includes>
