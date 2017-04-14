@@ -399,7 +399,20 @@
 			<linespacing>0.8</linespacing>
 			<size>73</size>
 		</font>
-		
+		<font>
+			<name>fontConsole</name>
+			<filename>lucon.ttf</filename>
+			<style></style>
+			<aspect>0.8</aspect>
+			<size>25</size>
+		</font>
+		<font>
+			<name>fontOut</name>
+			<filename>aeon_common.ttf</filename>
+			<style></style>
+			<aspect>1.0</aspect>
+			<size>100</size>
+		</font>
 		<font>
 			<name>fontOutline</name>
 			<filename>aeon_common.ttf</filename>
