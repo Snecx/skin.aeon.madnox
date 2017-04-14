@@ -144,9 +144,21 @@
 					<param name="w">1920</param>
 					<param name="scrol">false</param>
 				</include>
-				
+				<!--
 				<include content="OutlineFont">
-				    <param name="labvar">GPU Temp:$INFO[Window(Home).Property(SkinHelperIP.gputemp)]   GPU Usage:$INFO[Window(Home).Property(SkinHelperIP.gpulast)]</param>
+				    <param name="labvar">CPU Temp:$INFO[Window(Home).Property(SkinHelperIP.hdtemp1)]   CPU Usage:$INFO[Window(Home).Property(SkinHelperIP.cpulast)]</param>
+     				<param name="x">10</param>
+					<param name="y">830</param>
+					<param name="left">-2</param>
+					<param name="right">2</param>
+					<param name="top">-2</param>
+					<param name="bottom">2</param>
+					<param name="w">1920</param>
+					<param name="scrol">false</param>
+				</include>
+				-->
+				<include content="OutlineFont">
+				    <param name="labvar">GPU Temp:$INFO[Window(Home).Property(SkinHelperIP.gputemp)]   GPU Usage:$INFO[Window(Home).Property(SkinHelperIP.gpulast)]   GPU Video Engine:$INFO[Window(Home).Property(SkinHelperIP.gpulastengine)]</param>
      				<param name="x">10</param>
 					<param name="y">830</param>
 					<param name="left">-2</param>
@@ -157,7 +169,7 @@
 					<param name="scrol">false</param>
 				</include>
 				<include content="OutlineFont">
-				    <param name="labvar">GPU Video Engine:$INFO[Window(Home).Property(SkinHelperIP.gpulastengine)]</param>
+				    <param name="labvar">Mainboard Temp:$INFO[Window(Home).Property(SkinHelperIP.mainboardtemp1)]  $INFO[Window(Home).Property(SkinHelperIP.mainboardtemp2)]  $INFO[Window(Home).Property(SkinHelperIP.mainboardtemp3)]      HD Temp:$INFO[Window(Home).Property(SkinHelperIP.hdtemp1)]</param>
      				<param name="x">10</param>
 					<param name="y">880</param>
 					<param name="left">-2</param>
@@ -182,8 +194,8 @@
 				-->
 				<include content="OutlineFont2">
 				    <param name="labvar">$INFO[VideoPlayer.VideoCodec]</param>
-     				<param name="x">330</param>
-					<param name="y">910</param>
+     				<param name="x">350</param>
+					<param name="y">920</param>
 					<param name="left">-3</param>
 					<param name="right">3</param>
 					<param name="top">-3</param>

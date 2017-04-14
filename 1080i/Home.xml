@@ -468,7 +468,49 @@
 			<content>special://skin/extras/Playlists/MoviesInProgress.xsp</content>
 			<autoscroll time="7000" delay="7000" repeat="7000">True</autoscroll>
 		</control>
-	   
+	    <control type="group"><!-- guardians -->
+			<visible>Skin.HasSetting(guardians)</visible>
+				<control type="image">
+					<posx>200</posx>
+					<posy>200</posy>
+					<width>406</width>
+					<height>500</height>
+					<texture>guardians/ggggekko2.png</texture>
+				</control>
+				<control type="image">
+					<animation type="Conditional" condition="true" loop="true">
+						<effect type="slide" start="1000,0" end="0,0" time="10000"  delay="0"  /> 
+						<effect type="rotate" end="3" center="auto" time="1000" delay="10000"  />
+						<effect type="rotate" end="-3" center="auto" time="1000" delay="20000"  />
+						<effect type="slide" start="0,0" end="1000,0" time="10000"  delay="30000"  />
+					</animation>
+					<posx>1617</posx>
+					<posy>710</posy>
+					<width>303</width>
+					<height>400</height>
+					<texture>guardians/gekko3.png</texture>
+				</control>
+				<control type="image">
+					<posx>850</posx>
+					<posy>880</posy>
+					<width>185</width>
+					<height>240</height>
+					<texture>guardians/groot1.png</texture>
+				</control>
+				<control type="image">
+					<animation type="Conditional" condition="true" loop="true">
+						<effect type="slide" start="0,0" end="1000,0" time="10000"  delay="0"  />
+						<effect type="rotate" end="-2" center="auto" time="1000" delay="10000"  />
+						<effect type="rotate" end="2" center="auto" time="10000" delay="20000"  />
+						<effect type="slide" start="0,0" end="-1000,0" time="10000"  delay="30000"  />
+					</animation>
+					<posx>-1000</posx>
+					<posy>700</posy>
+					<width>204</width>
+					<height>400</height>
+					<texture>guardians/groot2.png</texture>
+				</control>
+	    </control><!-- guardians -->	   
 	   <!--*   HOLIDAY MOD ADDITIONS  *-->
 		<control type="group"><!-- New Years -->
 			<visible>Skin.HasSetting(newyears)</visible>

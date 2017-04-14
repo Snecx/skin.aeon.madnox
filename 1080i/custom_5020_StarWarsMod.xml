@@ -68,6 +68,14 @@
 						<selected>Skin.HasSetting(starwars)</selected>
 						<onclick>noop</onclick>
 					</item>
+					<item id="199">
+						<property name="description">Guardians</property>
+						<property name="screenshot">guardians/screenshot.png</property>						
+						<label>Guardians</label>
+						<onclick>Skin.ToggleSetting(guardians)</onclick>
+						<selected>Skin.HasSetting(guardians)</selected>
+						<onclick>noop</onclick>
+					</item>
 				</content>
 			</control>
 			<control type="label">
@@ -158,7 +166,29 @@
 						<selected>Skin.HasSetting(starwars)</selected>
 					</control>
 					
-				</control>					
+				</control>
+				<control type="grouplist" id="9011"><!--guardians-->
+					<left>387</left>
+					<top>226</top>
+					<width>1469</width>
+					<height>732</height>
+					<visible>Container(9000).Hasfocus(199)</visible>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onup>450</onup>
+					<ondown>9004</ondown>
+					<onup>9004</onup>
+					<onright>9009</onright>
+					<control type="radiobutton" id="7080">
+						<label></label>
+						<include>RadioButtonSoShort</include>
+						<onclick>Skin.ToggleSetting(guardians)</onclick>
+						<selected>Skin.HasSetting(guardians)</selected>
+					</control>
+					
+				</control>
+                 				
 			</control>			
 		</control>
 		<control type="image">
